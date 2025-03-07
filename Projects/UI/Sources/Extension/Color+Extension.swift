@@ -18,4 +18,7 @@ public extension Color {
     static let disabledButtonBackground = Color("DisabledButtonBackground", bundle: Bundle.module)
     static let buttonText = Color("ButtonText", bundle: Bundle.module)
     static let disabledButtonText = Color("DisabledButtonText", bundle: Bundle.module)
+    
+    // Text, TextField
+    static let inactiveBorderColor = Color("InactiveBorderColor", bundle: Bundle.module)
 }
