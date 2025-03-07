@@ -11,9 +11,11 @@ import SwiftUICore
 public extension Color {
     static let primaryColor = Color("Primary", bundle: Bundle.module)
     static let secondaryColor = Color("Secondary", bundle: Bundle.module)
+    static let progressBArColor = Color("ProgressBar", bundle: Bundle.module)
     
     // Bottom Button
     static let pressedButtonBackground = Color("PressedButtonBackground", bundle: Bundle.module)
     static let disabledButtonBackground = Color("DisabledButtonBackground", bundle: Bundle.module)
+    static let buttonText = Color("ButtonText", bundle: Bundle.module)
     static let disabledButtonText = Color("DisabledButtonText", bundle: Bundle.module)
 }
