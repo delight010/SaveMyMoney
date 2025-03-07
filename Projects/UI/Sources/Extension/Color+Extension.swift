@@ -11,7 +11,7 @@ import SwiftUICore
 public extension Color {
     static let primaryColor = Color("Primary", bundle: Bundle.module)
     static let secondaryColor = Color("Secondary", bundle: Bundle.module)
-    static let progressBArColor = Color("ProgressBar", bundle: Bundle.module)
+    static let progressBarColor = Color("ProgressBar", bundle: Bundle.module)
     
     // Bottom Button
     static let pressedButtonBackground = Color("PressedButtonBackground", bundle: Bundle.module)
