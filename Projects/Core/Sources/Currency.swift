@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Currency: Identifiable {
+public struct Currency: Identifiable, Hashable {
     public let id = UUID()
     public let localeIdentifier: String
     public let flag: String
@@ -46,6 +46,14 @@ public struct Currency: Identifiable {
         formatter.usesGroupingSeparator = true
         formatter.groupingSize = 3
         self.formatter = formatter
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    public static func == (lhs: Currency, rhs: Currency) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
