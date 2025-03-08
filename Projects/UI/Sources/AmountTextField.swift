@@ -48,11 +48,7 @@ public struct AmountTextField: View {
         .padding(padding)
         .foregroundColor(.primary)
         .cornerRadius(cornerRadius)
-        .overlay(
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(isFocused ? .primaryColor : Color.inactiveBorder,
-                        lineWidth: isFocused ? 2 : 1)
-        )
+        .textRoundedRectangle(isFocused)
     }
 }
 
