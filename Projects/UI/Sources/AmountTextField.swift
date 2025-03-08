@@ -47,7 +47,6 @@ public struct AmountTextField: View {
         } // HStack
         .padding(padding)
         .foregroundColor(.primary)
-        .cornerRadius(cornerRadius)
         .textRoundedRectangle(isFocused)
     }
 }
