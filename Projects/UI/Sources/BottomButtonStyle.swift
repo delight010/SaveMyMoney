@@ -17,6 +17,7 @@ public struct BottomButtonStyle: ButtonStyle {
     
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .bold()
             .frame(maxWidth: .infinity)
             .padding()
             .foregroundStyle(
