@@ -15,17 +15,17 @@ public struct Currency: Identifiable, Hashable {
     
     public private(set) var code: String
     public private(set) var country: String
-    public private(set) var unit: String
+    public private(set) var currencySymbol: String
     public private(set) var decimals: Int
     
-    private let formatter: NumberFormatter
+    public let formatter: NumberFormatter
     
     public init(localeIdentifier: String, flag: String) {
         self.localeIdentifier = localeIdentifier
         self.flag = flag
         
         let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
+        formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: localeIdentifier)
         formatter.usesGroupingSeparator = true
         formatter.groupingSize = 3
@@ -41,7 +41,7 @@ public struct Currency: Identifiable, Hashable {
         }
         
         formatter.currencyCode = self.code
-        self.unit = formatter.currencySymbol
+        self.currencySymbol = formatter.currencySymbol
         self.decimals = formatter.maximumFractionDigits
     }
     
