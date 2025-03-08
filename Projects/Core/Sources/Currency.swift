@@ -13,26 +13,10 @@ public struct Currency: Identifiable, Hashable {
     public let localeIdentifier: String
     public let flag: String
     
-    public private(set) lazy var code: String = {
-        let locale = Locale(identifier: localeIdentifier)
-        return locale.currency?.identifier ?? "USD"
-    }()
-    
-    public private(set) lazy var country: String = {
-        let locale = Locale(identifier: localeIdentifier)
-        guard let regionCode = locale.region?.identifier else { return "United States" }
-        return Locale.current.localizedString(forRegionCode: regionCode) ?? code
-    }()
-    
-    public private(set) lazy var unit: String = {
-        formatter.currencyCode = self.code
-        return formatter.currencySymbol
-    }()
-    
-    public private(set) lazy var decimals: Int = {
-        formatter.currencyCode = self.code
-        return formatter.maximumFractionDigits
-    }()
+    public private(set) var code: String
+    public private(set) var country: String
+    public private(set) var unit: String
+    public private(set) var decimals: Int
     
     private let formatter: NumberFormatter
     
@@ -46,6 +30,19 @@ public struct Currency: Identifiable, Hashable {
         formatter.usesGroupingSeparator = true
         formatter.groupingSize = 3
         self.formatter = formatter
+        
+        let locale = Locale(identifier: localeIdentifier)
+        self.code = locale.currency?.identifier ?? "USD"
+        
+        if let regionCode = locale.region?.identifier {
+            self.country = Locale.current.localizedString(forRegionCode: regionCode) ?? self.code
+        } else {
+            self.country = "United States"
+        }
+        
+        formatter.currencyCode = self.code
+        self.unit = formatter.currencySymbol
+        self.decimals = formatter.maximumFractionDigits
     }
     
     public func hash(into hasher: inout Hasher) {
