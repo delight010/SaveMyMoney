@@ -10,34 +10,69 @@ import Foundation
 
 public struct Currency: Identifiable {
     public let id = UUID()
+    public let localeIdentifier: String
     public let flag: String
-    public let country: String
-    public let code: String
-    public let unit: String
-    public let decimals: Int
+    
+    public private(set) lazy var code: String = {
+        let locale = Locale(identifier: localeIdentifier)
+        return locale.currency?.identifier ?? "USD"
+    }()
+    
+    public private(set) lazy var country: String = {
+        let locale = Locale(identifier: localeIdentifier)
+        guard let regionCode = locale.region?.identifier else { return "United States" }
+        return Locale.current.localizedString(forRegionCode: regionCode) ?? code
+    }()
+    
+    public private(set) lazy var unit: String = {
+        formatter.currencyCode = self.code
+        return formatter.currencySymbol
+    }()
+    
+    public private(set) lazy var decimals: Int = {
+        formatter.currencyCode = self.code
+        return formatter.maximumFractionDigits
+    }()
+    
+    private let formatter: NumberFormatter
+    
+    public init(localeIdentifier: String, flag: String) {
+        self.localeIdentifier = localeIdentifier
+        self.flag = flag
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: localeIdentifier)
+        formatter.usesGroupingSeparator = true
+        formatter.groupingSize = 3
+        self.formatter = formatter
+    }
 }
 
 public extension Currency {
     static let currencies = [
-        Currency(flag: "🇺🇸", country: "United States", code: "USD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇪🇺", country: "European Union", code: "EUR", unit: "Euro", decimals: 2),
-        Currency(flag: "🇯🇵", country: "Japan", code: "JPY", unit: "Yen", decimals: 0),
-        Currency(flag: "🇬🇧", country: "United Kingdom", code: "GBP", unit: "Pound", decimals: 2),
-        Currency(flag: "🇨🇦", country: "Canada", code: "CAD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇦🇺", country: "Australia", code: "AUD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇨🇭", country: "Switzerland", code: "CHF", unit: "Franc", decimals: 2),
-        Currency(flag: "🇨🇳", country: "China", code: "CNY", unit: "Yuan", decimals: 2),
-        Currency(flag: "🇰🇷", country: "South Korea", code: "KRW", unit: "Won", decimals: 0),
-        Currency(flag: "🇮🇳", country: "India", code: "INR", unit: "Rupee", decimals: 2),
-        Currency(flag: "🇧🇷", country: "Brazil", code: "BRL", unit: "Real", decimals: 2),
-        Currency(flag: "🇷🇺", country: "Russia", code: "RUB", unit: "Ruble", decimals: 2),
-        Currency(flag: "🇲🇽", country: "Mexico", code: "MXN", unit: "Peso", decimals: 2),
-        Currency(flag: "🇸🇬", country: "Singapore", code: "SGD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇹🇷", country: "Turkey", code: "TRY", unit: "Lira", decimals: 2),
-        Currency(flag: "🇭🇰", country: "Hong Kong", code: "HKD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇳🇴", country: "Norway", code: "NOK", unit: "Krone", decimals: 2),
-        Currency(flag: "🇸🇪", country: "Sweden", code: "SEK", unit: "Krona", decimals: 2),
-        Currency(flag: "🇳🇿", country: "New Zealand", code: "NZD", unit: "Dollar", decimals: 2),
-        Currency(flag: "🇹🇭", country: "Thailand", code: "THB", unit: "Baht", decimals: 2)
+        Currency(localeIdentifier: "en_US", flag: "🇺🇸"),
+        Currency(localeIdentifier: "en_150", flag: "🇪🇺"),
+        Currency(localeIdentifier: "ja_JP", flag: "🇯🇵"),
+        Currency(localeIdentifier: "en_GB", flag: "🇬🇧"),
+        Currency(localeIdentifier: "en_CA", flag: "🇨🇦"),
+        Currency(localeIdentifier: "en_AU", flag: "🇦🇺"),
+        Currency(localeIdentifier: "de_CH", flag: "🇨🇭"),
+        Currency(localeIdentifier: "zh_CN", flag: "🇨🇳"),
+        Currency(localeIdentifier: "ko_KR", flag: "🇰🇷"),
+        Currency(localeIdentifier: "hi_IN", flag: "🇮🇳"),
+        Currency(localeIdentifier: "pt_BR", flag: "🇧🇷"),
+        Currency(localeIdentifier: "ru_RU", flag: "🇷🇺"),
+        Currency(localeIdentifier: "es_MX", flag: "🇲🇽"),
+        Currency(localeIdentifier: "zh_SG", flag: "🇸🇬"),
+        Currency(localeIdentifier: "tr_TR", flag: "🇹🇷"),
+        Currency(localeIdentifier: "zh_HK", flag: "🇭🇰"),
+        Currency(localeIdentifier: "no_NO", flag: "🇳🇴"),
+        Currency(localeIdentifier: "sv_SE", flag: "🇸🇪"),
+        Currency(localeIdentifier: "en_NZ", flag: "🇳🇿"),
+        Currency(localeIdentifier: "th_TH", flag: "🇹🇭")
     ]
+    static let currenciesDictionary: [String: Currency] = Dictionary(
+        uniqueKeysWithValues: Currency.currencies.map { ($0.localeIdentifier, $0) }
+    )
 }
