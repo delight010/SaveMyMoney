@@ -17,7 +17,6 @@ public struct AmountTextField: View {
     
     @FocusState private var isFocused: Bool
     
-    private let cornerRadius: CGFloat = 8
     private let padding: CGFloat = 12
     
     public init(_ titleKey: LocalizedStringKey, value: Binding<Decimal>, currency: Binding<Currency>) {
