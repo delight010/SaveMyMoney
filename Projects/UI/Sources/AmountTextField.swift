@@ -124,5 +124,5 @@ extension AmountTextField {
     @Previewable @State var amount: Decimal = 0
     @Previewable @State var currency = Currency.currencies[2]
     
-    AmountTextField("Input Amount", value: $amount, currency: $currency)
+    AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: $currency)
 }
