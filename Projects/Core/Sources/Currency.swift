@@ -55,6 +55,15 @@ public struct Currency: Identifiable, Hashable {
 }
 
 public extension Currency {
+    func formatStyle() -> Decimal.FormatStyle.Currency {
+        return Decimal.FormatStyle.Currency
+            .currency(code: code)
+            .precision(.fractionLength(decimals))
+            .locale(.init(identifier: localeIdentifier))
+    }
+}
+
+public extension Currency {
     static let currencies = [
         Currency(localeIdentifier: "en_US", flag: "🇺🇸"),
         Currency(localeIdentifier: "en_150", flag: "🇪🇺"),
@@ -77,6 +86,7 @@ public extension Currency {
         Currency(localeIdentifier: "en_NZ", flag: "🇳🇿"),
         Currency(localeIdentifier: "th_TH", flag: "🇹🇭")
     ]
+    
     static let currenciesDictionary: [String: Currency] = Dictionary(
         uniqueKeysWithValues: Currency.currencies.map { ($0.localeIdentifier, $0) }
     )
