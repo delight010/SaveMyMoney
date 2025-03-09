@@ -1,5 +1,5 @@
 //
-//  DateRangePickerView.swift
+//  PlanDateRangePickerView.swift
 //  Features
 //
 //  Created by abc on 3/9/25.
@@ -10,7 +10,7 @@ import Core
 import UI
 import SwiftUI
 
-struct DateRangePickerView: View {
+struct PlanDateRangePickerView: View {
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     
@@ -71,7 +71,7 @@ struct DateRangePickerView: View {
     }
 }
 
-extension DateRangePickerView {
+extension PlanDateRangePickerView {
     
     func updateEndDate() {
         if endDate < endDateRange.lowerBound {
@@ -83,6 +83,6 @@ extension DateRangePickerView {
 }
 
 #Preview {
-    DateRangePickerView()
+    PlanDateRangePickerView()
 }
 
