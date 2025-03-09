@@ -19,6 +19,7 @@ protocol PlanBuilderViewModelProtocol {
 
 class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     @Published private var plan: Plan?
+    @Published private var currency: Currency?
     
     init() {}
     
@@ -28,7 +29,7 @@ class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     }
     
     func setCurrency(_ currency: Core.Currency) {
-        plan?.currency = currency
+        self.currency = currency
     }
     
     func setBudget(_ budget: Decimal) {
