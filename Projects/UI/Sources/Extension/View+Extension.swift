@@ -6,6 +6,7 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
+import Core
 import SwiftUI
 
 public extension View {
@@ -17,5 +18,16 @@ public extension View {
                         lineWidth: isFocused ? 2 : 1)
                 .frame(height: 46)
         )
+    }
+    
+    func datePickerRectangle(_ date: Date) -> some View {
+        self.labelsHidden()
+            .colorMultiply(.clear)
+            .overlay {
+                Text(date, formatter: DateFormatter().yearAndDay)
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .textRoundedRectangle()
+            .tint(.primaryColor)
     }
 }
