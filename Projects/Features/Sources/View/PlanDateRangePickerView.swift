@@ -10,7 +10,7 @@ import Core
 import UI
 import SwiftUI
 
-struct PlanDateRangePickerView: View {
+public struct PlanDateRangePickerView: View {
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     
@@ -22,7 +22,7 @@ struct PlanDateRangePickerView: View {
     
     private let progress = 0.3
     
-    var body: some View {
+    public var body: some View {
         VStack {
             ProgressView(value: progress)
                 .tint(.progressBarColor)
