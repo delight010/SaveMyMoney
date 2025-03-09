@@ -10,15 +10,15 @@ import Foundation
 import SwiftData
 
 @Model
-final class Plan {
-    @Attribute(.unique) var id: UUID
-    var startDate: Date
-    var endDate: Date
-    var budget: Decimal
+public final class Plan {
+    @Attribute(.unique) public var id: UUID
+    public var startDate: Date
+    public var endDate: Date
+    public var budget: Decimal
     @Relationship(deleteRule: .cascade)
-    var consumption: [Expense]
+    public var consumption: [Expense]
     
-    init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense]) {
+    public init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense]) {
         self.id = .init()
         self.startDate = startDate
         self.endDate = endDate
