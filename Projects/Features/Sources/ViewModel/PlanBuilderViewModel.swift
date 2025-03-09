@@ -18,7 +18,6 @@ protocol PlanBuilderViewModelProtocol {
 }
 
 class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
-    @Published private var plan: Plan?
     @Published private var startDate = Date()
     @Published private var endDate = Date()
     @Published private var currency: Currency?
@@ -27,8 +26,8 @@ class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     init() {}
     
     func setDateRange(startDate: Date, endDate: Date) {
-        plan?.startDate = startDate
-        plan?.endDate = endDate
+        self.startDate = startDate
+        self.endDate = endDate
     }
     
     func setCurrency(_ currency: Core.Currency) {
@@ -36,6 +35,6 @@ class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     }
     
     func setBudget(_ budget: Decimal) {
-        plan?.budget = budget
+        self.budget = budget
     }
 }
