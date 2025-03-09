@@ -19,7 +19,10 @@ protocol PlanBuilderViewModelProtocol {
 
 class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     @Published private var plan: Plan?
+    @Published private var startDate = Date()
+    @Published private var endDate = Date()
     @Published private var currency: Currency?
+    @Published private var budget: Decimal = 0
     
     init() {}
     
