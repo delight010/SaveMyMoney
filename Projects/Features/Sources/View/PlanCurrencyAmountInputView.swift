@@ -17,10 +17,7 @@ public struct PlanCurrencyAmountInputView: View {
     @State private var amount: Decimal = 0
     private let progress = 0.66
     
-    public init() {
-        let identifier = locale.currency?.identifier ?? "en_US"
-        selectedCurrency = Currency.currenciesDictionary[identifier] ?? Currency.currencies[0]
-    }
+    public init() { }
     
     public var body: some View {
         VStack {
@@ -72,7 +69,18 @@ public struct PlanCurrencyAmountInputView: View {
         .padding(.horizontal, 20)
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false
-        }
+        } // onChange
+        .onAppear {
+            fetchCurrency()
+        } // onAppear
+    }
+}
+
+extension PlanCurrencyAmountInputView {
+    
+    func fetchCurrency() {
+        let identifier = locale.currency?.identifier ?? "en_US"
+        selectedCurrency = Currency.currenciesDictionary[identifier] ?? Currency.currencies[0]
     }
 }
 
