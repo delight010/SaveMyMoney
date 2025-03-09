@@ -22,6 +22,8 @@ public struct PlanDateRangePickerView: View {
     
     private let progress = 0.3
     
+    public init() { }
+    
     public var body: some View {
         VStack {
             ProgressView(value: progress)
