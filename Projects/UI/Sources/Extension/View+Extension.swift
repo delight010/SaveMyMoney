@@ -11,7 +11,7 @@ import SwiftUI
 public extension View {
     
     func textRoundedRectangle(_ isFocused: Bool = false) -> some View {
-        self.overlay(
+        self.background(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(isFocused ? .primaryColor : Color.inactiveBorder,
                         lineWidth: isFocused ? 2 : 1)
