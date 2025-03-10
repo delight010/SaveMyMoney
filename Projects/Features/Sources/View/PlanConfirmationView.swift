@@ -6,10 +6,13 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
+import Core
 import UI
 import SwiftUI
 
 public struct PlanConfirmationView: View {
+    @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0])
+    private var userCurrency
     @EnvironmentObject private var viewModel: PlanBuilderViewModel
     private let progress = 1.0
     
