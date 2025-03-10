@@ -6,11 +6,13 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
+import Features
 import UI
 
 import SwiftUI
 
 struct RootView: View {
+    @StateObject private var router = AppRouter()
     @State private var selectedMenu: AppDestination = .home
     
     public init() {}
