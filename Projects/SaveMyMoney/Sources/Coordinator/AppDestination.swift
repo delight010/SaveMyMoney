@@ -7,7 +7,7 @@
 //
 
 enum AppDestination {
-    case main
+    case home
     case history
     case setting
 }
