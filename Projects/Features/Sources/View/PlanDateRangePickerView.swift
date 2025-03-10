@@ -11,6 +11,7 @@ import UI
 import SwiftUI
 
 public struct PlanDateRangePickerView: View {
+    @StateObject private var viewModel = PlanBuilderViewModel()
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     
@@ -18,8 +19,7 @@ public struct PlanDateRangePickerView: View {
         let minEndDate = Calendar.current.date(byAdding: .day, value: 7, to: startDate)!
         let maxEndDate = Calendar.current.date(byAdding: .day, value: 31, to: startDate)!
         return minEndDate...maxEndDate
-    }
-    
+    }    
     private let progress = 0.3
     
     public init() { }
@@ -81,6 +81,10 @@ extension PlanDateRangePickerView {
         } else if endDate > endDateRange.upperBound {
             endDate = endDateRange.upperBound
         }
+    }
+    
+    func setDateRange() {
+        viewModel.setDateRange(startDate: startDate, endDate: endDate)
     }
 }
 
