@@ -12,7 +12,6 @@ import UI
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var router = AppRouter()
     @State private var selectedMenu: AppDestination = .home
     
     public init() {}
