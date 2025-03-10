@@ -6,7 +6,7 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
-enum AppDestination {
+public enum AppDestination {
     case home
     case history
     case setting
