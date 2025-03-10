@@ -11,6 +11,14 @@ import SwiftUI
 
 public extension View {
     
+    func backgroundRoundedRectangle() -> some View {
+        self.background {
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.inactiveBorder)
+                .foregroundStyle(.clear)
+        }
+    }
+    
     func textRoundedRectangle(_ isFocused: Bool = false) -> some View {
         self.background(
             RoundedRectangle(cornerRadius: 8)
