@@ -26,7 +26,7 @@ struct RootView: View {
                 
                 Text("History")
                     .tabItem {
-                        Label("History", systemImage: "gearshape.fill")
+                        Label("History", systemImage: "magazine.fill")
                     }
                     .tag(AppDestination.history)
                 
