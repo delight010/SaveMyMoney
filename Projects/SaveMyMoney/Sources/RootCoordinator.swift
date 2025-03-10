@@ -11,12 +11,6 @@ import Features
 import Foundation
 
 class RootCoordinator: AppCoordinator {
-    enum RootDestination: Hashable {
-        case home
-        case history
-        case setting
-    }
-    
     var appRouter: AppRouter
     
     init(_ appRouter: AppRouter) {
