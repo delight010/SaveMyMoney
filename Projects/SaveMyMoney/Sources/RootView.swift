@@ -28,6 +28,7 @@ struct RootView: View {
                         Label("Home", systemImage: "house.fill")
                     }
                     .tag(AppDestination.home)
+                    .navigationTitle("")
                 
                 Text("History")
                     .tabItem {
@@ -35,7 +36,7 @@ struct RootView: View {
                     }
                     .tag(AppDestination.history)
                 
-                Text("Setting")
+                SettingView(coordinator: SettingCoordinator(router))
                     .tabItem {
                         Label("Setting", systemImage: "gearshape.fill")
                     }
