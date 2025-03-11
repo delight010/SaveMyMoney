@@ -8,7 +8,7 @@ struct SaveMyMoneyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(coordinator: RootCoordinator(router))
                 .environmentObject(router)
         }
     }

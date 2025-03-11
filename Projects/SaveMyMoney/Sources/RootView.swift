@@ -12,12 +12,16 @@ import UI
 import SwiftUI
 
 struct RootView: View {
+    @EnvironmentObject var router: AppRouter
+    var coordinator: RootCoordinator
     @State private var selectedMenu: AppDestination = .home
     
-    public init() {}
+    public init(coordinator: RootCoordinator) {
+        self.coordinator = coordinator
+    }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $router.path) {
             TabView(selection: $selectedMenu) {
                 Text("Home")
                     .tabItem {
@@ -43,5 +47,7 @@ struct RootView: View {
 }
 
 #Preview {
-    RootView()
+    @Previewable @StateObject var router = AppRouter()
+    RootView(coordinator: RootCoordinator(router))
+        .environmentObject(router)
 }
