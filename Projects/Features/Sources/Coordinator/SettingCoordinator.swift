@@ -8,17 +8,30 @@
 
 import Foundation
 
-class SettingCoordinator: AppCoordinator {
-    enum SettingDestination: Hashable {
+public class SettingCoordinator: AppCoordinator {
+    enum SettingDestination: Hashable, CaseIterable {
         case language
         case currency
         case appearance
         case reset
+        
+        var icon: String {
+            switch self {
+            case .language:
+                return "globe"
+            case .currency:
+                return "creditcard.circle"
+            case .appearance:
+                return "circle.lefthalf.filled"
+            case .reset:
+                return "arrow.triangle.2.circlepath"
+            }
+        }
     }
     
-    var appRouter: AppRouter
+    public var appRouter: AppRouter
     
-    init(_ appRouter: AppRouter) {
+    public init(_ appRouter: AppRouter) {
         self.appRouter = appRouter
     }
 }
