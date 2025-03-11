@@ -9,11 +9,13 @@
 import Foundation
 
 public class SettingCoordinator: AppCoordinator {
-    enum SettingDestination: Hashable, CaseIterable {
+    enum SettingDestination: Hashable, CaseIterable, Identifiable {
         case language
         case currency
         case appearance
         case reset
+        
+        var id: Self { self }
         
         var icon: String {
             switch self {
