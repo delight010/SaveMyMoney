@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     
-    static func isCurrentDateInRange(from startDate: Date, to endDate: Date) -> Bool {
+    static public func isCurrentDateInRange(from startDate: Date, to endDate: Date) -> Bool {
         let currentDate = Date()
         return currentDate >= startDate && currentDate <= endDate
     }
