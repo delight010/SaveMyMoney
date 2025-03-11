@@ -11,18 +11,26 @@ import SwiftData
 
 @Model
 public final class Plan {
+    public enum TaskStatus: String, Codable {
+        case success = "Success"
+        case failure = "Failure"
+        case inProgress = "InProgress"
+    }
+    
     @Attribute(.unique) public var id: UUID
     public var startDate: Date
     public var endDate: Date
     public var budget: Decimal
     @Relationship(deleteRule: .cascade)
     public var consumption: [Expense]
+    public var status: TaskStatus
     
-    public init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense]) {
+    public init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense], status: TaskStatus = .inProgress) {
         self.id = .init()
         self.startDate = startDate
         self.endDate = endDate
         self.budget = budget
         self.consumption = consumption
+        self.status = status
     }
 }
