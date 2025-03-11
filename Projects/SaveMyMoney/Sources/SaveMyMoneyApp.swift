@@ -1,5 +1,7 @@
 import Features
+import Core
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -11,5 +13,6 @@ struct SaveMyMoneyApp: App {
             RootView(coordinator: RootCoordinator(router))
                 .environmentObject(router)
         }
+        .modelContainer(for: Plan.self)
     }
 }
