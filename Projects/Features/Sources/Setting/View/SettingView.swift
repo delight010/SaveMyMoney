@@ -22,11 +22,31 @@ public struct SettingView: View {
                 settingList()
                 Spacer()
             } // VStack
-            .navigationTitle("Setting")
-            .navigationBarTitleDisplayMode(.inline)
         } // NavigationStack
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
+        
+    }
+}
+
+extension SettingView {
+    
+    @ViewBuilder
+    func settingList() -> some View {
+        LazyVStack {
+            Group {
+                ForEach(SettingCoordinator.SettingDestination.allCases) { destination in
+                    Button {
+                        router.push(to: destination)
+                    } label: {
+                        Label("\(destination.id)".capitalized, systemImage: destination.icon)
+                    }
+                    Divider()
+                } // ForEach
+            } // Group
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .tint(.primary)
+        } // LazyVStack
         .navigationDestination(for: SettingCoordinator.SettingDestination.self) { destination in
             switch destination {
             case .language:
@@ -39,25 +59,6 @@ public struct SettingView: View {
                 EmptyView()
             }
         } // navigationDestination
-    }
-}
-
-extension SettingView {
-    
-    @ViewBuilder
-    func settingList() -> some View {
-        Group {
-            ForEach(SettingCoordinator.SettingDestination.allCases) { destination in
-                Button {
-                    router.push(to: destination)
-                } label: {
-                    Label("\(destination.id)".capitalized, systemImage: destination.icon)
-                }
-                Divider()
-            } // ForEach
-        } // Group
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .tint(.primary)
     }
 }
 
