@@ -22,10 +22,9 @@ public struct SettingView: View {
                 settingList()
                 Spacer()
             } // VStack
+            .padding(.horizontal, 20)
         } // NavigationStack
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 20)
-        
     }
 }
 
