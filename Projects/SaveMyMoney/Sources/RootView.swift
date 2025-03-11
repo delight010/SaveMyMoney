@@ -10,6 +10,7 @@ import Features
 import UI
 
 import SwiftUI
+import SwiftData
 
 struct RootView: View {
     @EnvironmentObject var router: AppRouter
@@ -23,7 +24,7 @@ struct RootView: View {
     var body: some View {
         NavigationStack(path: $router.path) {
             TabView(selection: $selectedMenu) {
-                Text("Home")
+                HomeView()
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
                     }
