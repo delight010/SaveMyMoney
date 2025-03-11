@@ -1,5 +1,5 @@
 //
-//  PlanCoordinator.swift
+//  PlanBuildCoordinator.swift
 //  Features
 //
 //  Created by abc on 3/11/25.
@@ -11,7 +11,6 @@ import Foundation
 
 public class PlanBuildCoordinator: AppCoordinator {
     enum PlanBuildDestination: Hashable {
-        case empty
         case dateRange
         case currency
         case currencyAmount
