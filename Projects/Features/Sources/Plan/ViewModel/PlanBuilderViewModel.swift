@@ -22,13 +22,13 @@ protocol PlanBuilderViewModelProtocol {
     func calculateDateDifference() -> Int
 }
 
-class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
+public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
     @Published private var startDate = Date()
     @Published private var endDate = Date()
     @Published private var currency: Currency?
     @Published private var budget: Decimal = 0
     
-    init() {}
+    public init() {}
     
     func setDateRange(startDate: Date, endDate: Date) {
         self.startDate = startDate
