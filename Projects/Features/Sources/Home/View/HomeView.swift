@@ -21,9 +21,7 @@ public struct HomeView: View {
     
     @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
     
-    var latestPlan: Plan? {
-        return plans.first
-    }
+    @State var latestPlan: Plan?
     
     public init() {}
     
@@ -39,6 +37,9 @@ public struct HomeView: View {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
             } // VStack
+            .onAppear {
+                updateLatestPlan()
+            }
             .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
                 switch destination {
                 case .dateRange:
@@ -71,6 +72,10 @@ extension HomeView {
         }
         
         return false
+    }
+    
+    func updateLatestPlan() {
+        latestPlan = plans.first
     }
 }
 
