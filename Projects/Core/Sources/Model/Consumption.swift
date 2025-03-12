@@ -15,11 +15,13 @@ public final class Consumption {
     public var date: Date
     public var amount: Decimal
     public var tag: String
+    public var createdDate: Date
     
-    public init(date: Date, amount: Decimal, tag: String) {
+    public init(date: Date, amount: Decimal, tag: String, createdDate: Date = Date()) {
         self.id = .init()
         self.date = date
         self.amount = amount
         self.tag = tag
+        self.createdDate = createdDate
     }
 }
