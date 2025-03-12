@@ -71,6 +71,7 @@ public struct PlanCurrencyAmountInputView: View {
             .buttonStyle(BottomButtonStyle(isPositive))
         } // VStack
         .frame(maxWidth: .infinity)
+        .ignoresSafeArea(.keyboard)
         .padding(.horizontal, 20)
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false
