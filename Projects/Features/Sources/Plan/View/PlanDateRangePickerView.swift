@@ -41,8 +41,10 @@ public struct PlanDateRangePickerView: View {
             VStack(alignment: .leading) {
                 Text("Start date")
                     .bold()
-                DatePicker("", selection: $startDate, in: Date()..., displayedComponents: .date)
-                    .datePickerRectangle(startDate)
+                Text("\(startDate.formatted(date: .abbreviated, time: .omitted))")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.horizontal, 10)
+                    .textRoundedRectangle()
                 Text("End date")
                     .bold()
                     .padding(.top, 5)
