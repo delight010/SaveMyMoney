@@ -12,10 +12,11 @@ import SwiftUI
 
 public struct PlanConfirmationView: View {
     @EnvironmentObject var router: AppRouter
-    @ObservedObject private var viewModel: PlanBuilderViewModel
+    @Environment(\.modelContext) private var modelContext
     
-    @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0])
-    private var userCurrency
+    @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
+    
+    @ObservedObject private var viewModel: PlanBuilderViewModel
     
     @State private var isShowingAlert: Bool = false
     
@@ -62,12 +63,28 @@ public struct PlanConfirmationView: View {
                     message: "Ready to start your budgeting journey?",
                     primaryButtonTitle: "OK",
                     secondaryButtonTitle: "Cancel") {
-            print("OK")
-        } secondaryButtonAction: {
             
+        } secondaryButtonAction: { }
+    }
+}
+
+// MARK: Functions
+
+extension PlanConfirmationView {
+    
+    func createPlan() {
+        modelContext.insert(viewModel.createPlan())
+    }
+    
+    func saveCurrency() {
+        if let selectedCurrency = viewModel.getCurrency() {
+            currency = selectedCurrency
         }
     }
 }
+
+
+// MARK: UI Components
 
 extension PlanConfirmationView {
     
