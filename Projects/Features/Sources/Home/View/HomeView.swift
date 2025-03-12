@@ -17,6 +17,8 @@ public struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = PlanBuilderViewModel()
     
+    @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
+    
     @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
     
     var latestPlan: Plan? {
@@ -29,7 +31,10 @@ public struct HomeView: View {
         NavigationStack(path: $router.path) {
             VStack {
                 if isProcessingPlan() {
-                    Text("Progressing")
+                    if let lastestPlan = latestPlan {
+                        Text("\(lastestPlan.budget)")
+                        Text("\(currency.flag) \(currency.code)")
+                    }
                 } else {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
