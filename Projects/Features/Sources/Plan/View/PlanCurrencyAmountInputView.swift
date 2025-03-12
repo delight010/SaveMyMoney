@@ -68,7 +68,8 @@ public struct PlanCurrencyAmountInputView: View {
             } label: {
                 Text("Next")
             }
-            .buttonStyle(BottomButtonStyle(isPositive))
+            .buttonStyle(BottomButtonStyle())
+            .disabled(!isPositive)
         } // VStack
         .frame(maxWidth: .infinity)
         .ignoresSafeArea(.keyboard)

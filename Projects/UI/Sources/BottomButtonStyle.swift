@@ -9,11 +9,9 @@
 import SwiftUI
 
 public struct BottomButtonStyle: ButtonStyle {
-    private var isEnabled: Bool
+    @Environment(\.isEnabled) private var isEnabled
     
-    public init(_ isEnabled: Bool = true) {
-        self.isEnabled = isEnabled
-    }
+    public init() {}
     
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
