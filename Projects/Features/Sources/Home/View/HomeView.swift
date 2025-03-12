@@ -28,7 +28,7 @@ public struct HomeView: View {
                 if isProcessingPlan() {
                     Text("Progressing")
                 } else {
-                    EmptyPlanView()
+                    EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
             } // VStack
         } // NavigationStack
