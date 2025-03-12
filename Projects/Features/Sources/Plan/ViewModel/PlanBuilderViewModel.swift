@@ -18,6 +18,7 @@ protocol PlanBuilderViewModelProtocol {
     func getStartDate() -> String
     func getEndDate() -> String
     func getCurrency() -> String
+    func getCurrency() -> Currency?
     func getBudget() -> String
     func calculateDateDifference() -> Int
     func createPlan() -> Plan
@@ -55,6 +56,10 @@ public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtoco
     func getCurrency() -> String {
         guard let currency = self.currency else { return "" }
         return "\(currency.flag) \(currency.code)"
+    }
+    
+    func getCurrency() -> Currency? {
+        return currency
     }
     
     func getBudget() -> String {
