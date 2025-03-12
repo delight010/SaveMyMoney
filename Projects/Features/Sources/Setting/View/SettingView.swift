@@ -6,6 +6,8 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
+import Core
+
 import SwiftUI
 
 public struct SettingView: View {

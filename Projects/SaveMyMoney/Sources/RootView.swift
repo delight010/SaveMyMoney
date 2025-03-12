@@ -8,6 +8,7 @@
 
 import Features
 import UI
+import Core
 
 import SwiftUI
 import SwiftData
