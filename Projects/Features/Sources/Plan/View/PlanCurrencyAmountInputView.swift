@@ -11,6 +11,7 @@ import UI
 import SwiftUI
 
 public struct PlanCurrencyAmountInputView: View {
+    @EnvironmentObject var router: AppRouter
     @Environment(\.locale) var locale
     @State private var isPositive: Bool = false
     @State private var selectedCurrency: Currency = Currency.currencies[0]
@@ -85,5 +86,7 @@ extension PlanCurrencyAmountInputView {
 }
 
 #Preview {
+    @Previewable @StateObject var router = AppRouter()
     PlanCurrencyAmountInputView()
+        .environmentObject(router)
 }
