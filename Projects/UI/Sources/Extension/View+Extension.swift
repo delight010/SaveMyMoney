@@ -38,4 +38,13 @@ public extension View {
             .textRoundedRectangle()
             .tint(.primaryColor)
     }
+    
+    func transparentFullScreenCover<Content: View>(isPresented: Binding<Bool>, content: @escaping () -> Content) -> some View {
+        fullScreenCover(isPresented: isPresented) {
+            ZStack {
+                content()
+            }
+            .background(BackgroundClearView())
+        }
+    }
 }
