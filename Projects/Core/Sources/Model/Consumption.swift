@@ -1,5 +1,5 @@
 //
-//  Expense.swift
+//  Consumption.swift
 //  Core
 //
 //  Created by abc on 3/9/25.
@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 @Model
-public final class Expense {
+public final class Consumption {
     @Attribute(.unique) public var id: UUID
     public var date: Date
     public var amount: Decimal
