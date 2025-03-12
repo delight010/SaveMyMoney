@@ -84,6 +84,9 @@ public struct BasicAlertView: View {
             .background(Color.primary.colorInvert())
             .clipShape(RoundedRectangle(cornerRadius: 10.0))
         } // ZStack
+        .onTapGesture {
+            isPresented = false
+        }
     }
 }
 
