@@ -16,7 +16,7 @@ public struct BasicAlertModifier: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .fullScreenCover(isPresented: $isPresented) { 
+            .transparentFullScreenCover(isPresented: $isPresented) {
                 alert
             }
     }
