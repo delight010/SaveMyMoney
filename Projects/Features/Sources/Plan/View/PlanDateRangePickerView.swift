@@ -60,7 +60,7 @@ public struct PlanDateRangePickerView: View {
             Spacer()
             
             Button {
-                
+                router.push(to: PlanBuildCoordinator.PlanBuildDestination.currencyAmount)
             } label: {
                 Text("Next")
             }
