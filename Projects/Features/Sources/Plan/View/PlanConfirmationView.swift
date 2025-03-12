@@ -13,8 +13,12 @@ import SwiftUI
 public struct PlanConfirmationView: View {
     @EnvironmentObject var router: AppRouter
     @ObservedObject private var viewModel: PlanBuilderViewModel
+    
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0])
     private var userCurrency
+    
+    @State private var isShowingAlert: Bool = false
+    
     private let progress = 1.0
     
     public init(viewModel: PlanBuilderViewModel) {
@@ -42,7 +46,7 @@ public struct PlanConfirmationView: View {
             Spacer()
             
             Button {
-                
+                isShowingAlert.toggle()
             } label: {
                 Text("Done")
             }
@@ -50,6 +54,15 @@ public struct PlanConfirmationView: View {
         } // VStack
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
+        .basicAlert(isPresented: $isShowingAlert,
+                    title: "Challenge Start",
+                    message: "Ready to start your budgeting journey?",
+                    primaryButtonTitle: "OK",
+                    secondaryButtonTitle: "Cancel") {
+            print("OK")
+        } secondaryButtonAction: {
+            
+        }
     }
 }
 
