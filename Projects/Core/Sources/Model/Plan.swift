@@ -24,13 +24,15 @@ public final class Plan {
     @Relationship(deleteRule: .cascade)
     public var consumption: [Expense]
     public var status: TaskStatus
+    public var createdDate: Date
     
-    public init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense], status: TaskStatus = .inProgress) {
+    public init(startDate: Date, endDate: Date, budget: Decimal, consumption: [Expense], status: TaskStatus = .inProgress, createdDate: Date = Date()) {
         self.id = .init()
         self.startDate = startDate
         self.endDate = endDate
         self.budget = budget
         self.consumption = consumption
         self.status = status
+        self.createdDate = createdDate
     }
 }
