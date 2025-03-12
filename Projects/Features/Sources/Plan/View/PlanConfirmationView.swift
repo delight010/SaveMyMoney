@@ -11,6 +11,7 @@ import UI
 import SwiftUI
 
 public struct PlanConfirmationView: View {
+    @EnvironmentObject var router: AppRouter
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0])
     private var userCurrency
     @EnvironmentObject private var viewModel: PlanBuilderViewModel
@@ -151,6 +152,8 @@ extension PlanConfirmationView {
 }
 
 #Preview {
+    @Previewable @StateObject var router = AppRouter()
     PlanConfirmationView()
         .environmentObject(PlanBuilderViewModel())
+        .environmentObject(router)
 }
