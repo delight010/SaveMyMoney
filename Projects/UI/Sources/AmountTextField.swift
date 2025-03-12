@@ -31,6 +31,14 @@ public struct AmountTextField: View {
                 .multilineTextAlignment(.trailing)
                 .focused($isFocused)
                 .keyboardType(.decimalPad)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            isFocused = false
+                        }
+                    }
+                }
                 .onChange(of: isFocused) {
                     if isFocused {
                         valueString = filterDecimal(valueString)
