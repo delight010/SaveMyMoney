@@ -51,6 +51,7 @@ public struct HomeView: View {
                     PlanConfirmationView(viewModel: viewModel)
                 }
             }
+            .ignoresSafeArea(.keyboard)
         } // NavigationStack
     }
 }
