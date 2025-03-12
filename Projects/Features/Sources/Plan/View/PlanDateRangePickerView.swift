@@ -12,7 +12,7 @@ import SwiftUI
 
 public struct PlanDateRangePickerView: View {
     @EnvironmentObject var router: AppRouter
-    @StateObject private var viewModel = PlanBuilderViewModel()
+    @ObservedObject private var viewModel: PlanBuilderViewModel
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     
@@ -23,7 +23,9 @@ public struct PlanDateRangePickerView: View {
     }    
     private let progress = 0.3
     
-    public init() { }
+    public init(viewModel: PlanBuilderViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         VStack {
@@ -60,6 +62,7 @@ public struct PlanDateRangePickerView: View {
             Spacer()
             
             Button {
+                viewModel.setDateRange(startDate: startDate, endDate: endDate)
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.currencyAmount)
             } label: {
                 Text("Next")
@@ -91,7 +94,7 @@ extension PlanDateRangePickerView {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    PlanDateRangePickerView()
+    PlanDateRangePickerView(viewModel: PlanBuilderViewModel())
         .environmentObject(router)
 }
 

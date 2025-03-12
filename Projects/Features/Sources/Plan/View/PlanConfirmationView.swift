@@ -12,12 +12,14 @@ import SwiftUI
 
 public struct PlanConfirmationView: View {
     @EnvironmentObject var router: AppRouter
+    @ObservedObject private var viewModel: PlanBuilderViewModel
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0])
     private var userCurrency
-    @EnvironmentObject private var viewModel: PlanBuilderViewModel
     private let progress = 1.0
     
-    public init() { }
+    public init(viewModel: PlanBuilderViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         VStack {
@@ -153,7 +155,6 @@ extension PlanConfirmationView {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    PlanConfirmationView()
-        .environmentObject(PlanBuilderViewModel())
+    PlanConfirmationView(viewModel: PlanBuilderViewModel())
         .environmentObject(router)
 }

@@ -12,6 +12,7 @@ import SwiftUI
 
 public struct EmptyPlanView: View {
     @EnvironmentObject var router: AppRouter
+    @StateObject private var viewModel = PlanBuilderViewModel()
     
     var coordinator: PlanBuildCoordinator
     
@@ -33,13 +34,13 @@ public struct EmptyPlanView: View {
         .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
             switch destination {
             case .dateRange:
-                PlanDateRangePickerView()
+                PlanDateRangePickerView(viewModel: viewModel)
             case .currency:
                 EmptyView()
             case .currencyAmount:
-                PlanCurrencyAmountInputView()
+                PlanCurrencyAmountInputView(viewModel: viewModel)
             case .confirmation:
-                PlanConfirmationView()
+                PlanConfirmationView(viewModel: viewModel)
             }
         }
     }
