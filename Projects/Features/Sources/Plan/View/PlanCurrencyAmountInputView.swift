@@ -78,6 +78,9 @@ public struct PlanCurrencyAmountInputView: View {
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false
         } // onChange
+        .backNavagationToolbar {
+            router.pop()
+        }
         .onAppear {
             fetchCurrency()
         } // onAppear

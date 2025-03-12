@@ -54,6 +54,9 @@ public struct PlanConfirmationView: View {
         } // VStack
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
+        .backNavagationToolbar {
+            router.pop()
+        }
         .basicAlert(isPresented: $isShowingAlert,
                     title: "Challenge Start",
                     message: "Ready to start your budgeting journey?",

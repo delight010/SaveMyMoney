@@ -74,6 +74,9 @@ public struct PlanDateRangePickerView: View {
         .onChange(of: startDate) { _, _ in
             updateEndDate()
         }
+        .backNavagationToolbar {
+            router.pop()
+        }
     }
 }
 
