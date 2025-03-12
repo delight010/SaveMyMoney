@@ -19,5 +19,8 @@ public struct BasicAlertModifier: ViewModifier {
             .transparentFullScreenCover(isPresented: $isPresented) {
                 alert
             }
+            .transaction { transaction in
+                transaction.disablesAnimations = true
+            }
     }
 }
