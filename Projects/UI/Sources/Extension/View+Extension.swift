@@ -47,4 +47,26 @@ public extension View {
             .background(BackgroundClearView())
         }
     }
+    
+    func basicAlert(
+            isPresented: Binding<Bool>,
+            title: String,
+            message: String? = nil,
+            primaryButtonTitle: String,
+            secondaryButtonTitle: String? = nil,
+            primaryButtonAction: ( () -> Void)? = nil,
+            secondaryButtonAction: ( () -> Void)? = nil
+        ) -> some View {
+            let alert = BasicAlertView(
+                isPresented: isPresented,
+                title: title,
+                message: message,
+                primaryButtonTitle: primaryButtonTitle,
+                secondaryButtonTitle: secondaryButtonTitle,
+                primaryButtonAction: primaryButtonAction,
+                secondaryButtonAction: secondaryButtonAction
+            )
+            
+            return modifier(BasicAlertModifier(isPresented: isPresented, alert: alert))
+        }
 }
