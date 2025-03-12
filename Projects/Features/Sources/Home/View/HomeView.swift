@@ -15,7 +15,7 @@ import SwiftUI
 public struct HomeView: View {
     @EnvironmentObject var router: AppRouter
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Plan.startDate, order: .reverse) private var plans: [Plan]
+    @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
     var latestPlan: Plan? {
         return plans.first
     }
