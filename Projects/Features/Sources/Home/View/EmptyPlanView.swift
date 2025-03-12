@@ -24,12 +24,24 @@ public struct EmptyPlanView: View {
             Text("There is no plan currently in progress.")
             Text("Would you like to start a new plan?")
             Button {
-                
+                router.push(to: PlanBuildCoordinator.PlanBuildDestination.dateRange)
             } label: {
                 Text("Create Plan")
             }
             .buttonStyle(CapsuleButtonStyle())
         } // VStack
+        .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
+            switch destination {
+            case .dateRange:
+                PlanDateRangePickerView()
+            case .currency:
+                EmptyView()
+            case .currencyAmount:
+                PlanCurrencyAmountInputView()
+            case .confirmation:
+                PlanConfirmationView()
+            }
+        }
     }
 }
 
