@@ -15,7 +15,10 @@ import SwiftUI
 public struct HomeView: View {
     @EnvironmentObject var router: AppRouter
     @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel = PlanBuilderViewModel()
+    
     @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
+    
     var latestPlan: Plan? {
         return plans.first
     }
@@ -31,6 +34,18 @@ public struct HomeView: View {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
             } // VStack
+            .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
+                switch destination {
+                case .dateRange:
+                    PlanDateRangePickerView(viewModel: viewModel)
+                case .currency:
+                    EmptyView()
+                case .currencyAmount:
+                    PlanCurrencyAmountInputView(viewModel: viewModel)
+                case .confirmation:
+                    PlanConfirmationView(viewModel: viewModel)
+                }
+            }
         } // NavigationStack
     }
 }

@@ -12,7 +12,6 @@ import SwiftUI
 
 public struct EmptyPlanView: View {
     @EnvironmentObject var router: AppRouter
-    @StateObject private var viewModel = PlanBuilderViewModel()
     
     var coordinator: PlanBuildCoordinator
     
@@ -31,18 +30,6 @@ public struct EmptyPlanView: View {
             }
             .buttonStyle(CapsuleButtonStyle())
         } // VStack
-        .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
-            switch destination {
-            case .dateRange:
-                PlanDateRangePickerView(viewModel: viewModel)
-            case .currency:
-                EmptyView()
-            case .currencyAmount:
-                PlanCurrencyAmountInputView(viewModel: viewModel)
-            case .confirmation:
-                PlanConfirmationView(viewModel: viewModel)
-            }
-        }
     }
 }
 
