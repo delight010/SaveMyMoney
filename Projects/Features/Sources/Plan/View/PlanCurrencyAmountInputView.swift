@@ -57,9 +57,6 @@ public struct PlanCurrencyAmountInputView: View {
                 Text("Please enter a positive amount only.")
                     .foregroundStyle(.secondary)
             } // VStack
-            .onChange(of: selectedCurrency, { oldValue, newValue in
-                print(newValue)
-            })
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
