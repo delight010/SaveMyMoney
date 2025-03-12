@@ -13,7 +13,11 @@ import SwiftUI
 public struct EmptyPlanView: View {
     @EnvironmentObject var router: AppRouter
     
-    public init() {}
+    var coordinator: PlanBuildCoordinator
+    
+    public init(coordinator: PlanBuildCoordinator) {
+        self.coordinator = coordinator
+    }
     
     public var body: some View {
         VStack {
@@ -31,6 +35,6 @@ public struct EmptyPlanView: View {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    EmptyPlanView()
+    EmptyPlanView(coordinator: PlanBuildCoordinator(router))
         .environmentObject(router)
 }
