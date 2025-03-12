@@ -20,6 +20,7 @@ protocol PlanBuilderViewModelProtocol {
     func getCurrency() -> String
     func getBudget() -> String
     func calculateDateDifference() -> Int
+    func createPlan() -> Plan
 }
 
 public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
@@ -65,5 +66,9 @@ public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtoco
         let calendar = Calendar.current
         let difference = calendar.dateComponents([.day], from: startDate, to: endDate)
         return difference.day ?? 0
+    }
+    
+    func createPlan() -> Plan {
+        return Plan(startDate: startDate, endDate: endDate, budget: budget, consumption: [])
     }
 }
