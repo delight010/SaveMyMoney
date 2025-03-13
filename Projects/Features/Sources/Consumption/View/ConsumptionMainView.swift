@@ -66,6 +66,7 @@ extension ConsumptionMainView {
             .frame(width: buttonWidth)
             
             Text(viewModel.getDate())
+                .bold()
             
             ZStack {
                 if !viewModel.isDateSameDayAsToday() {
