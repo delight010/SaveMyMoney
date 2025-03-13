@@ -114,9 +114,9 @@ let previewContainer: ModelContainer = {
         let context = container.mainContext
         
         let consumption: [Consumption] = [
-            Consumption(date: Date(), amount: 100, tag: "food"),
-            Consumption(date: Date(), amount: 200, tag: "food"),
-            Consumption(date: Date(), amount: 300, tag: "food")
+            Consumption(title: "Banana", date: Date(), amount: 100, tag: "food"),
+            Consumption(title: "Drink", date: Date(), amount: 200, tag: "food"),
+            Consumption(title: "Snack", date: Date(), amount: 300, tag: "food")
         ]
         let plan = Plan(
             startDate: Calendar.current.date(byAdding: .day, value: -2, to: .now)!,
