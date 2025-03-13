@@ -18,6 +18,7 @@ protocol ConsumptionMainViewModelProtocol {
     func getDate() -> String
     func getDday() -> Int
     func getRemainBudget() -> Decimal
+    func getConsumption() -> [Consumption]
     func decreaseDate()
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
@@ -55,6 +56,12 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     public func getRemainBudget() -> Decimal {
         return remainBudget
+    }
+    
+    public func getConsumption() -> [Consumption] {
+        guard let plan = plan else { return [] }
+        let consumption = plan.consumption.filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
+        return consumption
     }
     
     public func decreaseDate() {
