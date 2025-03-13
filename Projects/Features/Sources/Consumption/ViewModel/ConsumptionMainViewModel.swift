@@ -20,7 +20,7 @@ protocol ConsumptionMainViewModelProtocol {
     func decreaseDate()
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
-    func isDateSameDayAsEndDate() -> Bool
+    func isDateSameDayAsToday() -> Bool
 }
 
 public class ConsumptionMainViewModel: ObservableObject {
@@ -59,9 +59,8 @@ public class ConsumptionMainViewModel: ObservableObject {
         return calender.isDate(date, inSameDayAs: plan.startDate)
     }
     
-    public func isDateSameDayAsEndDate() -> Bool {
-        guard let plan = plan else { return false }
+    public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
-        return calender.isDate(date, inSameDayAs: plan.endDate)
+        return calender.isDate(date, inSameDayAs: Date())
     }
 }
