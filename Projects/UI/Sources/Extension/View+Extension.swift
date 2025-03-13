@@ -49,6 +49,10 @@ public extension View {
         }
     }
     
+    func expandTouchArea(_ size: CGFloat = 20) -> some View {
+        self.modifier(ExpandTouchArea(size: size))
+    }
+    
     func basicAlert(
         isPresented: Binding<Bool>,
         title: String,
