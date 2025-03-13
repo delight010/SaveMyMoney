@@ -15,8 +15,9 @@ import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
     func setPlan(_ plan: Plan)
-    func getDday() -> Int
     func getDate() -> String
+    func getDday() -> Int
+    func getRemainBudget() -> Decimal
     func decreaseDate()
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
@@ -26,11 +27,24 @@ protocol ConsumptionMainViewModelProtocol {
 public class ConsumptionMainViewModel: ObservableObject {
     @Published private var plan: Plan?
     @Published private var date: Date = Date()
+    @Published private var remainBudget: Decimal = 0
+    @Published var chartData: [ChartData] = [
+        ChartData(label: "consumption", value: 0, color: Color.primaryColor),
+        ChartData(label: "remainBudget", value: 0, color: Color.secondaryColor)
+    ]
     
-    public init() { }
+    private var cancellable = Set<AnyCancellable>()
+    
+    public init() {
+        setupBinding()
+    }
     
     public func setPlan(_ plan: Plan) {
         self.plan = plan
+    }
+    
+    public func getDate() -> String {
+        return DateFormatter().yearAndDay.string(from: date)
     }
     
     public func getDday() -> Int {
@@ -39,8 +53,8 @@ public class ConsumptionMainViewModel: ObservableObject {
         return difference.day ?? 0
     }
     
-    public func getDate() -> String {
-        return DateFormatter().yearAndDay.string(from: date)
+    public func getRemainBudget() -> Decimal {
+        return remainBudget
     }
     
     public func decreaseDate() {
@@ -62,5 +76,33 @@ public class ConsumptionMainViewModel: ObservableObject {
     public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
         return calender.isDate(date, inSameDayAs: Date())
+    }
+    
+    private func setupBinding() {
+        $plan
+            .compactMap { $0 }
+            .sink { [weak self] plan in
+                guard let self = self else { return }
+                let consumption = plan.consumption.reduce(0) { $0 + $1.amount }
+                let remainBudget = plan.budget - consumption
+                self.updateConsumption(consumption)
+                self.updateRemainBudget(remainBudget)
+            }
+            .store(in: &cancellable)
+        
+        $remainBudget
+            .sink { [weak self] remainBudget in
+                guard let self = self else { return }
+                self.chartData[1].value = remainBudget
+            }
+            .store(in: &cancellable)
+    }
+    
+    private func updateConsumption(_ value: Decimal) {
+        chartData[0].value = value
+    }
+    
+    private func updateRemainBudget(_ value: Decimal) {
+        remainBudget = value
     }
 }

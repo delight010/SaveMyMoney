@@ -9,12 +9,16 @@
 import Core
 import UI
 
+import Charts
 import SwiftData
 import SwiftUI
 
 public struct ConsumptionMainView: View {
     @EnvironmentObject var router: AppRouter
     @Environment(\.modelContext) private var modelContext
+    
+    @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
+    
     @StateObject private var viewModel = ConsumptionMainViewModel()
     
     @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
@@ -22,6 +26,8 @@ public struct ConsumptionMainView: View {
     public var body: some View {
         VStack(spacing: 10) {
             dateInfoView()
+            chartView()
+            Spacer()
         } // VStack
         .onAppear {
             updateLatestPlan()
@@ -71,6 +77,31 @@ extension ConsumptionMainView {
             } // ZStack
             .frame(width: buttonWidth)
         } // HStack
+    }
+    
+    @ViewBuilder
+    func chartView() -> some View {
+        ZStack {
+            Chart {
+                ForEach(viewModel.chartData) { data in
+                    SectorMark(
+                        angle: .value("Consumption", data.value),
+                        innerRadius: .ratio(0.6),
+                        angularInset: 1.5
+                    )
+                    .foregroundStyle(data.color)
+                }
+            } // Chart
+            .padding(20)
+            VStack {
+                Text("D-\(viewModel.getDday())")
+                    .font(.largeTitle)
+                    .bold()
+                Text(currency.formatStyle().format(viewModel.getRemainBudget()))
+                    .font(.title2)
+            } // VStack
+        } // ZStack
+        .frame(width: 300, height: 300)
     }
 }
 
