@@ -24,6 +24,7 @@ public struct BackNavigationToolbarContent: ToolbarContent {
                 Image(systemName: "chevron.backward")
             }
             .tint(Color.primaryColor)
+            .expandTouchArea(10)
         }
     }
 }
