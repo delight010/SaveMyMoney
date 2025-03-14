@@ -11,6 +11,7 @@ import Core
 
 import Combine
 import Foundation
+import SwiftData
 import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
@@ -25,7 +26,7 @@ protocol ConsumptionMainViewModelProtocol {
     func isDateSameDayAsToday() -> Bool
 }
 
-public class ConsumptionMainViewModel: ObservableObject {
+public class ConsumptionMainViewModel: SwiftDataManger {
     @Published private var plan: Plan?
     @Published private var date: Date = Date()
     @Published private var remainBudget: Decimal = 0
@@ -36,12 +37,24 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
+    @MainActor
     public init() {
+        super.init(modelTypes: [Plan.self, Consumption.self])
         setupBinding()
+    }
+    
+    public override func didSetupContainer() {
+        super.didSetupContainer()
+        fetchPlan()
     }
     
     public func setPlan(_ plan: Plan) {
         self.plan = plan
+    }
+    
+    public func getPlan() -> Plan? {
+        guard let plan = plan else { return nil }
+        return plan
     }
     
     public func getDate() -> String {
@@ -60,8 +73,9 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     public func getConsumption() -> [Consumption] {
         guard let plan = plan else { return [] }
-        let consumption = plan.consumption.filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
-        return consumption
+        return plan.consumption
+            .filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
+            .sorted { $0.date > $1.date }
     }
     
     public func decreaseDate() {
@@ -103,6 +117,16 @@ public class ConsumptionMainViewModel: ObservableObject {
                 self.chartData[1].value = remainBudget
             }
             .store(in: &cancellable)
+    }
+    
+    private func fetchPlan() {
+        performContextOperation { context in
+            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
+            descriptor.fetchLimit = 1
+            
+            let result = try context.fetch(descriptor)
+            plan = result.first
+        }
     }
     
     private func updateConsumption(_ value: Decimal) {

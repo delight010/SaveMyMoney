@@ -15,13 +15,10 @@ import SwiftUI
 
 public struct ConsumptionMainView: View {
     @EnvironmentObject var router: AppRouter
-    @Environment(\.modelContext) private var modelContext
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
     @StateObject private var viewModel = ConsumptionMainViewModel()
-    
-    @Query(sort: \Plan.createdDate, order: .reverse) private var plans: [Plan]
     
     public var body: some View {
         VStack(spacing: 10) {
@@ -30,18 +27,6 @@ public struct ConsumptionMainView: View {
             Spacer()
         } // VStack
         .onAppear {
-            updateLatestPlan()
-        }
-    }
-}
-
-// MARK: Functions
-
-extension ConsumptionMainView {
-    
-    func updateLatestPlan() {
-        if let plan = plans.first {
-            viewModel.setPlan(plan)
         }
     }
 }
@@ -104,6 +89,8 @@ extension ConsumptionMainView {
         } // ZStack
         .frame(width: 300, height: 300)
     }
+    
+    
 }
 
 @MainActor
