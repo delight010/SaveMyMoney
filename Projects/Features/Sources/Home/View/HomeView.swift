@@ -15,7 +15,8 @@ import SwiftUI
 public struct HomeView: View {
     @EnvironmentObject var router: AppRouter
     @Environment(\.modelContext) private var modelContext
-    @StateObject private var viewModel = PlanBuilderViewModel()
+    @StateObject private var consumptionViewModel = ConsumptionMainViewModel()
+    @StateObject private var planViewModel = PlanBuilderViewModel()
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
@@ -29,10 +30,7 @@ public struct HomeView: View {
         NavigationStack(path: $router.path) {
             VStack {
                 if isProcessingPlan() {
-                    if let lastestPlan = latestPlan {
-                        Text("\(lastestPlan.budget)")
-                        Text("\(currency.flag) \(currency.code)")
-                    }
+                    ConsumptionMainView(coordinator: ConsumptionCoordinator(router))
                 } else {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
@@ -43,13 +41,21 @@ public struct HomeView: View {
             .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
                 switch destination {
                 case .dateRange:
-                    PlanDateRangePickerView(viewModel: viewModel)
+                    PlanDateRangePickerView(viewModel: planViewModel)
                 case .currency:
                     EmptyView()
                 case .currencyAmount:
-                    PlanCurrencyAmountInputView(viewModel: viewModel)
+                    PlanCurrencyAmountInputView(viewModel: planViewModel)
                 case .confirmation:
-                    PlanConfirmationView(viewModel: viewModel)
+                    PlanConfirmationView(viewModel: planViewModel)
+                }
+            }
+            .navigationDestination(for: ConsumptionCoordinator.ConsumptionDestination.self) { destination in
+                switch destination {
+                case .add:
+                    AddConsumptionView(viewModel: consumptionViewModel)
+                case .edit:
+                    EmptyView()
                 }
             }
         } // NavigationStack

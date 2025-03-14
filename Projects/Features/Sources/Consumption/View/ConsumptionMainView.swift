@@ -20,6 +20,12 @@ public struct ConsumptionMainView: View {
     
     @StateObject private var viewModel = ConsumptionMainViewModel()
     
+    var coordinator: ConsumptionCoordinator
+    
+    public init(coordinator: ConsumptionCoordinator) {
+        self.coordinator = coordinator
+    }
+    
     public var body: some View {
         VStack(spacing: 10) {
             dateInfoView()
@@ -148,7 +154,7 @@ let previewContainer: ModelContainer = {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    ConsumptionMainView()
+    ConsumptionMainView(coordinator: ConsumptionCoordinator(router))
         .environmentObject(router)
         .modelContainer(previewContainer)
 }
