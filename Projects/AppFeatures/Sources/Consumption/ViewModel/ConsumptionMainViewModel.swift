@@ -15,7 +15,8 @@ import SwiftData
 import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
-    func fetchPlan()
+    func fetchPlan()    
+    func insertConsumption(_ consumption: Consumption)
     func setPlan(_ plan: Plan)
     func getDate() -> Date
     func getDate() -> String
@@ -59,6 +60,10 @@ public class ConsumptionMainViewModel: SwiftDataManger {
             let result = try context.fetch(descriptor)
             plan = result.first
         }
+    }
+    
+    public func insertConsumption(_ consumption: Consumption) {
+        plan?.consumption.append(consumption)
     }
     
     public func setPlan(_ plan: Plan) {
