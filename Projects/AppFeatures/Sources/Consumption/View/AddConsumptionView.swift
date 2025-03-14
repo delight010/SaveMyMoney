@@ -59,11 +59,10 @@ struct AddConsumptionView: View {
         } // VStack
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .toolbar {
-            BackNavigationToolbarContent {
-                router.pop()
-            }
-        } // toolbar
+        .navigationTitle("Add Consumption")
+        .backNavagationToolbar {
+            router.pop()
+        }
     }
 }
 
