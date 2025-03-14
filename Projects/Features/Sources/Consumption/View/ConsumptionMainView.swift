@@ -91,14 +91,18 @@ extension ConsumptionMainView {
     @ViewBuilder
     func consumptionListView() -> some View {
         List {
-            Section("Consumption List") {
-                ForEach(viewModel.getConsumption()) { data in
-                    HStack {
-                        Text("[\(data.tag)]")
-                        Text(data.title)
-                        Spacer()
-                        Text(currency.formatStyle().format(data.amount))
-                    } // HStack
+            Section("Consumption Record") {
+                if viewModel.getConsumption().isEmpty {
+                    Text("There is no consumption record.")
+                } else {
+                    ForEach(viewModel.getConsumption()) { data in
+                        HStack {
+                            Text("[\(data.tag)]")
+                            Text(data.title)
+                            Spacer()
+                            Text(currency.formatStyle().format(data.amount))
+                        } // HStack
+                    }
                 }
             }
         } // List
