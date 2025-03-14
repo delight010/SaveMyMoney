@@ -49,8 +49,8 @@ public extension View {
         }
     }
     
-    func expandTouchArea(_ size: CGFloat = 20) -> some View {
-        self.modifier(ExpandTouchArea(size: size))
+    func expandTouchArea(_ edges: Edge.Set = .all, size: CGFloat = 20) -> some View {
+        self.modifier(ExpandTouchArea(edges, size: size))
     }
     
     func basicAlert(

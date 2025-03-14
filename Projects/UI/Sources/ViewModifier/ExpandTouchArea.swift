@@ -9,15 +9,17 @@
 import SwiftUI
 
 struct ExpandTouchArea: ViewModifier {
+    var edges: Edge.Set
     var size: CGFloat
     
-    init(size: CGFloat = 20) {
+    init(_ edges: Edge.Set = .all, size: CGFloat = 20) {
+        self.edges = edges
         self.size = size
     }
     
     func body(content: Content) -> some View {
         content
             .contentShape(Rectangle())
-            .padding(size)
+            .padding(edges, size)
     }
 }
