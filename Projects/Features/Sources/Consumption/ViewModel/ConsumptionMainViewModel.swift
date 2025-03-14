@@ -30,6 +30,7 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     @Published private var plan: Plan?
     @Published private var date: Date = Date()
     @Published private var remainBudget: Decimal = 0
+    
     @Published var chartData: [ChartData] = [
         ChartData(label: "consumption", value: 0, color: Color.primaryColor),
         ChartData(label: "remainBudget", value: 0, color: Color.secondaryColor)
@@ -72,10 +73,9 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     }
     
     public func getConsumption() -> [Consumption] {
-        guard let plan = plan else { return [] }
-        return plan.consumption
+        return plan?.consumption
             .filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
-            .sorted { $0.date > $1.date }
+            .sorted { $0.date > $1.date } ?? []
     }
     
     public func decreaseDate() {
@@ -104,9 +104,9 @@ public class ConsumptionMainViewModel: SwiftDataManger {
             .compactMap { $0 }
             .sink { [weak self] plan in
                 guard let self = self else { return }
-                let consumption = plan.consumption.reduce(0) { $0 + $1.amount }
-                let remainBudget = plan.budget - consumption
-                self.updateConsumption(consumption)
+                let totalConsumption = plan.consumption.reduce(0) { $0 + $1.amount }
+                let remainBudget = plan.budget - totalConsumption
+                self.updateConsumption(totalConsumption)
                 self.updateRemainBudget(remainBudget)
             }
             .store(in: &cancellable)

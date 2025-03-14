@@ -24,10 +24,8 @@ public struct ConsumptionMainView: View {
         VStack(spacing: 10) {
             dateInfoView()
             chartView()
-            Spacer()
+            consumptionListView()
         } // VStack
-        .onAppear {
-        }
     }
 }
 
@@ -90,13 +88,28 @@ extension ConsumptionMainView {
         .frame(width: 300, height: 300)
     }
     
-    
+    @ViewBuilder
+    func consumptionListView() -> some View {
+        List {
+            Section("Consumption List") {
+                ForEach(viewModel.getConsumption()) { data in
+                    HStack {
+                        Text("[\(data.tag)]")
+                        Text(data.title)
+                        Spacer()
+                        Text(currency.formatStyle().format(data.amount))
+                    } // HStack
+                }
+            }
+        } // List
+        .listStyle(.inset)
+    }
 }
 
 @MainActor
 let previewContainer: ModelContainer = {
     do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let config = ModelConfiguration(isStoredInMemoryOnly: false)
         let container = try! ModelContainer(for: Plan.self, configurations: config)
         let context = container.mainContext
         
