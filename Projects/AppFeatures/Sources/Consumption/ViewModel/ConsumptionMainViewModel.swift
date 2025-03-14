@@ -15,6 +15,7 @@ import SwiftData
 import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
+    func fetchPlan()
     func setPlan(_ plan: Plan)
     func getDate() -> String
     func getDday() -> Int
@@ -47,6 +48,16 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public override func didSetupContainer() {
         super.didSetupContainer()
         fetchPlan()
+    }
+    
+    public func fetchPlan() {
+        performContextOperation { context in
+            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
+            descriptor.fetchLimit = 1
+            
+            let result = try context.fetch(descriptor)
+            plan = result.first
+        }
     }
     
     public func setPlan(_ plan: Plan) {
@@ -117,16 +128,6 @@ public class ConsumptionMainViewModel: SwiftDataManger {
                 self.chartData[1].value = remainBudget
             }
             .store(in: &cancellable)
-    }
-    
-    private func fetchPlan() {
-        performContextOperation { context in
-            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
-            descriptor.fetchLimit = 1
-            
-            let result = try context.fetch(descriptor)
-            plan = result.first
-        }
     }
     
     private func updateConsumption(_ value: Decimal) {
