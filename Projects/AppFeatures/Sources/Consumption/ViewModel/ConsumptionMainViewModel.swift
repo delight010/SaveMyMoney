@@ -17,6 +17,7 @@ import SwiftUI
 protocol ConsumptionMainViewModelProtocol {
     func fetchPlan()
     func setPlan(_ plan: Plan)
+    func getDate() -> Date
     func getDate() -> String
     func getDday() -> Int
     func getRemainBudget() -> Decimal
@@ -67,6 +68,10 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public func getPlan() -> Plan? {
         guard let plan = plan else { return nil }
         return plan
+    }
+    
+    public func getDate() -> Date {
+        return date
     }
     
     public func getDate() -> String {
