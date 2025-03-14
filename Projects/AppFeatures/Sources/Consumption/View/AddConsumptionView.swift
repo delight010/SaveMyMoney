@@ -60,8 +60,19 @@ struct AddConsumptionView: View {
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
         .navigationTitle("Add Consumption")
-        .backNavagationToolbar {
-            router.pop()
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            BackNavigationToolbarContent {
+                router.pop()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Text("Done")
+                }
+                .tint(Color.primaryColor)
+            }
         }
     }
 }
