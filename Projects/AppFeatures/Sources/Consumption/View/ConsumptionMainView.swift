@@ -67,6 +67,7 @@ extension ConsumptionMainView {
             } // ZStack
             .frame(width: buttonWidth)
         } // HStack
+        .frame(height: 44)
         .frame(maxWidth: .infinity)
         .overlay(alignment: .trailing) {
             HStack {
@@ -76,6 +77,7 @@ extension ConsumptionMainView {
                 }
                 .buttonStyle(BasicButtonStyle())
             } // HStack
+            .frame(height: 44)
             .frame(maxWidth: .infinity)
         }
     }
