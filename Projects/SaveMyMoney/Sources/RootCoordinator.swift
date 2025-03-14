@@ -6,8 +6,8 @@
 //  Copyright © 2025 delight010. All rights reserved.
 //
 
-import Features
-import Core
+import AppFeatures
+import AppCore
 
 import Foundation
 

@@ -22,11 +22,11 @@ public extension Module {
         case .app:
             return AppConfiguration.appName
         case .features:
-            return "Features"
+            return "AppFeatures"
         case .ui:
-            return "UI"
+            return "AppUI"
         case .core:
-            return "Core"
+            return "AppCore"
         }
     }
     

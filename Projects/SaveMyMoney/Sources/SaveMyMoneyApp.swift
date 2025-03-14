@@ -1,5 +1,5 @@
-import Features
-import Core
+import AppFeatures
+import AppCore
 
 import SwiftData
 import SwiftUI
