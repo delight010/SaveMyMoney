@@ -20,6 +20,7 @@ struct AddConsumptionView: View {
     @State private var title: String = ""
     @State private var amount: Decimal = 0
     @State private var category: ExpenseCategory = .food
+    @State private var isPositive: Bool = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -61,6 +62,9 @@ struct AddConsumptionView: View {
         .frame(maxWidth: .infinity)
         .navigationTitle("Add Consumption")
         .navigationBarBackButtonHidden()
+        .onChange(of: amount) { _, newValue in
+            isPositive = newValue > 0 ? true : false
+        } // onChange
         .toolbar {
             BackNavigationToolbarContent {
                 router.pop()
@@ -71,7 +75,8 @@ struct AddConsumptionView: View {
                 } label: {
                     Text("Done")
                 }
-                .tint(Color.primaryColor)
+                .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
+                .disabled(!isPositive)
             }
         }
     }
