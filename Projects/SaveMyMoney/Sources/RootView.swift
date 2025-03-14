@@ -45,6 +45,7 @@ struct RootView: View {
                     .tag(AppDestination.setting)
             } // TabView
             .tint(Color.primaryColor)
+            .navigationBarTitleDisplayMode(.inline)
         } // NavigationStack
     }
 }
