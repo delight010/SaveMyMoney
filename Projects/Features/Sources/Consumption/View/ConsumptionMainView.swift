@@ -61,6 +61,17 @@ extension ConsumptionMainView {
             } // ZStack
             .frame(width: buttonWidth)
         } // HStack
+        .frame(maxWidth: .infinity)
+        .overlay(alignment: .trailing) {
+            HStack {
+                Spacer()
+                Button("", systemImage: "plus") {
+                    router.push(to: ConsumptionCoordinator.ConsumptionDestination.add)
+                }
+                .buttonStyle(BasicButtonStyle())
+            } // HStack
+            .frame(maxWidth: .infinity)
+        }
     }
     
     @ViewBuilder
@@ -104,7 +115,7 @@ extension ConsumptionMainView {
                         } // HStack
                     }
                 }
-            }
+            } // Section
         } // List
         .listStyle(.inset)
     }
