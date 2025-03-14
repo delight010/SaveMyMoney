@@ -13,10 +13,13 @@ import SwiftUI
 public struct PlanCurrencyAmountInputView: View {
     @EnvironmentObject var router: AppRouter
     @Environment(\.locale) var locale
+    
     @ObservedObject private var viewModel: PlanBuilderViewModel
+    
     @State private var isPositive: Bool = false
     @State private var selectedCurrency: Currency = Currency.currencies[0]
     @State private var amount: Decimal = 0
+    
     private let progress = 0.66
     
     public init(viewModel: PlanBuilderViewModel) {

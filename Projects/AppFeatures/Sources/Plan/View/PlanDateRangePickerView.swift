@@ -12,7 +12,9 @@ import SwiftUI
 
 public struct PlanDateRangePickerView: View {
     @EnvironmentObject var router: AppRouter
+    
     @ObservedObject private var viewModel: PlanBuilderViewModel
+    
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     

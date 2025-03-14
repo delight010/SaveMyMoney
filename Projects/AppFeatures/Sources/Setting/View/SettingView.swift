@@ -12,6 +12,7 @@ import SwiftUI
 
 public struct SettingView: View {
     @EnvironmentObject var router: AppRouter
+    
     var coordinator: SettingCoordinator
     
     public init(coordinator: SettingCoordinator) {
