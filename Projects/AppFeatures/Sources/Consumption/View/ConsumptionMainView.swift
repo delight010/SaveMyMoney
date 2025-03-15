@@ -111,10 +111,10 @@ extension ConsumptionMainView {
     func consumptionListView() -> some View {
         List {
             Section("Consumption Record") {
-                if viewModel.getConsumption().isEmpty {
+                if viewModel.consumption.isEmpty {
                     Text("There is no consumption record.")
                 } else {
-                    ForEach(viewModel.getConsumption()) { data in
+                    ForEach(viewModel.consumption, id: \.self) { data in
                         NavigationLink(value: ConsumptionCoordinator.ConsumptionDestination.edit(consumptionID: data.id)) {
                             HStack {
                                 Text("[\(data.tag)]")

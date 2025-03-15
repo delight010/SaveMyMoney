@@ -16,6 +16,7 @@ import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
     func setPlan(_ plan: Plan)
+    func setConsumption(_ consumption: [Consumption])
     func getDate() -> Date
     func getDate() -> String
     func getDday() -> Int
@@ -60,6 +61,12 @@ public class ConsumptionMainViewModel: SwiftDataManger {
         self.plan = plan
     }
     
+    private func setConsumption(_ consumption: [Consumption]) {
+        self.consumption = consumption
+            .filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
+            .sorted { $0.date > $1.date }
+    }
+    
     public func getPlan() -> Plan? {
         guard let plan = plan else { return nil }
         return plan
@@ -92,11 +99,19 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public func decreaseDate() {
         guard let decreaseDate = Calendar.current.date(byAdding: .day, value: -1, to: date) else { return }
         date = decreaseDate
+        
+        if let plan = plan {
+            setConsumption(plan.consumption)
+        }
     }
     
     public func increaseDate() {
         guard let increaseDate = Calendar.current.date(byAdding: .day, value: 1, to: date) else { return }
         date = increaseDate
+        
+        if let plan = plan {
+            setConsumption(plan.consumption)
+        }
     }
     
     public func isDateSameDayAsStartDate() -> Bool {
@@ -156,6 +171,7 @@ public class ConsumptionMainViewModel: SwiftDataManger {
                 guard let self = self else { return }
                 let totalConsumption = plan.consumption.reduce(0) { $0 + $1.amount }
                 let remainBudget = plan.budget - totalConsumption
+                self.setConsumption(plan.consumption)
                 self.updateConsumption(totalConsumption)
                 self.updateRemainBudget(remainBudget)
             }
