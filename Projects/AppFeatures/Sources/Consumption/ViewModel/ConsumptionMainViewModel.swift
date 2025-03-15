@@ -26,6 +26,7 @@ protocol ConsumptionMainViewModelProtocol {
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
     func fetchPlan()
+    func fetchConsumption(id: UUID) -> Consumption?
     func insertConsumption(_ consumption: Consumption)
 }
 
@@ -114,6 +115,18 @@ public class ConsumptionMainViewModel: SwiftDataManger {
             let result = try context.fetch(descriptor)
             plan = result.first
         }
+    }
+    
+    public func fetchConsumption(id: UUID) -> Consumption? {
+        var consumption: Consumption?
+        performContextOperation { context in
+            var descriptor = FetchDescriptor<Consumption>(predicate: #Predicate { $0.id == id })
+            descriptor.fetchLimit = 1
+            
+            let result = try context.fetch(descriptor)
+            consumption = result.first
+        }
+        return consumption
     }
     
     public func insertConsumption(_ consumption: Consumption) {
