@@ -18,6 +18,7 @@ struct EditConsumptionView: View {
     
     @ObservedObject private var viewModel = ConsumptionMainViewModel()
     
+    @State private var id: UUID = UUID()
     @State private var title: String
     @State private var amount: Decimal
     @State private var category: ExpenseCategory
@@ -25,6 +26,7 @@ struct EditConsumptionView: View {
     
     init(viewModel: ConsumptionMainViewModel, consumption: Consumption) {
         self.viewModel = viewModel
+        self.id = consumption.id
         self.title = consumption.title
         self.amount = consumption.amount
         self.category = ExpenseCategory(rawValue: consumption.tag) ?? .food
