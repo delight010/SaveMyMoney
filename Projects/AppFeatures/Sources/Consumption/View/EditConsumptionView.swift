@@ -90,7 +90,7 @@ struct EditConsumptionView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    
+                    viewModel.updateConsumption(consumptionID: id, title: title, amount: amount, tag: category.rawValue)
                     router.pop()
                 } label: {
                     Text("Done")
