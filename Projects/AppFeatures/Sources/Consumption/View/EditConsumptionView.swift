@@ -23,6 +23,7 @@ struct EditConsumptionView: View {
     @State private var amount: Decimal = 0
     @State private var category: ExpenseCategory = .food
     @State private var isPositive: Bool = false
+    @FocusState private var isFocused: Bool
     
     init(viewModel: ConsumptionMainViewModel, consumptionID: UUID) {
         self.viewModel = viewModel
@@ -43,12 +44,14 @@ struct EditConsumptionView: View {
                     .frame(width: 80, alignment: .leading)
                 Spacer()
                 CustomTextField("Title", text: $title)
+                    .focused($isFocused)
             }
             HStack {
                 Text("Amount")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
+                    .focused($isFocused)
             }
             HStack {
                 Text("Tag")
@@ -94,6 +97,7 @@ struct EditConsumptionView: View {
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
                 .disabled(!isPositive)
+                .disabled(!isPositive || isFocused)
             }
         }
     }
