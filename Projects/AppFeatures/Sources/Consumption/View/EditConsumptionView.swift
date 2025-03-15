@@ -19,18 +19,14 @@ struct EditConsumptionView: View {
     @ObservedObject private var viewModel = ConsumptionMainViewModel()
     
     @State private var id: UUID = UUID()
-    @State private var title: String
-    @State private var amount: Decimal
-    @State private var category: ExpenseCategory
+    @State private var title: String = ""
+    @State private var amount: Decimal = 0
+    @State private var category: ExpenseCategory = .food
     @State private var isPositive: Bool = false
     
-    init(viewModel: ConsumptionMainViewModel, consumption: Consumption) {
+    init(viewModel: ConsumptionMainViewModel, consumptionID: UUID) {
         self.viewModel = viewModel
-        self.id = consumption.id
-        self.title = consumption.title
-        self.amount = consumption.amount
-        self.category = ExpenseCategory(rawValue: consumption.tag) ?? .food
-        self.isPositive = consumption.amount > 0
+        self.id = consumptionID
     }
     
     var body: some View {
@@ -97,6 +93,6 @@ struct EditConsumptionView: View {
 #Preview {
     @Previewable @StateObject var router = AppRouter()
     @Previewable @State var consumption = Consumption(title: "Test", date: Date(), amount: 10, tag: "Health")
-    EditConsumptionView(viewModel: ConsumptionMainViewModel(), consumption: consumption)
+    EditConsumptionView(viewModel: ConsumptionMainViewModel(), consumptionID: consumption.id)
         .environmentObject(router)
 }
