@@ -115,12 +115,14 @@ extension ConsumptionMainView {
                     Text("There is no consumption record.")
                 } else {
                     ForEach(viewModel.getConsumption()) { data in
-                        HStack {
-                            Text("[\(data.tag)]")
-                            Text(data.title)
-                            Spacer()
-                            Text(currency.formatStyle().format(data.amount))
-                        } // HStack
+                        NavigationLink(value: ConsumptionCoordinator.ConsumptionDestination.edit(consumptionID: data.id)) {
+                            HStack {
+                                Text("[\(data.tag)]")
+                                Text(data.title)
+                                Spacer()
+                                Text(currency.formatStyle().format(data.amount))
+                            } // HStack
+                        }
                     }
                 }
             } // Section
