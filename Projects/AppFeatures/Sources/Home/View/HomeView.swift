@@ -47,7 +47,7 @@ public struct HomeView: View {
                 case .add:
                     AddConsumptionView(viewModel: consumptionViewModel)
                 case .edit(consumptionID: let id):
-                    EmptyView()
+                    EditConsumptionView(viewModel: consumptionViewModel, consumptionID: id)
                 }
             }
         } // NavigationStack
