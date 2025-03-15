@@ -15,8 +15,6 @@ import SwiftData
 import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
-    func fetchPlan()    
-    func insertConsumption(_ consumption: Consumption)
     func setPlan(_ plan: Plan)
     func getDate() -> Date
     func getDate() -> String
@@ -27,6 +25,8 @@ protocol ConsumptionMainViewModelProtocol {
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
+    func fetchPlan()
+    func insertConsumption(_ consumption: Consumption)
 }
 
 public class ConsumptionMainViewModel: SwiftDataManger {
@@ -50,20 +50,6 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public override func didSetupContainer() {
         super.didSetupContainer()
         fetchPlan()
-    }
-    
-    public func fetchPlan() {
-        performContextOperation { context in
-            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
-            descriptor.fetchLimit = 1
-            
-            let result = try context.fetch(descriptor)
-            plan = result.first
-        }
-    }
-    
-    public func insertConsumption(_ consumption: Consumption) {
-        plan?.consumption.append(consumption)
     }
     
     public func setPlan(_ plan: Plan) {
@@ -118,6 +104,20 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
         return calender.isDate(date, inSameDayAs: Date())
+    }
+    
+    public func fetchPlan() {
+        performContextOperation { context in
+            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
+            descriptor.fetchLimit = 1
+            
+            let result = try context.fetch(descriptor)
+            plan = result.first
+        }
+    }
+    
+    public func insertConsumption(_ consumption: Consumption) {
+        plan?.consumption.append(consumption)
     }
     
     private func setupBinding() {
