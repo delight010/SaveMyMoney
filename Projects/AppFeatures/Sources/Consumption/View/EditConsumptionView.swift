@@ -72,15 +72,15 @@ struct EditConsumptionView: View {
         .frame(maxWidth: .infinity)
         .navigationTitle("Edit Consumption")
         .navigationBarBackButtonHidden()
-        .onAppear {
-            guard let consumption = viewModel.fetchConsumption(id: id) else {
-                return
-            }
-            title = consumption.title
-            amount = consumption.amount
-            category = ExpenseCategory(rawValue: consumption.tag) ?? .food
-            isPositive = consumption.amount > 0 ? true : false
-        }
+//        .onAppear {
+//            guard let consumption = viewModel.fetchConsumption(id: id) else {
+//                return
+//            }
+//            title = consumption.title
+//            amount = consumption.amount
+//            category = ExpenseCategory(rawValue: consumption.tag) ?? .food
+//            isPositive = consumption.amount > 0 ? true : false
+//        }
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false
         } // onChange
@@ -90,7 +90,7 @@ struct EditConsumptionView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    viewModel.updateConsumption(consumptionID: id, title: title, amount: amount, tag: category.rawValue)
+                    
                     router.pop()
                 } label: {
                     Text("Done")

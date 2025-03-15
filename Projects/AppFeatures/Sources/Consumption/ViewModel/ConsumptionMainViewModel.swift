@@ -26,13 +26,9 @@ protocol ConsumptionMainViewModelProtocol {
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
-    func fetchPlan()
-    func fetchConsumption(id: UUID) -> Consumption?
-    func insertConsumption(_ consumption: Consumption)
-    func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String)
 }
 
-public class ConsumptionMainViewModel: SwiftDataManger {
+public class ConsumptionMainViewModel: ObservableObject {
     @Published private var plan: Plan?
     @Published private var date: Date = Date()
     @Published private var remainBudget: Decimal = 0
@@ -45,17 +41,6 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     ]
     
     private var cancellable = Set<AnyCancellable>()
-    
-    @MainActor
-    public init() {
-        super.init(modelTypes: [Plan.self, Consumption.self])
-        setupBinding()
-    }
-    
-    public override func didSetupContainer() {
-        super.didSetupContainer()
-        fetchPlan()
-    }
     
     public func setPlan(_ plan: Plan) {
         self.plan = plan
@@ -123,66 +108,6 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
         return calender.isDate(date, inSameDayAs: Date())
-    }
-    
-    public func fetchPlan() {
-        performContextOperation { context in
-            var descriptor = FetchDescriptor<Plan>(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
-            descriptor.fetchLimit = 1
-            
-            let result = try context.fetch(descriptor)
-            plan = result.first
-        }
-    }
-    
-    public func fetchConsumption(id: UUID) -> Consumption? {
-        var consumption: Consumption?
-        performContextOperation { context in
-            var descriptor = FetchDescriptor<Consumption>(predicate: #Predicate { $0.id == id })
-            descriptor.fetchLimit = 1
-            
-            let result = try context.fetch(descriptor)
-            consumption = result.first
-        }
-        return consumption
-    }
-    
-    public func insertConsumption(_ consumption: Consumption) {
-        plan?.consumption.append(consumption)
-    }
-    
-    public func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String) {
-        guard let plan = plan else { return }
-        performContextOperation { context in
-            if let index = plan.consumption.firstIndex(where: { $0.id == consumptionID }) {
-                plan.consumption[index].title = title
-                plan.consumption[index].amount = amount
-                plan.consumption[index].tag = tag
-                
-                try context.save()
-            }
-        }
-    }
-    
-    private func setupBinding() {
-        $plan
-            .compactMap { $0 }
-            .sink { [weak self] plan in
-                guard let self = self else { return }
-                let totalConsumption = plan.consumption.reduce(0) { $0 + $1.amount }
-                let remainBudget = plan.budget - totalConsumption
-                self.setConsumption(plan.consumption)
-                self.updateConsumption(totalConsumption)
-                self.updateRemainBudget(remainBudget)
-            }
-            .store(in: &cancellable)
-        
-        $remainBudget
-            .sink { [weak self] remainBudget in
-                guard let self = self else { return }
-                self.chartData[1].value = remainBudget
-            }
-            .store(in: &cancellable)
     }
     
     private func updateConsumption(_ value: Decimal) {

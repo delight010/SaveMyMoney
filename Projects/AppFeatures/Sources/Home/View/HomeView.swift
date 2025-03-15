@@ -51,9 +51,6 @@ public struct HomeView: View {
                 }
             }
         } // NavigationStack
-        .onAppear {
-            consumptionViewModel.fetchPlan()
-        }
     }
 }
 
