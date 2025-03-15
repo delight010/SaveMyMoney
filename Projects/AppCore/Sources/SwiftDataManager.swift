@@ -20,11 +20,23 @@ public final class SwiftDataManager: ObservableObject {
     
     enum SwiftDataError: LocalizedError {
         case nilContext
+        case fetchFailed
+        case deleteFailed
+        case updateFailed
+        case insertFailed
         
         var errorDescription: String? {
             switch self {
             case .nilContext:
                 return "Model context is nil"
+            case .fetchFailed:
+                return "Failed to fetch data"
+            case .deleteFailed:
+                return "Failed to delete data"
+            case .updateFailed:
+                return "Failed to update data"
+            case .insertFailed:
+                return "Failed to insert data"
             }
         }
     }
