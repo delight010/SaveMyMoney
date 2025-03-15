@@ -18,7 +18,7 @@ struct EditConsumptionView: View {
     
     @ObservedObject private var viewModel = ConsumptionMainViewModel()
     
-    @State private var id: UUID = UUID()
+    @State private var id: UUID
     @State private var title: String = ""
     @State private var amount: Decimal = 0
     @State private var category: ExpenseCategory = .food
