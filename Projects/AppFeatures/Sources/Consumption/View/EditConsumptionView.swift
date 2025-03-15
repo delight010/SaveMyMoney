@@ -96,7 +96,6 @@ struct EditConsumptionView: View {
                     Text("Done")
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
-                .disabled(!isPositive)
                 .disabled(!isPositive || isFocused)
             }
         }
