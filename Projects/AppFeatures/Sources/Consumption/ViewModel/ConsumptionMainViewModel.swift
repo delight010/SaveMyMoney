@@ -36,6 +36,8 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     @Published private var date: Date = Date()
     @Published private var remainBudget: Decimal = 0
     
+    @Published var consumption: [Consumption] = []
+    
     @Published var chartData: [ChartData] = [
         ChartData(label: "consumption", value: 0, color: Color.primaryColor),
         ChartData(label: "remainBudget", value: 0, color: Color.secondaryColor)
