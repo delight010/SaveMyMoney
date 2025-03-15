@@ -48,6 +48,11 @@ public struct AmountTextField: View {
                         convertStringToDecimal()
                     }
                 }
+                .onChange(of: value) {
+                    if !isFocused {
+                        valueString = currency.formatStyle().format(value)
+                    }
+                }
                 .onChange(of: valueString) {
                     if isFocused {
                         valueString = validateDecimalFormat(valueString)
