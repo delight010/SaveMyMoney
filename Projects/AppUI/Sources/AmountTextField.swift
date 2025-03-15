@@ -23,6 +23,8 @@ public struct AmountTextField: View {
         self.titleKey = titleKey
         self._value = value
         self._currency = currency
+        let formattedValue = value.wrappedValue.formatted()
+        self._valueString = State(initialValue: validateDecimalFormat(formattedValue))
     }
     
     public var body: some View {
@@ -123,7 +125,7 @@ extension AmountTextField {
 }
 
 #Preview {
-    @Previewable @State var amount: Decimal = 0
+    @Previewable @State var amount: Decimal = 100
     @Previewable @State var currency = Currency.currencies[2]
     
     AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: $currency)
