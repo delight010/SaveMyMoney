@@ -46,7 +46,7 @@ public struct HomeView: View {
                 switch destination {
                 case .add:
                     AddConsumptionView(viewModel: consumptionViewModel)
-                case .edit:
+                case .edit(consumptionID: let id):
                     EmptyView()
                 }
             }

@@ -13,7 +13,7 @@ import Foundation
 public class ConsumptionCoordinator: AppCoordinator {
     enum ConsumptionDestination: Hashable {
         case add
-        case edit
+        case edit(consumptionID: UUID)
     }
     
     public var appRouter: AppRouter
