@@ -28,6 +28,7 @@ protocol ConsumptionMainViewModelProtocol {
     func fetchPlan()
     func fetchConsumption(id: UUID) -> Consumption?
     func insertConsumption(_ consumption: Consumption)
+    func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String)
 }
 
 public class ConsumptionMainViewModel: SwiftDataManger {
@@ -131,6 +132,19 @@ public class ConsumptionMainViewModel: SwiftDataManger {
     
     public func insertConsumption(_ consumption: Consumption) {
         plan?.consumption.append(consumption)
+    }
+    
+    public func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String) {
+        guard let plan = plan else { return }
+        performContextOperation { context in
+            if let index = plan.consumption.firstIndex(where: { $0.id == consumptionID }) {
+                plan.consumption[index].title = title
+                plan.consumption[index].amount = amount
+                plan.consumption[index].tag = tag
+                
+                try context.save()
+            }
+        }
     }
     
     private func setupBinding() {
