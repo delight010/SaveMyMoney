@@ -26,6 +26,7 @@ protocol ConsumptionMainViewModelProtocol {
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
+    func fetchPlan()
 }
 
 public class ConsumptionMainViewModel: ObservableObject {
@@ -46,6 +47,7 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     public init() {
         setupBinding()
+        fetchPlan()
     }
     
     public func setPlan(_ plan: Plan) {
@@ -114,6 +116,17 @@ public class ConsumptionMainViewModel: ObservableObject {
     public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
         return calender.isDate(date, inSameDayAs: Date())
+    }
+    
+    public func fetchPlan() {
+        do {
+            let result: [Plan] = try dataManager.fetch(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
+            if let plan = result.first {
+                self.plan = plan
+            }
+        } catch {
+            print(error)
+        }
     }
     
     private func updateConsumption(_ value: Decimal) {
