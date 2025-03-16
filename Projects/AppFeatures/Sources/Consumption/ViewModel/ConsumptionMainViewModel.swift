@@ -44,6 +44,10 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
+    public init() {
+        setupBinding()
+    }
+    
     public func setPlan(_ plan: Plan) {
         self.plan = plan
     }
@@ -118,5 +122,26 @@ public class ConsumptionMainViewModel: ObservableObject {
     
     private func updateRemainBudget(_ value: Decimal) {
         remainBudget = value
+    }
+    
+    private func setupBinding() {
+        $plan
+            .compactMap { $0 }
+            .sink { [weak self] plan in
+                guard let self = self else { return }
+                let totalConsumption = plan.consumption.reduce(0) { $0 + $1.amount }
+                let remainBudget = plan.budget - totalConsumption
+                self.setConsumption(plan.consumption)
+                self.updateConsumption(totalConsumption)
+                self.updateRemainBudget(remainBudget)
+            }
+            .store(in: &cancellable)
+        
+        $remainBudget
+            .sink { [weak self] remainBudget in
+                guard let self = self else { return }
+                self.chartData[1].value = remainBudget
+            }
+            .store(in: &cancellable)
     }
 }
