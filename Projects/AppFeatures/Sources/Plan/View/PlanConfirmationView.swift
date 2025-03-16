@@ -62,6 +62,7 @@ public struct PlanConfirmationView: View {
                     message: "Ready to start your budgeting journey?",
                     primaryButtonTitle: "OK",
                     secondaryButtonTitle: "Cancel") {
+            viewModel.insertPlan()
             saveCurrency()
             router.popToRoot()
         } secondaryButtonAction: { }
