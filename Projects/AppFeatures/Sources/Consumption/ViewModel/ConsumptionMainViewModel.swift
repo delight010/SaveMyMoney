@@ -29,7 +29,7 @@ protocol ConsumptionMainViewModelProtocol {
     func fetchPlan()
 }
 
-public class ConsumptionMainViewModel: ObservableObject {
+public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
     @ObservedObject private var dataManager = SwiftDataManager.shared
     
     @Published private var plan: Plan?
@@ -54,7 +54,7 @@ public class ConsumptionMainViewModel: ObservableObject {
         self.plan = plan
     }
     
-    private func setConsumption(_ consumption: [Consumption]) {
+    internal func setConsumption(_ consumption: [Consumption]) {
         self.consumption = consumption
             .filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
             .sorted { $0.date > $1.date }
