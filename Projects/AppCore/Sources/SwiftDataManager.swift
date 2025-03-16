@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @MainActor
-public final class SwiftDataManager: ObservableObject {
+public class SwiftDataManager: ObservableObject {
     public static let shared = SwiftDataManager()
     
     @Published var error: Error? = nil
