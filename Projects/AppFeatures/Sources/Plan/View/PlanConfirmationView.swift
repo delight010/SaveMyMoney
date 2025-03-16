@@ -12,7 +12,6 @@ import SwiftUI
 
 public struct PlanConfirmationView: View {
     @EnvironmentObject var router: AppRouter
-    @Environment(\.modelContext) private var modelContext
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
