@@ -61,6 +61,7 @@ struct AddConsumptionView: View {
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
         .navigationTitle("Add Consumption")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false

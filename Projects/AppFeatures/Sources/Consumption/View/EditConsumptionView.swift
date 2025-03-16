@@ -71,6 +71,7 @@ struct EditConsumptionView: View {
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
         .navigationTitle("Edit Consumption")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {
             guard let consumption = viewModel.loadConsumption(consumptionID: id) else {
