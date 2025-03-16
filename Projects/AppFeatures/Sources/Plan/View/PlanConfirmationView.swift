@@ -63,7 +63,6 @@ public struct PlanConfirmationView: View {
                     message: "Ready to start your budgeting journey?",
                     primaryButtonTitle: "OK",
                     secondaryButtonTitle: "Cancel") {
-            createPlan()
             saveCurrency()
             router.popToRoot()
         } secondaryButtonAction: { }
@@ -73,10 +72,6 @@ public struct PlanConfirmationView: View {
 // MARK: Functions
 
 extension PlanConfirmationView {
-    
-    func createPlan() {
-        modelContext.insert(viewModel.createPlan())
-    }
     
     func saveCurrency() {
         if let selectedCurrency = viewModel.getCurrency() {
