@@ -28,6 +28,7 @@ protocol ConsumptionMainViewModelProtocol {
     func isDateSameDayAsToday() -> Bool
     func fetchPlan()
     func addConsumption(_ consumption: Consumption)
+    func loadConsumption(consumptionID: UUID) -> Consumption?
 }
 
 public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
@@ -132,6 +133,12 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     
     public func addConsumption(_ consumption: Consumption) {
         plan?.consumption.append(consumption)
+    }
+    
+    public func loadConsumption(consumptionID: UUID) -> Consumption? {
+        return plan?.consumption
+            .filter { $0.id == consumptionID }
+            .first
     }
     
     private func updateConsumption(_ value: Decimal) {
