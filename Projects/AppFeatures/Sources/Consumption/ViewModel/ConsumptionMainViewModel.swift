@@ -133,7 +133,12 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     }
     
     public func addConsumption(_ consumption: Consumption) {
-        plan?.consumption.append(consumption)
+        do {
+            plan?.consumption.append(consumption)
+            try dataManager.update()
+        } catch {
+            print(error)
+        }
     }
     
     public func loadConsumption(consumptionID: UUID) -> Consumption? {
