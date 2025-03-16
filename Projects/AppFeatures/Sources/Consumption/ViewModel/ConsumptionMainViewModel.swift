@@ -27,6 +27,7 @@ protocol ConsumptionMainViewModelProtocol {
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
     func fetchPlan()
+    func addConsumption(_ consumption: Consumption)
 }
 
 public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
@@ -127,6 +128,10 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         } catch {
             print(error)
         }
+    }
+    
+    public func addConsumption(_ consumption: Consumption) {
+        plan?.consumption.append(consumption)
     }
     
     private func updateConsumption(_ value: Decimal) {
