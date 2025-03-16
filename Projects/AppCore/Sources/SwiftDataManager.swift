@@ -55,6 +55,22 @@ public class SwiftDataManager: ObservableObject {
         }
     }
     
+    @discardableResult
+    func performContextOperation<T>(_ operation: (ModelContext) throws -> T) throws -> T {
+        guard let context = modelContext else {
+            handleError(SwiftDataError.nilContext)
+            throw SwiftDataError.nilContext
+        }
+        
+        do {
+            let result = try operation(context)
+            return result
+        } catch {
+            handleError(error)
+            throw error
+        }
+    }
+    
     func handleError(_ error: Error) {
         print("SwiftDataManager error: \(error.localizedDescription)")
         self.error = error
