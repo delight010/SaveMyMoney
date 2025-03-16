@@ -22,9 +22,12 @@ protocol PlanBuilderViewModelProtocol {
     func getBudget() -> String
     func calculateDateDifference() -> Int
     func createPlan() -> Plan
+    func insertPlan()
 }
 
 public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtocol {
+    @ObservedObject private var dataManager = SwiftDataManager.shared
+    
     @Published private var startDate = Date()
     @Published private var endDate = Date()
     @Published private var currency: Currency?
@@ -75,5 +78,14 @@ public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtoco
     
     func createPlan() -> Plan {
         return Plan(startDate: startDate, endDate: endDate, budget: budget, consumption: [])
+    }
+    
+    func insertPlan() {
+        let plan = createPlan()
+        do {
+            try dataManager.insert(plan)
+        } catch {
+            print(error)
+        }
     }
 }
