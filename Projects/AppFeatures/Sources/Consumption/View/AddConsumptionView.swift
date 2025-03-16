@@ -71,6 +71,14 @@ struct AddConsumptionView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
+                    viewModel.addConsumption(
+                        Consumption(
+                            title: title,
+                            date: viewModel.getDate(),
+                            amount: amount,
+                            tag: category.rawValue
+                        )
+                    )
                     router.pop()
                 } label: {
                     Text("Done")
