@@ -73,6 +73,12 @@ public class SwiftDataManager: ObservableObject {
         }
     }
     
+    public func insert<T: PersistentModel>(_ item: T) throws {
+        try performContextOperation { context in
+            context.insert(item)
+        }
+    }
+    
     @discardableResult
     func performContextOperation<T>(_ operation: (ModelContext) throws -> T) throws -> T {
         guard let context = modelContext else {
