@@ -15,7 +15,6 @@ import SwiftData
 import SwiftUI
 
 protocol ConsumptionMainViewModelProtocol {
-    func setPlan(_ plan: Plan)
     func setConsumption(_ consumption: [Consumption])
     func getDate() -> Date
     func getDate() -> String
@@ -53,10 +52,6 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     public init() {
         setupBinding()
         fetchPlan()
-    }
-    
-    public func setPlan(_ plan: Plan) {
-        self.plan = plan
     }
     
     internal func setConsumption(_ consumption: [Consumption]) {
