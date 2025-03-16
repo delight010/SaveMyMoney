@@ -29,6 +29,7 @@ protocol ConsumptionMainViewModelProtocol {
     func fetchPlan()
     func addConsumption(_ consumption: Consumption)
     func loadConsumption(consumptionID: UUID) -> Consumption?
+    func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String)
 }
 
 public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
@@ -139,6 +140,21 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         return plan?.consumption
             .filter { $0.id == consumptionID }
             .first
+    }
+    
+    public func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String) {
+        do {
+            guard let plan = plan else { return }
+            if let index = plan.consumption.firstIndex(where: { $0.id == consumptionID }) {
+                plan.consumption[index].title = title
+                plan.consumption[index].amount = amount
+                plan.consumption[index].tag = tag
+                
+                try dataManager.update()
+            }
+        } catch {
+            print(error)
+        }
     }
     
     private func updateConsumption(_ value: Decimal) {
