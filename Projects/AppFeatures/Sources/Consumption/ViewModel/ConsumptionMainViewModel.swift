@@ -30,6 +30,7 @@ protocol ConsumptionMainViewModelProtocol {
     func addConsumption(_ consumption: Consumption)
     func loadConsumption(consumptionID: UUID) -> Consumption?
     func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String)
+    func deleteConsumption(at offsets: IndexSet)
 }
 
 public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
@@ -158,6 +159,22 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
                 
                 try dataManager.update()
             }
+        } catch {
+            print(error)
+        }
+    }
+    
+    public func deleteConsumption(at offsets: IndexSet) {
+        do {
+            guard let plan = self.plan else { return }
+            let consumptionsToDelete = offsets.map { self.consumption[$0] }
+            for consumptionToDelete in consumptionsToDelete {
+                plan.consumption.removeAll(where: { $0.id == consumptionToDelete.id })
+            }
+            offsets.forEach { self.consumption.remove(at: $0) }
+            try dataManager.update()
+            
+            modelContextChanged.send()
         } catch {
             print(error)
         }
