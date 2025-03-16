@@ -10,7 +10,7 @@ import ProjectDescription
 public extension Target {
     
     static func create(name: String,
-                       destinations: Destinations = [.iPhone],
+                       destinations: Destinations = [.iPhone, .iPad],
                        product: Product,
                        bundleId: String,
                        minimumVersion: String = AppConfiguration.minimumVersion,
