@@ -192,5 +192,12 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
                 self.chartData[1].value = remainBudget
             }
             .store(in: &cancellable)
+        
+        modelContextChanged
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.fetchPlan()
+            }
+            .store(in: &cancellable)
     }
 }
