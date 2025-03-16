@@ -25,7 +25,7 @@ public struct HomeView: View {
         NavigationStack(path: $router.path) {
             VStack {
                 if let plan = consumptionViewModel.getPlan(), isProcessingPlan(plan: plan) {
-                    ConsumptionMainView(coordinator: ConsumptionCoordinator(router))
+                    ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: consumptionViewModel)
                 } else {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }

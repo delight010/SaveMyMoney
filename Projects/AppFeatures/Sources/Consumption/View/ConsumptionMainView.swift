@@ -18,12 +18,13 @@ public struct ConsumptionMainView: View {
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
-    @ObservedObject private var viewModel = ConsumptionMainViewModel()
+    @ObservedObject private var viewModel: ConsumptionMainViewModel
     
     var coordinator: ConsumptionCoordinator
     
-    public init(coordinator: ConsumptionCoordinator) {
+    public init(coordinator: ConsumptionCoordinator, viewModel: ConsumptionMainViewModel) {
         self.coordinator = coordinator
+        self.viewModel = viewModel
     }
     
     public var body: some View {
@@ -158,7 +159,7 @@ let previewContainer: ModelContainer = {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    ConsumptionMainView(coordinator: ConsumptionCoordinator(router))
+    ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: ConsumptionMainViewModel())
         .environmentObject(router)
         .modelContainer(previewContainer)
 }
