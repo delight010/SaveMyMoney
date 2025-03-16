@@ -29,6 +29,8 @@ protocol ConsumptionMainViewModelProtocol {
 }
 
 public class ConsumptionMainViewModel: ObservableObject {
+    @ObservedObject private var dataManager = SwiftDataManager.shared
+    
     @Published private var plan: Plan?
     @Published private var date: Date = Date()
     @Published private var remainBudget: Decimal = 0
