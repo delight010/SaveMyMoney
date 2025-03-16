@@ -55,6 +55,24 @@ public class SwiftDataManager: ObservableObject {
         }
     }
     
+    public func fetch<T: PersistentModel>(
+        predicate: Predicate<T>? = nil,
+        sortBy: [SortDescriptor<T>]? = nil
+    ) throws -> [T] {
+        return try performContextOperation { context in
+            let descriptor = FetchDescriptor<T>(
+                predicate: predicate,
+                sortBy: sortBy ?? []
+            )
+            
+            do {
+                return try context.fetch(descriptor)
+            } catch {
+                throw SwiftDataError.fetchFailed
+            }
+        }
+    }
+    
     @discardableResult
     func performContextOperation<T>(_ operation: (ModelContext) throws -> T) throws -> T {
         guard let context = modelContext else {
