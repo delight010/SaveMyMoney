@@ -175,7 +175,9 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
             .compactMap { $0 }
             .sink { [weak self] plan in
                 guard let self = self else { return }
-                let totalConsumption = plan.consumption.reduce(0) { $0 + $1.amount }
+                let totalConsumption = plan.consumption
+                    .compactMap { $0.amount }
+                    .reduce(0, +)
                 let remainBudget = plan.budget - totalConsumption
                 self.setConsumption(plan.consumption)
                 self.updateConsumption(totalConsumption)
