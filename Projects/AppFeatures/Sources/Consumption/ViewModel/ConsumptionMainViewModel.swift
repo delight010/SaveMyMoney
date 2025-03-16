@@ -46,6 +46,7 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         ChartData(label: "remainBudget", value: 0, color: Color.secondaryColor)
     ]
     
+    private let modelContextChanged = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
     
     public init() {
