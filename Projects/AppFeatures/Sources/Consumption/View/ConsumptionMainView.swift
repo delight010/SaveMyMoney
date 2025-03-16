@@ -125,6 +125,9 @@ extension ConsumptionMainView {
                             } // HStack
                         }
                     }
+                    .onDelete { indexSet in
+                        viewModel.deleteConsumption(at: indexSet)
+                    }
                 }
             } // Section
         } // List
