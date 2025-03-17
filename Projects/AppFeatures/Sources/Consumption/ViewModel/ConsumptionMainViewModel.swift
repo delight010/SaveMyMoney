@@ -28,6 +28,7 @@ protocol ConsumptionMainViewModelProtocol {
     func isPlanStatusInProcess() -> Bool
     func isTodayInRange() -> Bool
     func fetchPlan()
+    func updatePlanStatus(_ status: Plan.TaskStatus)
     func addConsumption(_ consumption: Consumption)
     func loadConsumption(consumptionID: UUID) -> Consumption?
     func updateConsumption(consumptionID: UUID, title: String, amount: Decimal, tag: String)
@@ -136,6 +137,15 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
             if let plan = result.first {
                 self.plan = plan
             }
+        } catch {
+            print(error)
+        }
+    }
+    
+    public func updatePlanStatus(_ status: Plan.TaskStatus) {
+        do {
+            plan?.status = status
+            try dataManager.update()
         } catch {
             print(error)
         }
