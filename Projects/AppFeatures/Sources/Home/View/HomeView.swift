@@ -24,7 +24,7 @@ public struct HomeView: View {
     public var body: some View {
         NavigationStack(path: $router.path) {
             VStack {
-                if let plan = consumptionViewModel.getPlan(), isProcessingPlan(plan: plan) {
+                if consumptionViewModel.isTodayInRange() {
                     ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: consumptionViewModel)
                 } else {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
@@ -54,21 +54,6 @@ public struct HomeView: View {
         .onAppear {
             consumptionViewModel.fetchPlan()
         }
-    }
-}
-
-extension HomeView {
-    
-    func isProcessingPlan(plan: Plan) -> Bool {
-        if Date.isCurrentDateInRange(from: plan.startDate, to: plan.endDate) {
-            return true
-        }
-        
-        if plan.status == .inProgress {
-            return true
-        }
-        
-        return false
     }
 }
 
