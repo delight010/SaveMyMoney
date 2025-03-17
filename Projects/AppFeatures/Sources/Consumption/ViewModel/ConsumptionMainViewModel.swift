@@ -208,6 +208,7 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     private func setupBinding() {
         $plan
             .compactMap { $0 }
+            .filter { $0.status == .inProgress }
             .sink { [weak self] plan in
                 guard let self = self else { return }
                 let totalConsumption = plan.consumption
