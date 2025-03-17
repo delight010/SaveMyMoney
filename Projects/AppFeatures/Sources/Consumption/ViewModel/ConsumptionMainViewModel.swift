@@ -25,6 +25,7 @@ protocol ConsumptionMainViewModelProtocol {
     func increaseDate()
     func isDateSameDayAsStartDate() -> Bool
     func isDateSameDayAsToday() -> Bool
+    func isPlanStatusInProcess() -> Bool
     func fetchPlan()
     func addConsumption(_ consumption: Consumption)
     func loadConsumption(consumptionID: UUID) -> Consumption?
@@ -116,6 +117,11 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     public func isDateSameDayAsToday() -> Bool {
         let calender = Calendar.current
         return calender.isDate(date, inSameDayAs: Date())
+    }
+    
+    func isPlanStatusInProcess() -> Bool {
+        guard let plan = plan else { return false }
+        return plan.status == .inProgress
     }
     
     public func fetchPlan() {
