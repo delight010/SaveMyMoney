@@ -84,7 +84,12 @@ public struct AddConsumptionView: View {
                             tag: category.rawValue
                         )
                     )
-                    router.pop()
+                    
+                    if viewModel.isAmountWithinBudget(amount: amount) {
+                        router.pop()
+                    } else {
+                        router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
+                    }
                 } label: {
                     Text("Done")
                 }
