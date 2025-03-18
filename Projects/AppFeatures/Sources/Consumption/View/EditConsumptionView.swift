@@ -11,7 +11,7 @@ import AppUI
 
 import SwiftUI
 
-struct EditConsumptionView: View {
+public struct EditConsumptionView: View {
     @EnvironmentObject var router: AppRouter
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
@@ -25,12 +25,12 @@ struct EditConsumptionView: View {
     @State private var isPositive: Bool = false
     @FocusState private var isFocused: Bool
     
-    init(viewModel: ConsumptionMainViewModel, consumptionID: UUID) {
+    public init(viewModel: ConsumptionMainViewModel, consumptionID: UUID) {
         self.viewModel = viewModel
         self.id = consumptionID
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 20) {
             HStack {
                 Text("Date")
