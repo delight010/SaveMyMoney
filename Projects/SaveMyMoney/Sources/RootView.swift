@@ -48,6 +48,7 @@ struct RootView: View {
                     .tag(AppDestination.setting)
             } // TabView
             .tint(Color.primaryColor)
+            .toolbar(.hidden)
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
                 switch destination {

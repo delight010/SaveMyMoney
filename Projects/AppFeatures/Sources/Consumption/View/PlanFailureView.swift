@@ -55,6 +55,7 @@ public struct PlanFailureView: View {
         .padding(20)
         .background(Color.primary.colorInvert())
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
+        .toolbar(.hidden)
         .onAppear {
             isPresented = true
         }
