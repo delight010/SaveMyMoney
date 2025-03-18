@@ -53,7 +53,6 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     
     public init() {
         setupBinding()
-        fetchPlan()
     }
     
     internal func setConsumption(_ consumption: [Consumption]) {
