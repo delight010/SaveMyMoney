@@ -11,7 +11,7 @@ import AppCore
 import Foundation
 
 public class ConsumptionCoordinator: AppCoordinator {
-    enum ConsumptionDestination: Hashable {
+    public enum ConsumptionDestination: Hashable {
         case add
         case edit(consumptionID: UUID)
         case success

@@ -11,7 +11,7 @@ import AppCore
 import Foundation
 
 public class PlanBuildCoordinator: AppCoordinator {
-    enum PlanBuildDestination: Hashable {
+    public enum PlanBuildDestination: Hashable {
         case dateRange
         case currency
         case currencyAmount
