@@ -25,39 +25,13 @@ public struct HomeView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $router.path) {
-            VStack {
-                if consumptionViewModel.isTodayInRange() {
-                    ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: consumptionViewModel)
-                } else {
-                    EmptyPlanView(coordinator: PlanBuildCoordinator(router))
-                }
-            } // VStack
-            .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
-                switch destination {
-                case .dateRange:
-                    PlanDateRangePickerView(viewModel: planViewModel)
-                case .currency:
-                    EmptyView()
-                case .currencyAmount:
-                    PlanCurrencyAmountInputView(viewModel: planViewModel)
-                case .confirmation:
-                    PlanConfirmationView(viewModel: planViewModel)
-                }
+        VStack {
+            if consumptionViewModel.isTodayInRange() {
+                ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: consumptionViewModel)
+            } else {
+                EmptyPlanView(coordinator: PlanBuildCoordinator(router))
             }
-            .navigationDestination(for: ConsumptionCoordinator.ConsumptionDestination.self) { destination in
-                switch destination {
-                case .add:
-                    AddConsumptionView(viewModel: consumptionViewModel)
-                case .edit(consumptionID: let id):
-                    EditConsumptionView(viewModel: consumptionViewModel, consumptionID: id)
-                case .success:
-                    EmptyView()
-                case .failure:
-                    PlanFailureView(viewModel: consumptionViewModel)
-                }
-            }
-        } // NavigationStack
+        } // VStack
         .onAppear {
             consumptionViewModel.fetchPlan()
         }
