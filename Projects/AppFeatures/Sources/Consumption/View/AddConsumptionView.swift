@@ -11,7 +11,7 @@ import AppCore
 
 import SwiftUI
 
-struct AddConsumptionView: View {
+public struct AddConsumptionView: View {
     @EnvironmentObject var router: AppRouter
     @ObservedObject var viewModel: ConsumptionMainViewModel
     
@@ -22,7 +22,11 @@ struct AddConsumptionView: View {
     @State private var category: ExpenseCategory = .food
     @State private var isPositive: Bool = false
     
-    var body: some View {
+    public init(viewModel: ConsumptionMainViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
         VStack(spacing: 20) {
             HStack {
                 Text("Date")
