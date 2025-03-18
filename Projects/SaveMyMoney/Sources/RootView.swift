@@ -15,6 +15,9 @@ import SwiftData
 
 struct RootView: View {
     @EnvironmentObject var router: AppRouter
+    @StateObject private var consumptionViewModel = ConsumptionMainViewModel()
+    @StateObject private var planViewModel = PlanBuilderViewModel()
+    
     var coordinator: RootCoordinator
     @State private var selectedMenu: AppDestination = .home
     
@@ -25,7 +28,7 @@ struct RootView: View {
     var body: some View {
         NavigationStack(path: $router.path) {
             TabView(selection: $selectedMenu) {
-                HomeView()
+                HomeView(consumptionViewModel: consumptionViewModel, planViewModel: planViewModel)
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
                     }

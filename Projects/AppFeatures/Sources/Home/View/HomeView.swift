@@ -14,12 +14,15 @@ import SwiftUI
 
 public struct HomeView: View {
     @EnvironmentObject var router: AppRouter
-    @StateObject private var consumptionViewModel = ConsumptionMainViewModel()
-    @StateObject private var planViewModel = PlanBuilderViewModel()
+    @ObservedObject private var consumptionViewModel: ConsumptionMainViewModel
+    @ObservedObject private var planViewModel: PlanBuilderViewModel
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
-    public init() {}
+    public init(consumptionViewModel: ConsumptionMainViewModel, planViewModel: PlanBuilderViewModel) {
+        self.consumptionViewModel = consumptionViewModel
+        self.planViewModel = planViewModel
+    }
     
     public var body: some View {
         NavigationStack(path: $router.path) {
@@ -76,6 +79,6 @@ public struct HomeView: View {
 
 #Preview {
     @Previewable @StateObject var router = AppRouter()
-    HomeView()
+    HomeView(consumptionViewModel: ConsumptionMainViewModel(), planViewModel: PlanBuilderViewModel())
         .environmentObject(router)
 }
