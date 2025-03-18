@@ -34,20 +34,7 @@ public struct HomeView: View {
         } // VStack
         .onAppear {
             consumptionViewModel.fetchPlan()
-        }
-        .onReceive(consumptionViewModel.sendPlanResult, perform: { result in
-            switch result {
-            case .success:
-                router.push(to: ConsumptionCoordinator.ConsumptionDestination.success)
-            case .failure:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    
-                    router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
-                }
-            default:
-                break
-            }
-        })
+        }        
     }
 }
 
