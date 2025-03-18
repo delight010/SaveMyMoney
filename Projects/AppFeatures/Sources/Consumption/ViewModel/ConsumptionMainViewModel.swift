@@ -18,6 +18,7 @@ protocol ConsumptionMainViewModelProtocol {
     func setConsumption(_ consumption: [Consumption])
     func getDate() -> Date
     func getDate() -> String
+    func getStatus() -> Plan.TaskStatus?
     func getDday() -> Int
     func getRemainBudget() -> Decimal
     func getConsumption() -> [Consumption]
@@ -72,6 +73,10 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     
     public func getDate() -> String {
         return DateFormatter().yearAndDay.string(from: date)
+    }
+    
+    public func getStatus() -> Plan.TaskStatus? {
+        return plan?.status
     }
     
     public func getDday() -> Int {
