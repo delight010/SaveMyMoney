@@ -148,6 +148,7 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         do {
             plan?.status = status
             try dataManager.update()
+            self.plan = nil
         } catch {
             print(error)
         }
