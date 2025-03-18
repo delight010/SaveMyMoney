@@ -45,7 +45,6 @@ public struct PlanFailureView: View {
             Spacer()
             
             Button {
-                viewModel.updatePlanStatus(.failure)
                 router.popToRoot()
             } label: {
                 Text("OK")
@@ -58,6 +57,7 @@ public struct PlanFailureView: View {
         .toolbar(.hidden)
         .onAppear {
             isPresented = true
+            viewModel.updatePlanStatus(.failure)
         }
     }
 }
