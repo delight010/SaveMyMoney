@@ -48,7 +48,6 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         ChartData(label: "remainBudget", value: 0, color: Color.secondaryColor)
     ]
     
-    let sendPlanResult = PassthroughSubject<Plan.TaskStatus, Never>()
     private let modelContextChanged = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
     
@@ -217,9 +216,6 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
                 self.setConsumption(plan.consumption)
                 self.updateConsumption(totalConsumption)
                 self.updateRemainBudget(remainBudget)
-                if self.isNegativeBudget(remainBudget) {
-                    sendPlanResult.send(.failure)
-                }
             }
             .store(in: &cancellable)
         
