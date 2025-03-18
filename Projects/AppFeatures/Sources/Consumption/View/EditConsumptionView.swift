@@ -25,6 +25,8 @@ public struct EditConsumptionView: View {
     @State private var isPositive: Bool = false
     @FocusState private var isFocused: Bool
     
+    @State private var originalAmount: Decimal = 0
+    
     public init(viewModel: ConsumptionMainViewModel, consumptionID: UUID) {
         self.viewModel = viewModel
         self.id = consumptionID
@@ -81,6 +83,7 @@ public struct EditConsumptionView: View {
             amount = consumption.amount
             category = ExpenseCategory(rawValue: consumption.tag) ?? .food
             isPositive = consumption.amount > 0 ? true : false
+            originalAmount = consumption.amount
         }
         .onChange(of: amount) { _, newValue in
             isPositive = newValue > 0 ? true : false
