@@ -12,18 +12,18 @@ import AppCore
 import SwiftData
 import SwiftUI
 
-struct PlanFailureView: View {
+public struct PlanFailureView: View {
     @EnvironmentObject var router: AppRouter
     
     @ObservedObject private var viewModel: ConsumptionMainViewModel
     
     @State private var isPresented: Bool = false
     
-    init(viewModel: ConsumptionMainViewModel) {
+    public init(viewModel: ConsumptionMainViewModel) {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 15) {
             Spacer()
             
@@ -45,6 +45,7 @@ struct PlanFailureView: View {
             Spacer()
             
             Button {
+                viewModel.updatePlanStatus(.failure)
                 router.pop()
             } label: {
                 Text("OK")
