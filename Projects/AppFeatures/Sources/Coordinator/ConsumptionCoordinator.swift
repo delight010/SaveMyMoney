@@ -14,6 +14,8 @@ public class ConsumptionCoordinator: AppCoordinator {
     enum ConsumptionDestination: Hashable {
         case add
         case edit(consumptionID: UUID)
+        case success
+        case failure
     }
     
     public var appRouter: AppRouter
