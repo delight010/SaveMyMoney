@@ -46,7 +46,7 @@ public struct PlanFailureView: View {
             
             Button {
                 viewModel.updatePlanStatus(.failure)
-                router.pop()
+                router.popToRoot()
             } label: {
                 Text("OK")
             }
