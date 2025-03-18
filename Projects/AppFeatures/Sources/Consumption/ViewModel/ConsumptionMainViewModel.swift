@@ -125,6 +125,10 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         return Date.isCurrentDateInRange(from: plan.startDate, to: plan.endDate)
     }
     
+    func isAmountWithinBudget(amount: Decimal) -> Bool {
+        return amount < remainBudget
+    }
+    
     public func fetchPlan() {
         do {
             let result: [Plan] = try dataManager.fetch(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
