@@ -30,16 +30,6 @@ public struct HomeView: View {
                     EmptyPlanView(coordinator: PlanBuildCoordinator(router))
                 }
             } // VStack
-            .onReceive(consumptionViewModel.sendPlanResult, perform: { result in
-                switch result {
-                case .success:
-                    router.push(to: ConsumptionCoordinator.ConsumptionDestination.success)
-                case .failure:
-                    router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
-                default:
-                    break
-                }
-            })
             .navigationDestination(for: PlanBuildCoordinator.PlanBuildDestination.self) { destination in
                 switch destination {
                 case .dateRange:
@@ -68,6 +58,19 @@ public struct HomeView: View {
         .onAppear {
             consumptionViewModel.fetchPlan()
         }
+        .onReceive(consumptionViewModel.sendPlanResult, perform: { result in
+            switch result {
+            case .success:
+                router.push(to: ConsumptionCoordinator.ConsumptionDestination.success)
+            case .failure:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    
+                    router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
+                }
+            default:
+                break
+            }
+        })
     }
 }
 
