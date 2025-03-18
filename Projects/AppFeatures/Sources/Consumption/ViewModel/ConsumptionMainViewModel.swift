@@ -199,6 +199,10 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
         remainBudget = value
     }
     
+    private func isNegativeBudget(_ budget: Decimal) -> Bool {
+        return budget < 0 ? true : false
+    }
+    
     private func setupBinding() {
         $plan
             .compactMap { $0 }
