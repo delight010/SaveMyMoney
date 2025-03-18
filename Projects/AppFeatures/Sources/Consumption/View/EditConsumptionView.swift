@@ -16,7 +16,7 @@ public struct EditConsumptionView: View {
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     
-    @ObservedObject private var viewModel = ConsumptionMainViewModel()
+    @ObservedObject private var viewModel: ConsumptionMainViewModel
     
     @State private var id: UUID
     @State private var title: String = ""
