@@ -26,7 +26,7 @@ public struct HomeView: View {
     
     public var body: some View {
         VStack {
-            if consumptionViewModel.isTodayInRange() {
+            if let status = consumptionViewModel.getStatus(), status == .inProgress {
                 ConsumptionMainView(coordinator: ConsumptionCoordinator(router), viewModel: consumptionViewModel)
             } else {
                 EmptyPlanView(coordinator: PlanBuildCoordinator(router))
