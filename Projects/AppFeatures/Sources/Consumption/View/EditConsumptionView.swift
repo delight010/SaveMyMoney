@@ -100,7 +100,15 @@ public struct EditConsumptionView: View {
                         amount: amount,
                         tag: category.rawValue
                     )
-                    router.pop()
+                    
+                    if amount > originalAmount {
+                        let diff = amount - originalAmount
+                        viewModel.isAmountWithinBudget(amount: diff)
+                        ? router.pop()
+                        : router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
+                    } else {
+                        router.pop()
+                    }
                 } label: {
                     Text("Done")
                 }
