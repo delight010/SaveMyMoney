@@ -13,7 +13,6 @@ import SwiftUI
 final public class AppRouter: ObservableObject {
     
     @Published public var path = NavigationPath()
-    public var lastPath: AnyHashable?
     
     public init() {
         self.path = path
