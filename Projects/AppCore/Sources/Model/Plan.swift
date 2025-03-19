@@ -37,6 +37,39 @@ public final class Plan {
     }
 }
 
+// MARK: public functions
+
+public extension Plan {
+    
+    func tagPercentages() -> [(tag: String, percentage: Decimal)] {
+        let tags = getTag()
+        var result: [(tag: String, percentage: Decimal)] = []
+        for tag in tags {
+            let amount = self.amountForTag(tag)
+            let percentage = amount / budget * 100
+            result.append((tag: tag, percentage: percentage))
+        }
+        return result.sorted { $0.percentage > $1.percentage }
+    }
+}
+
+// MARK: internal functions
+
+extension Plan {
+    
+    func getTag() -> Set<String> {
+        return Set(consumption.map { $0.tag })
+    }
+    
+    func amountForTag(_ tag: String) -> Decimal {
+        return consumption
+            .filter { $0.tag == tag }
+            .reduce(0) { $0 + $1.amount }
+    }
+}
+
+// MARK: Sample Data
+
 #if DEBUG
 public extension Plan {
     static var sampleConsumptions: [Consumption] {
