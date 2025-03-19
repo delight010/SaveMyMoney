@@ -11,7 +11,7 @@ import AppUI
 import SwiftUI
 
 public struct PlanCurrencyAmountInputView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     @Environment(\.locale) var locale
     
     @ObservedObject private var viewModel: PlanBuilderViewModel

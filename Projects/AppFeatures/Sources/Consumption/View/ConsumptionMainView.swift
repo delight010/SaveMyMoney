@@ -14,7 +14,7 @@ import SwiftData
 import SwiftUI
 
 public struct ConsumptionMainView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
     

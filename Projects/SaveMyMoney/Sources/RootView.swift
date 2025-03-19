@@ -14,7 +14,7 @@ import SwiftUI
 import SwiftData
 
 struct RootView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     @StateObject private var consumptionViewModel = ConsumptionMainViewModel()
     @StateObject private var planViewModel = PlanBuilderViewModel()
     

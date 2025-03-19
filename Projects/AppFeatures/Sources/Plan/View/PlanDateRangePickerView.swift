@@ -11,7 +11,7 @@ import AppUI
 import SwiftUI
 
 public struct PlanDateRangePickerView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     @ObservedObject private var viewModel: PlanBuilderViewModel
     

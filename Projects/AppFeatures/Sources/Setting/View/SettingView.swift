@@ -11,7 +11,7 @@ import AppCore
 import SwiftUI
 
 public struct SettingView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     var coordinator: SettingCoordinator
     

@@ -12,7 +12,7 @@ import AppCore
 import SwiftUI
 
 public struct AddConsumptionView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     @ObservedObject var viewModel: ConsumptionMainViewModel
     
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency

@@ -13,7 +13,7 @@ import SwiftData
 import SwiftUI
 
 public struct HomeView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     @ObservedObject private var consumptionViewModel: ConsumptionMainViewModel
     @ObservedObject private var planViewModel: PlanBuilderViewModel
     

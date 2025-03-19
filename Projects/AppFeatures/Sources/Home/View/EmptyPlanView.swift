@@ -12,7 +12,7 @@ import AppCore
 import SwiftUI
 
 public struct EmptyPlanView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     var coordinator: PlanBuildCoordinator
     

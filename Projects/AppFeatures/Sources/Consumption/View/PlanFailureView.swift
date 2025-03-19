@@ -13,7 +13,7 @@ import SwiftData
 import SwiftUI
 
 public struct PlanFailureView: View {
-    @EnvironmentObject var router: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     @ObservedObject private var viewModel: ConsumptionMainViewModel
     
