@@ -36,3 +36,41 @@ public final class Plan {
         self.createdDate = createdDate
     }
 }
+
+#if DEBUG
+extension Plan {
+    static var sampleConsumptions = [
+        Consumption(
+            title: "Pizza",
+            date: DateFormatter().date(from: "2025-03-15")!,
+            amount: 45000,
+            tag: "Food"
+        ),
+        Consumption(
+            title: "Subway",
+            date: DateFormatter().date(from: "2025-03-16")!,
+            amount: 15000,
+            tag: "Transportation"
+        ),
+        Consumption(
+            title: "Museum",
+            date: DateFormatter().date(from: "2025-03-16")!,
+            amount: 30000,
+            tag: "Hobbies"
+        ),
+        Consumption(
+            title: "Coffee",
+            date: DateFormatter().date(from: "2025-03-17")!,
+            amount: 8000,
+            tag: "Food"
+        )
+    ]
+    
+    static var samplePlan = Plan(
+        startDate: DateFormatter().date(from: "2025-03-10")!,
+        endDate: DateFormatter().date(from: "2025-03-18")!,
+        budget: 120000,
+        consumption: sampleConsumptions
+    )    
+}
+#endif
