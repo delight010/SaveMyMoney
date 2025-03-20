@@ -84,6 +84,12 @@ public extension Plan {
                 tag: "Food"
             ),
             Consumption(
+                title: "English Course",
+                date: dateFormatter.date(from: "2025-03-15")!,
+                amount: 100,
+                tag: "Education"
+            ),
+            Consumption(
                 title: "Subway",
                 date: dateFormatter.date(from: "2025-03-16")!,
                 amount: 15000,
