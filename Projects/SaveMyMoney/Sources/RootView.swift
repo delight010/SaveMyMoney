@@ -74,6 +74,18 @@ struct RootView: View {
                     PlanFailureView(viewModel: consumptionViewModel)
                 }
             }
+            .navigationDestination(for: SettingCoordinator.SettingDestination.self) { destination in
+                switch destination {
+                case .language:
+                    EmptyView()
+                case .currency:
+                    EmptyView()
+                case .appearance:
+                    EmptyView()
+                case .reset:
+                    EmptyView()
+                }
+            } // navigationDestination
         } // NavigationStack
     }
 }
