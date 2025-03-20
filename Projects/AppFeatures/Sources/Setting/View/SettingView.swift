@@ -33,7 +33,7 @@ extension SettingView {
     
     @ViewBuilder
     func settingList() -> some View {
-        LazyVStack {
+        VStack {
             Group {
                 ForEach(SettingCoordinator.SettingDestination.allCases) { destination in
                     Button {
@@ -46,7 +46,7 @@ extension SettingView {
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
             .tint(.primary)
-        } // LazyVStack
+        } // VStack
         .navigationDestination(for: SettingCoordinator.SettingDestination.self) { destination in
             switch destination {
             case .language:
