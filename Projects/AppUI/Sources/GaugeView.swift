@@ -34,7 +34,7 @@ public struct GaugeView: View {
     }
     
     public var body: some View {
-        Gauge(value: current, in: min...max) {
+        Gauge(value: current > max ? max : current, in: min...max) {
             if systemImage.isEmpty {
                 Text(label)
             } else {
