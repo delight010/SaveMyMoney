@@ -47,23 +47,23 @@ public enum ExpenseCategory: String, CaseIterable, Identifiable {
     public var color: Color {
         switch self {
         case .food:
-            return .green
+            return .init(hex: "C1E1C1")
         case .transportation:
-            return .blue
+            return .init(hex: "A7C7E7")
         case .hobbies:
-            return .purple
+            return .init(hex: "C3B1E1")
         case .fashionBeauty:
-            return .pink
+            return .init(hex: "FFCFD2")
         case .housingCommunication:
-            return .brown
+            return .init(hex: "D2B48C")
         case .education:
-            return .orange
+            return .init(hex: "FFD8B1")
         case .health:
-            return .red
+            return .init(hex: "FFB3B3")
         case .dailyNecessities:
-            return .cyan
+            return .init(hex: "B4EBE0")
         case .otherExpenses:
-            return .mint
+            return .init(hex: "BDFFD6")
         }
     }
 }
