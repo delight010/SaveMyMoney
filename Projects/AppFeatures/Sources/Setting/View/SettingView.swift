@@ -46,19 +46,7 @@ extension SettingView {
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
             .tint(.primary)
-        } // VStack
-        .navigationDestination(for: SettingCoordinator.SettingDestination.self) { destination in
-            switch destination {
-            case .language:
-                EmptyView()
-            case .currency:
-                EmptyView()
-            case .appearance:
-                EmptyView()
-            case .reset:
-                EmptyView()
-            }
-        } // navigationDestination
+        } // VStack        
     }
 }
 
