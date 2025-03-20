@@ -13,11 +13,13 @@ public struct ChartData: Identifiable {
     public let label: String
     public var value: Decimal
     public let color: Color
+    public let icon: String?
     
-    public init(label: String, value: Decimal, color: Color) {
+    public init(label: String, value: Decimal, color: Color, icon: String? = nil) {
         self.id = .init()
         self.label = label
         self.value = value
         self.color = color
+        self.icon = icon
     }
 }
