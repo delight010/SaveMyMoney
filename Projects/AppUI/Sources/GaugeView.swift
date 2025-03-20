@@ -35,7 +35,11 @@ public struct GaugeView: View {
     
     public var body: some View {
         Gauge(value: current, in: min...max) {
-            Label(label, systemImage: systemImage)
+            if systemImage.isEmpty {
+                Text(label)
+            } else {
+                Label(label, systemImage: systemImage)
+            }
         } currentValueLabel: {
             Text(String(format: "%.0f%%", current))
         } // Gauge
