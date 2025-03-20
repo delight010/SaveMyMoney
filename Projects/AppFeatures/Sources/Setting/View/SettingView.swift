@@ -20,13 +20,11 @@ public struct SettingView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $router.path) {
-            VStack {
-                settingList()
-                Spacer()
-            } // VStack
-            .padding(.horizontal, 20)
-        } // NavigationStack
+        VStack {
+            settingList()
+            Spacer()
+        } // VStack
+        .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
     }
 }
