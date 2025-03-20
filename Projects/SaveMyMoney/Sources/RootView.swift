@@ -81,7 +81,7 @@ struct RootView: View {
                 case .currency:
                     EmptyView()
                 case .appearance:
-                    EmptyView()
+                    AppearanceSettingView()
                 case .reset:
                     EmptyView()
                 }
