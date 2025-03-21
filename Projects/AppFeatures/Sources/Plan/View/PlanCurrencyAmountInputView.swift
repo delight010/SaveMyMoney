@@ -58,8 +58,14 @@ public struct PlanCurrencyAmountInputView: View {
                 AmountTextField("\(selectedCurrency.currencySymbol) 0", value: $amount, currency: $selectedCurrency)
                     .id(selectedCurrency)
                 
-                Text("Please enter a positive amount only.")
-                    .foregroundStyle(.secondary)
+                Group {
+                    Text("Please enter a positive amount only.")
+                    if !viewModel.isSwiftDataPlanEmpty() {
+                        Text("To change currency, please reset the app in Settings > Reset.")
+                    }
+                }
+                .foregroundStyle(.secondary)
+                
             } // VStack
             .frame(maxWidth: .infinity, alignment: .leading)
             
