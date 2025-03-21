@@ -31,14 +31,14 @@ public struct ConsumptionMainView: View {
         VStack(spacing: 10) {
             dateInfoView()
             chartView()
-            if let plan = viewModel.getPlan() {
+            if let plan = viewModel.getPlan(), !plan.consumption.isEmpty {
                 Group {
                     Text("Top Spending Category")
                         .bold()
                     HStack {
                         TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))
                     } // HStack
-                } // Group                
+                } // Group
             }
             consumptionListView()
         } // VStack
