@@ -50,6 +50,7 @@ public struct PlanCurrencyAmountInputView: View {
                 .tint(.primary)
                 .labelsHidden()
                 .textRoundedRectangle()
+                .disabled(!viewModel.isSwiftDataPlanEmpty())
                 
                 Text("Amount")
                     .bold()
