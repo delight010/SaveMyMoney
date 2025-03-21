@@ -41,7 +41,7 @@ public final class Plan {
 
 public extension Plan {
     
-    func tagPercentages() -> [(tag: String, percentage: Decimal)] {
+    func tagPercentage() -> [(tag: String, percentage: Decimal)] {
         let tags = getTag()
         var result: [(tag: String, percentage: Decimal)] = []
         for tag in tags {
