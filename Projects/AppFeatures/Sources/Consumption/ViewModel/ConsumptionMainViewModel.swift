@@ -35,7 +35,7 @@ protocol ConsumptionMainViewModelProtocol {
     func deleteConsumption(at offsets: IndexSet)
 }
 
-public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol {
+public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewModelProtocol, ChartDataProtocol {
     @ObservedObject private var dataManager = SwiftDataManager.shared
     
     @Published private var plan: Plan?

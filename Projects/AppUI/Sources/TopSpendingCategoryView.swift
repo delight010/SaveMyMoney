@@ -22,7 +22,7 @@ public struct TopSpendingCategoryView: View {
         HStack {
             ForEach(chartData.prefix(3), id: \.id) { data in
                 GaugeView(current: data.value, label: data.label, color: data.color, systemImage: data.icon ?? "")
-            }            
+            }
         } // HStack
     }
 }

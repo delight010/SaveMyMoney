@@ -31,6 +31,15 @@ public struct ConsumptionMainView: View {
         VStack(spacing: 10) {
             dateInfoView()
             chartView()
+            if let plan = viewModel.getPlan() {
+                Group {
+                    Text("Top Spending Category")
+                        .bold()
+                    HStack {
+                        TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))
+                    } // HStack
+                } // Group                
+            }
             consumptionListView()
         } // VStack
     }
