@@ -13,7 +13,6 @@ import Foundation
 public class SettingCoordinator: AppCoordinator {
     public enum SettingDestination: Hashable, CaseIterable, Identifiable {
         case language
-        case currency
         case appearance
         case reset
         
@@ -23,8 +22,6 @@ public class SettingCoordinator: AppCoordinator {
             switch self {
             case .language:
                 return "globe"
-            case .currency:
-                return "creditcard.circle"
             case .appearance:
                 return "circle.lefthalf.filled"
             case .reset:

@@ -78,8 +78,6 @@ struct RootView: View {
                 switch destination {
                 case .language:
                     EmptyView()
-                case .currency:
-                    EmptyView()
                 case .appearance:
                     AppearanceSettingView()
                 case .reset:
