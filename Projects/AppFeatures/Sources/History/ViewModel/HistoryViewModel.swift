@@ -18,7 +18,7 @@ protocol HistoryViewModelProtocol {
     func fetchPlan()
 }
 
-public class HistoryViewModel: ObservableObject, HistoryViewModelProtocol {
+public class HistoryViewModel: ObservableObject, HistoryViewModelProtocol, ChartDataProtocol {
     @ObservedObject private var dataManager = SwiftDataManager.shared
     
     @Published public var plan: [Plan] = []
