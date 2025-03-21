@@ -42,6 +42,11 @@ public struct ConsumptionMainView: View {
             }
             consumptionListView()
         } // VStack
+        .onAppear {
+            if !viewModel.isTodayInRange() {
+                router.push(to: ConsumptionCoordinator.ConsumptionDestination.success)
+            }
+        }
     }
 }
 
