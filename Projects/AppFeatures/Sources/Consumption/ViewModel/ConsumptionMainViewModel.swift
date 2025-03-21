@@ -130,7 +130,7 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     }
     
     func isAmountWithinBudget(amount: Decimal) -> Bool {
-        return amount < remainBudget
+        return amount <= remainBudget
     }
     
     public func fetchPlan() {
