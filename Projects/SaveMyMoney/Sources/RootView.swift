@@ -69,7 +69,7 @@ struct RootView: View {
                 case .edit(consumptionID: let id):
                     EditConsumptionView(viewModel: consumptionViewModel, consumptionID: id)
                 case .success:
-                    EmptyView()
+                    PlanSuccessView(viewModel: consumptionViewModel)
                 case .failure:
                     PlanFailureView(viewModel: consumptionViewModel)
                 }
