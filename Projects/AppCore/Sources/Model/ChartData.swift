@@ -23,3 +23,17 @@ public struct ChartData: Identifiable {
         self.icon = icon
     }
 }
+
+// MARK: Sample Data
+
+#if DEBUG
+
+extension ChartData: ChartDataProtocol {
+    
+    public static var sampleData: [ChartData] {
+        struct TempChartDataProtocol: ChartDataProtocol {}
+        return TempChartDataProtocol().createChartDataWithPercentage(plan: Plan.samplePlan)
+    }
+}
+
+#endif
