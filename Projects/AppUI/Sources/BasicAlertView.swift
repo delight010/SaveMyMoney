@@ -92,7 +92,6 @@ public struct BasicAlertView: View {
 
 extension BasicAlertView {
     
-    @ViewBuilder
     func buttonText(_ text: String) -> some View {
         Text(text)
             .frame(maxWidth: .infinity)

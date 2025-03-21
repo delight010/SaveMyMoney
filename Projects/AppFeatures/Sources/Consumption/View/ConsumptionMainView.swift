@@ -54,7 +54,6 @@ public struct ConsumptionMainView: View {
 
 extension ConsumptionMainView {
     
-    @ViewBuilder
     func dateInfoView() -> some View {
         HStack {
             let buttonWidth: CGFloat = 44
@@ -97,7 +96,6 @@ extension ConsumptionMainView {
         }
     }
     
-    @ViewBuilder
     func chartView() -> some View {
         ZStack {
             Chart {
@@ -122,7 +120,6 @@ extension ConsumptionMainView {
         .frame(width: 300, height: 300)
     }
     
-    @ViewBuilder
     func consumptionListView() -> some View {
         List {
             Section("Consumption Record") {

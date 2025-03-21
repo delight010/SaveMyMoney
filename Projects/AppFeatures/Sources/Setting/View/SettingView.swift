@@ -31,7 +31,6 @@ public struct SettingView: View {
 
 extension SettingView {
     
-    @ViewBuilder
     func settingList() -> some View {
         VStack {
             Group {
