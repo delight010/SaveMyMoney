@@ -21,6 +21,7 @@ protocol PlanBuilderViewModelProtocol {
     func getCurrency() -> Currency?
     func getBudget() -> String
     func calculateDateDifference() -> Int
+    func isSwiftDataPlanEmpty() -> Bool
     func createPlan() -> Plan
     func insertPlan()
 }
@@ -74,6 +75,16 @@ public class PlanBuilderViewModel: ObservableObject, PlanBuilderViewModelProtoco
         let calendar = Calendar.current
         let difference = calendar.dateComponents([.day], from: startDate, to: endDate)
         return difference.day ?? 0
+    }
+    
+    func isSwiftDataPlanEmpty() -> Bool {
+        do {
+            let result: [Plan] = try dataManager.fetch(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
+            return result.isEmpty
+        } catch {
+            print(error)
+        }
+        return true
     }
     
     func createPlan() -> Plan {
