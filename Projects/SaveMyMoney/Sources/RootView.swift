@@ -35,7 +35,7 @@ struct RootView: View {
                     .tag(AppDestination.home)
                     .navigationTitle("")
                 
-                Text("History")
+                HistoryView()
                     .tabItem {
                         Label("History", systemImage: "magazine.fill")
                     }
