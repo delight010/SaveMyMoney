@@ -8,12 +8,10 @@
 
 import SwiftUI
 
-public struct CircleAnimationView: View {
+struct CircleAnimationView: View {
     @State private var isRotate: Bool = false
     
-    public init() { }
-    
-    public var body: some View {
+    var body: some View {
         Circle()
             .foregroundStyle(AngularGradient(colors: [.primaryColor.opacity(0), .primaryColor.opacity(0.3), .primaryColor.opacity(0.5)], center: .center, angle: .degrees(isRotate ? 360 : 0)))
             .overlay {
