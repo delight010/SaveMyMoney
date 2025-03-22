@@ -14,7 +14,7 @@ import SwiftUI
 public struct EmptyPlanView: View {
     @EnvironmentObject private var router: AppRouter
     
-    var coordinator: PlanBuildCoordinator
+    private var coordinator: PlanBuildCoordinator
     
     public init(coordinator: PlanBuildCoordinator) {
         self.coordinator = coordinator
