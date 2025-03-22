@@ -43,6 +43,7 @@ public struct PlanSuccessView: View {
             .frame(width: 250)
             
             Text("🎉Congratulations!")
+                .font(.title3)
                 .bold()
             Text("Challenge successfully completed!")
             
