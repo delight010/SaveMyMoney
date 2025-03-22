@@ -13,7 +13,17 @@ struct CircleAnimationView: View {
     
     var body: some View {
         Circle()
-            .foregroundStyle(AngularGradient(colors: [.primaryColor.opacity(0), .primaryColor.opacity(0.3), .primaryColor.opacity(0.5)], center: .center, angle: .degrees(isRotate ? 360 : 0)))
+            .foregroundStyle(
+                AngularGradient(
+                    colors: [
+                        .primaryColor.opacity(0),
+                        .primaryColor.opacity(0.3),
+                        .primaryColor.opacity(0.5)
+                    ],
+                    center: .center,
+                    angle: .degrees(isRotate ? 360 : 0)
+                )
+            )
             .overlay {
                 Circle()
                     .inset(by: 10)
