@@ -27,18 +27,23 @@ public struct PlanFailureView: View {
         VStack(spacing: 15) {
             Spacer()
             
-            Image(systemName: "xmark.circle")
-                .font(.system(size: 100))
-                .mask {
-                    LinearGradient(
-                        gradient: Gradient(colors: [.clear, .red.opacity(0.7)]),
-                        startPoint: .top,
-                        endPoint: .bottom
+            ZStack {
+                CircleAnimationView()
+                Image(systemName: "flag.slash")
+                    .font(.system(size: 130))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [.red, .indigo],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                     )
-                }
-                .symbolEffect(.variableColor.cumulative, options: .repeat(3) ,isActive: isPresented)
+                    .symbolEffect(.pulse, options: .repeat(1) ,isActive: isPresented)
+            } // ZStack
+            .frame(width: 250)
             
             Text("😭Failure!")
+                .font(.title2)
                 .bold()
             Text("You spent more than your budget!")
             
