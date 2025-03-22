@@ -27,16 +27,20 @@ public struct PlanSuccessView: View {
         VStack(spacing: 15) {
             Spacer()
             
-            Image(systemName: "trophy.circle")
-                .font(.system(size: 100))
-                .mask {
-                    LinearGradient(
-                        gradient: Gradient(colors: [.clear, .red.opacity(0.7)]),
-                        startPoint: .top,
-                        endPoint: .bottom
+            ZStack {
+                CircleAnimationView()
+                Image(systemName: "trophy")
+                    .font(.system(size: 130))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [.orange, .yellow],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                     )
-                }
-                .symbolEffect(.variableColor.cumulative, options: .repeat(3) ,isActive: isPresented)
+                    .symbolEffect(.pulse, options: .repeat(1) ,isActive: isPresented)
+            } // ZStack
+            .frame(width: 250)
             
             Text("🎉Congratulations!")
                 .bold()
@@ -52,7 +56,7 @@ public struct PlanSuccessView: View {
             .buttonStyle(BottomButtonStyle())
         } // VStack
         .padding(20)
-        .background(Color.primary.colorInvert())
+        .background(.background)
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         .toolbar(.hidden)
         .onAppear {
