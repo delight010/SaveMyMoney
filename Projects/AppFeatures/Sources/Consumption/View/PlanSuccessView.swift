@@ -27,20 +27,8 @@ public struct PlanSuccessView: View {
         VStack(spacing: 15) {
             Spacer()
             
-            ZStack {
-                CircleAnimationView()
-                Image(systemName: "trophy")
-                    .font(.system(size: 130))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.orange, .yellow],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .symbolEffect(.pulse, options: .repeat(1) ,isActive: isPresented)
-            } // ZStack
-            .frame(width: 250)
+            SuccessSymbolView()
+                .frame(width: 250)
             
             Text("🎉Congratulations!")
                 .font(.title3)
