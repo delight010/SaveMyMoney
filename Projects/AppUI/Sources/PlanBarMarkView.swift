@@ -24,7 +24,7 @@ public struct PlanBarMarkView: View {
                 BarMark(
                     x: .value("amount", data.value),
                     y: .value("consumtion", data.label),
-                    width: .ratio(1.0)
+                    width: .fixed(30)
                 )
                 .foregroundStyle(data.color)
             } // Chart
