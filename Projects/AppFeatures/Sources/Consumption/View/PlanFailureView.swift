@@ -27,20 +27,8 @@ public struct PlanFailureView: View {
         VStack(spacing: 15) {
             Spacer()
             
-            ZStack {
-                CircleAnimationView()
-                Image(systemName: "flag.slash")
-                    .font(.system(size: 130))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.red, .indigo],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .symbolEffect(.pulse, options: .repeat(1) ,isActive: isPresented)
-            } // ZStack
-            .frame(width: 250)
+            FailureSymbolView()
+                .frame(width: 250)
             
             Text("😭Failure!")
                 .font(.title2)
