@@ -18,8 +18,8 @@ struct RootView: View {
     @StateObject private var consumptionViewModel = ConsumptionMainViewModel()
     @StateObject private var planViewModel = PlanBuilderViewModel()
     
-    var coordinator: RootCoordinator
     @State private var selectedMenu: AppDestination = .home
+    private var coordinator: RootCoordinator
     
     public init(coordinator: RootCoordinator) {
         self.coordinator = coordinator
