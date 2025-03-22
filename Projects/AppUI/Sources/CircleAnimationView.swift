@@ -18,7 +18,7 @@ public struct CircleAnimationView: View {
             .foregroundStyle(AngularGradient(colors: [.primaryColor.opacity(0), .primaryColor.opacity(0.3), .primaryColor.opacity(0.5)], center: .center, angle: .degrees(isRotate ? 360 : 0)))
             .overlay {
                 Circle()
-                    .inset(by: 5)
+                    .inset(by: 10)
                     .fill(.background)
             }
             .onAppear {
