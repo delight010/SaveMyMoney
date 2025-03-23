@@ -23,29 +23,17 @@ public class HistoryViewModel: ObservableObject, HistoryViewModelProtocol, Chart
     
     @Published public var plan: [Plan] = []
     
-    private var cancellable = Set<AnyCancellable>()
-    
-    public init() {
-        setupBinding()
-    }
-    
     public func fetchPlan() {
         do {
             let result: [Plan] = try dataManager.fetch(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
-            self.plan = result
+            let filterPlan = filterPlan(plan: result)
+            self.plan = filterPlan
         } catch {
             print(error)
         }
     }
     
-    private func setupBinding() {
-        $plan
-            .compactMap { plan in
-                plan.filter { $0.status != .inProgress }
-            }
-            .sink { [weak self] plan in
-                guard let self = self else { return }
-            }
-            .store(in: &cancellable)
+    private func filterPlan(plan: [Plan]) -> [Plan] {
+        return plan.filter { $0.status != .inProgress }
     }
 }
