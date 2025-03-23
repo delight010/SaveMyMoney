@@ -32,7 +32,7 @@ extension ChartData: ChartDataProtocol {
     
     public static var sampleData: [ChartData] {
         struct TempChartDataProtocol: ChartDataProtocol {}
-        return TempChartDataProtocol().createChartDataWithPercentage(plan: Plan.samplePlan)
+        return TempChartDataProtocol().createChartData(plan: Plan.samplePlan)
     }
 }
 
