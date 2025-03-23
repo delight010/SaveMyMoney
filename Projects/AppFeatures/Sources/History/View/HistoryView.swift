@@ -15,9 +15,9 @@ import SwiftData
 import SwiftUI
 
 public struct HistoryView: View {
-    @StateObject private var viewModel = HistoryViewModel()
-    
     @CodableAppStorage(key: "currency", defaultValue: Currency.currencies[0]) private var currency
+    
+    @StateObject private var viewModel = HistoryViewModel()
     
     @State private var isShowDetail: Bool = false
     @State private var selectedPlan: Plan?
@@ -34,7 +34,7 @@ public struct HistoryView: View {
             }
         } // VStack
         .sheet(item: $selectedPlan, content: { plan in
-            PlanBarMarkView(chartData: viewModel.createChartData(plan: plan))
+            HistoryDetailView(viewModel: viewModel, plan: plan)
         })
         .onAppear {
             viewModel.fetchPlan()
@@ -73,7 +73,7 @@ extension HistoryView {
         List(viewModel.plan) { plan in
             HStack {
                 PlanSectorMarkView(planStatus: plan.status.rawValue, chartData: viewModel.createChartData(plan: plan))
-                    .padding(10)
+                    .padding(5)
                 VStack {
                     Group {
                         HStack {
@@ -100,13 +100,12 @@ extension HistoryView {
                         selectedPlan = plan
                     } label: {
                         Text("Show Detail")
-                            .frame(maxWidth: .infinity)
                     }
+                    .font(.subheadline)
                     .buttonStyle(CapsuleButtonStyle())
-                    .padding(.horizontal, 10)
                 } // VStack
             } // HStack
-            .padding(.horizontal, 5)
+            .padding(5)
             .listRowSeparator(.hidden)
             .backgroundRoundedRectangle()
         }
