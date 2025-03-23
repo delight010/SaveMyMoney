@@ -136,9 +136,7 @@ public class ConsumptionMainViewModel: ObservableObject, ConsumptionMainViewMode
     public func fetchPlan() {
         do {
             let result: [Plan] = try dataManager.fetch(sortBy: [SortDescriptor(\.createdDate, order: .reverse)])
-            if let plan = result.first {
-                self.plan = plan
-            }
+            self.plan = result.first
         } catch {
             print(error)
         }
