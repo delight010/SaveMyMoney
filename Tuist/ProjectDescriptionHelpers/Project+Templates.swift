@@ -17,6 +17,10 @@ public extension Project {
     ) -> Project {
         return Project(name: module.name,
                        organizationName: AppConfiguration.organizationName,
+                       options: .options(
+                        defaultKnownRegions: ["en", "ko", "ja"],
+                        developmentRegion: "en"
+                       ),
                        settings: .settings(configurations: [
                         .debug(name: AppConfiguration.debugConfig,
                                settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEBUG"]
