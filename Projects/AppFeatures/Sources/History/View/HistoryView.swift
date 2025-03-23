@@ -74,8 +74,8 @@ extension HistoryView {
             HStack {
                 PlanSectorMarkView(planStatus: plan.status.rawValue, chartData: viewModel.createChartData(plan: plan))
                     .padding(10)
-                Group {
-                    VStack {
+                VStack {
+                    Group {
                         HStack {
                             Text("Start Date")
                             Spacer()
@@ -91,19 +91,20 @@ extension HistoryView {
                             Spacer()
                             Text(currency.formatStyle().format(plan.budget))
                         } // HStack
-                        Button {
-                            isShowDetail.toggle()
-                            selectedPlan = plan
-                        } label: {
-                            Text("Show Detail")
-                                .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(CapsuleButtonStyle())
-                        .padding(.horizontal, 10)
-                    } // VStack
-                } // Group
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
+                    } // Group
+                    .lineLimit(1)
+                    .font(.subheadline)
+                    
+                    Button {
+                        isShowDetail.toggle()
+                        selectedPlan = plan
+                    } label: {
+                        Text("Show Detail")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(CapsuleButtonStyle())
+                    .padding(.horizontal, 10)
+                } // VStack
             } // HStack
             .padding(.horizontal, 5)
             .listRowSeparator(.hidden)
