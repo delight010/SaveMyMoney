@@ -81,7 +81,9 @@ struct RootView: View {
                 case .appearance:
                     AppearanceSettingView()
                 case .reset:
-                    EmptyView()
+                    ResetSettingView()
+                case .resetSuccess:
+                    ResetSuccessView()
                 }
             } // navigationDestination
         } // NavigationStack
