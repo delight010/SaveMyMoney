@@ -82,7 +82,6 @@ public class SwiftDataManager: ObservableObject {
     public func update() throws {
         try performContextOperation { context in
             try context.save()
-            return ()
         }
     }
     
