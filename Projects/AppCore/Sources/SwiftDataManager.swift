@@ -93,6 +93,12 @@ public class SwiftDataManager: ObservableObject {
         }
     }
     
+    public func deleteAllData<T: PersistentModel>(_ type: T.Type) throws {
+        try performContextOperation { context in
+            try context.delete(model: T.self)
+        }
+    }
+    
     @discardableResult
     func performContextOperation<T>(_ operation: (ModelContext) throws -> T) throws -> T {
         guard let context = modelContext else {
