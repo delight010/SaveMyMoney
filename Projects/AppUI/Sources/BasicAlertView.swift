@@ -81,7 +81,7 @@ public struct BasicAlertView: View {
             } // VStack
             .frame(width: alertWidth)
             .padding()
-            .background(Color.primary.colorInvert())
+            .background(.background)
             .clipShape(RoundedRectangle(cornerRadius: 10.0))
         } // ZStack
         .onTapGesture {

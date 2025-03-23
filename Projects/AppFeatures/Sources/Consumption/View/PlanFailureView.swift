@@ -45,7 +45,7 @@ public struct PlanFailureView: View {
             .buttonStyle(BottomButtonStyle())
         } // VStack
         .padding(20)
-        .background(Color.primary.colorInvert())
+        .background(.background)
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         .toolbar(.hidden)
         .onAppear {
