@@ -42,7 +42,7 @@ public struct BasicAlertView: View {
     
     public var body: some View {
         ZStack {
-            Color.primary.opacity(0.3)
+            Color.black.opacity(0.3)
                 .ignoresSafeArea()
             
             VStack(spacing: 15) {
