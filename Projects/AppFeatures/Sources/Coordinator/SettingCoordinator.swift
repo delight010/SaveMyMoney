@@ -15,6 +15,7 @@ public class SettingCoordinator: AppCoordinator {
         case language
         case appearance
         case reset
+        case resetSuccess
         
         public var id: Self { self }
         
@@ -26,6 +27,8 @@ public class SettingCoordinator: AppCoordinator {
                 return "circle.lefthalf.filled"
             case .reset:
                 return "arrow.triangle.2.circlepath"
+            default:
+                return ""
             }
         }
     }
