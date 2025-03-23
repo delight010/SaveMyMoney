@@ -34,7 +34,7 @@ extension SettingView {
     func settingList() -> some View {
         VStack {
             Group {
-                ForEach(SettingCoordinator.SettingDestination.allCases) { destination in
+                ForEach(SettingCoordinator.SettingDestination.allCases.dropLast()) { destination in
                     Button {
                         router.push(to: destination)
                     } label: {
