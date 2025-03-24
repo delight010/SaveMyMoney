@@ -24,6 +24,12 @@
             "state" : "translated",
             "value" : "%@ days challenge"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 일 도전"
+          }
         }
       }
     },
@@ -33,6 +39,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amount"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "금액"
           }
         }
       }
@@ -44,6 +56,12 @@
             "state" : "translated",
             "value" : "Appearance Setting"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스플레이 모드 설정"
+          }
         }
       }
     },
@@ -53,6 +71,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Budget"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "예산"
           }
         }
       }
@@ -65,6 +89,12 @@
             "state" : "translated",
             "value" : "You're committing to this budget for the specified period."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기간과 예산을 입력하셨습니다."
+          }
         }
       }
     },
@@ -74,6 +104,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다음"
           }
         }
       }
@@ -85,6 +121,12 @@
             "state" : "translated",
             "value" : "OK"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "확인"
+          }
         }
       }
     },
@@ -94,6 +136,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Category"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카테고리"
           }
         }
       }
@@ -106,6 +154,12 @@
             "state" : "translated",
             "value" : "Choose your budget tracking period."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "목표 기간과 예산을 설정해주십시오."
+          }
         }
       }
     },
@@ -115,6 +169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Create Plan"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "도전 시작하기"
           }
         }
       }
@@ -126,6 +186,12 @@
             "state" : "translated",
             "value" : "Currency"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "통화"
+          }
         }
       }
     },
@@ -135,6 +201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To change currency, please reset the app in Settings > Reset."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "통화를 바꾸고 싶으시다면 설정 > 초기화로 가십시오."
           }
         }
       }
@@ -157,6 +229,12 @@
             "state" : "translated",
             "value" : "Date"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "날짜"
+          }
         }
       }
     },
@@ -167,6 +245,12 @@
             "state" : "translated",
             "value" : "This action will delete all your challenge records, budget settings, and currency."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 동작은 귀하의 모든 챌린지 기록, 예산 및 통화 설정을 삭제하게 됩니다."
+          }
         }
       }
     },
@@ -176,6 +260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Done"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료"
           }
         }
       }
@@ -188,6 +278,12 @@
             "state" : "translated",
             "value" : "🎉Congratulations!"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉축하합니다!"
+          }
         }
       }
     },
@@ -198,6 +294,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "😭Failure!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭실패하셨습니다!"
           }
         }
       }
@@ -210,6 +312,12 @@
             "state" : "translated",
             "value" : "😭Challenge attempt failed!"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭실패한 도전입니다!"
+          }
         }
       }
     },
@@ -220,6 +328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🎉Completed successfully!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉성공한 도전입니다!"
           }
         }
       }
@@ -232,6 +346,12 @@
             "state" : "translated",
             "value" : "There is no plan currently in progress."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 진행 중인 도전이 없습니다."
+          }
         }
       }
     },
@@ -241,6 +361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "end_date"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "종료일"
           }
         }
       }
@@ -252,6 +378,12 @@
             "state" : "translated",
             "value" : "If you spend your entire budget before end date."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "종료일 이전에 예산을 다 쓰시면 실패하게 됩니다."
+          }
         }
       }
     },
@@ -262,6 +394,12 @@
             "state" : "translated",
             "value" : "FAILURE"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "실패"
+          }
         }
       }
     },
@@ -271,6 +409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "There is no consumption record."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지출내역이 없습니다."
           }
         }
       }
@@ -283,6 +427,12 @@
             "state" : "translated",
             "value" : "No data yet"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아직 기록이 없습니다."
+          }
         }
       }
     },
@@ -293,6 +443,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The period range is from 7 to 31 days."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기간은 최소 7일부터 31일까지 설정 가능합니다."
           }
         }
       }
@@ -305,6 +461,12 @@
             "state" : "translated",
             "value" : "You spent more than your budget!"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지정한 예산을 전부 사용하셨습니다!"
+          }
         }
       }
     },
@@ -315,6 +477,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Challenge successfully completed!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "도전을 성공적으로 끝냈습니다!"
           }
         }
       }
@@ -327,6 +495,12 @@
             "state" : "translated",
             "value" : "Please set the period"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기간을 설정해주십시오."
+          }
         }
       }
     },
@@ -338,6 +512,12 @@
             "state" : "translated",
             "value" : "Please enter a positive amount only."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0을 초과하는 금액을 입력해주십시오."
+          }
         }
       }
     },
@@ -347,6 +527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reset"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "초기화"
           }
         }
       }
@@ -358,6 +544,12 @@
             "state" : "translated",
             "value" : "You are about to reset all app data."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 데이터 전체를 초기화하려고 합니다."
+          }
         }
       }
     },
@@ -367,6 +559,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "All data has been successfully reset."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 앱 데이터가 성공적으로 초기화되었습니다."
           }
         }
       }
@@ -378,6 +576,12 @@
             "state" : "translated",
             "value" : "This action cannot be undone. \\nAll your challenge data will be permanently erased."
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 작업은 취소할 수 없습니다. \\n모든 챌린지 데이터가 영구적으로 삭제됩니다."
+          }
         }
       }
     },
@@ -387,6 +591,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The app will now return to its initial setup."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱이 이제 초기 설정 상태로 돌아갑니다."
           }
         }
       }
@@ -398,6 +608,12 @@
             "state" : "translated",
             "value" : "Review Your Entries"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "입력 사항 확인"
+          }
         }
       }
     },
@@ -407,6 +623,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select currency and enter amount"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "통화 및 예산 설정"
           }
         }
       }
@@ -418,6 +640,12 @@
             "state" : "translated",
             "value" : "Show Detail"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자세히보기"
+          }
         }
       }
     },
@@ -428,6 +656,12 @@
             "state" : "translated",
             "value" : "Spending by Category"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카테고리별 지출"
+          }
         }
       }
     },
@@ -437,6 +671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start Date"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시작일"
           }
         }
       }
@@ -449,6 +689,12 @@
             "state" : "translated",
             "value" : "Would you like to start a new plan?"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 챌린지를 시작하시겠습니까?"
+          }
         }
       }
     },
@@ -458,6 +704,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "If you have money left on the day after end date."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "종료일 이후 잔액이 남아있다면 성공합니다."
           }
         }
       }
@@ -469,6 +721,12 @@
             "state" : "translated",
             "value" : "SUCCESS"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "성공"
+          }
         }
       }
     },
@@ -478,6 +736,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목"
           }
         }
       }
@@ -489,6 +753,12 @@
             "state" : "translated",
             "value" : "Top Spending Category"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지출 비중이 가장 높은 카테고리"
+          }
         }
       }
     },
@@ -499,6 +769,12 @@
             "state" : "translated",
             "value" : "Warning"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "경고"
+          }
         }
       }
     },
@@ -508,6 +784,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Period and amount cannot be changed after confirmation."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최종 확인 후 기간, 통화, 예산은 변경하실 수 없습니다."
           }
         }
       }
