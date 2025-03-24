@@ -56,7 +56,7 @@ public struct EditConsumptionView: View {
                     .focused($isFocused)
             }
             HStack {
-                Text("tag")
+                Text("category")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker("\(category.localizedName)", selection: $category) {

@@ -88,6 +88,16 @@
         }
       }
     },
+    "category" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        }
+      }
+    },
     "choose_budge_tracking_period" : {
       "comment" : "PlanDateRangePickerView",
       "localizations" : {
@@ -458,16 +468,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SUCCESS"
-          }
-        }
-      }
-    },
-    "tag" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tag"
           }
         }
       }

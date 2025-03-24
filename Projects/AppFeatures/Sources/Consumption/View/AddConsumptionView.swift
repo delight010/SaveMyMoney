@@ -48,7 +48,7 @@ public struct AddConsumptionView: View {
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
             }
             HStack {
-                Text("tag")
+                Text("category")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker(category.localizedName, selection: $category) {
