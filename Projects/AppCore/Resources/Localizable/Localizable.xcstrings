@@ -78,7 +78,7 @@
         }
       }
     },
-    "ExpenseCategory.Other Expense" : {
+    "ExpenseCategory.Other Expenses" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
