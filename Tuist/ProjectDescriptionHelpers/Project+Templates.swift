@@ -32,7 +32,11 @@ public extension Project {
                                       product: product,
                                       bundleId: module.bundleId,
                                       infoPlist: infoPlist,
-                                      dependencies: targetDependencies
+                                      dependencies: targetDependencies,
+                                      settings: .settings(
+                                        base: module.baseSettings,
+                                        configurations: []
+                                      )
                                      )
                        ]
         )

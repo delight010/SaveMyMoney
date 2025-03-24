@@ -17,7 +17,8 @@ public extension Target {
                        infoPlist: InfoPlist = .default,
                        sources: SourceFilesList = AppConfiguration.sources,
                        resources: ResourceFileElements? = AppConfiguration.resources,
-                       dependencies: [TargetDependency] = []
+                       dependencies: [TargetDependency] = [],
+                       settings: Settings?
     ) -> Target {
         return .target(name: name,
                        destinations: destinations,
@@ -27,7 +28,8 @@ public extension Target {
                        infoPlist: infoPlist,
                        sources: sources,
                        resources: resources,
-                       dependencies: dependencies
+                       dependencies: dependencies,
+                       settings: settings
         )
     }
 }

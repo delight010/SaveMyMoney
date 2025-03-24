@@ -42,4 +42,11 @@ public extension Module {
             return "\(AppConfiguration.bundleIdentifier).\(name)".lowercased()
         }
     }
+    
+    var baseSettings: [String: SettingValue] {
+        return [
+            "LOCALIZATION_PREFERS_STRING_CATALOGS": "YES",
+            "LOCALIZED_STRING_SWIFTUI_SUPPORT": "YES"
+        ]
+    }
 }
