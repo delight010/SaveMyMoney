@@ -29,26 +29,26 @@ public struct AddConsumptionView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("Date")
+                Text("date")
                     .bold()
                 Spacer()
                 Text(viewModel.getDate())
             } // HStack
             HStack {
-                Text("Title")
+                Text("title")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
                 CustomTextField("Title", text: $title)
             }
             HStack {
-                Text("Amount")
+                Text("amount")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
             }
             HStack {
-                Text("Tag")
+                Text("tag")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker(category.localizedName, selection: $category) {
@@ -91,7 +91,7 @@ public struct AddConsumptionView: View {
                         router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
                     }
                 } label: {
-                    Text("Done")
+                    Text("done")
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
                 .disabled(!isPositive)

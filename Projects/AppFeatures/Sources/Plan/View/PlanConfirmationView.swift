@@ -31,7 +31,7 @@ public struct PlanConfirmationView: View {
                 .tint(.progressBarColor)
                 .padding()
             
-            Text("Review Your Entries")
+            Text("review_your_entries")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom)
@@ -48,7 +48,7 @@ public struct PlanConfirmationView: View {
             Button {
                 isShowingAlert.toggle()
             } label: {
-                Text("Done")
+                Text("done")
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack
@@ -88,25 +88,25 @@ extension PlanConfirmationView {
     func inputPlanView() -> some View {
         VStack {
             HStack {
-                Text("Start Date")
+                Text("start_date")
                 Spacer()
                 Text("\(viewModel.getStartDate())")
             }
             Divider()
             HStack {
-                Text("End Date")
+                Text("end_date")
                 Spacer()
                 Text("\(viewModel.getEndDate())")
             }
             Divider()
             HStack {
-                Text("Currency")
+                Text("currency")
                 Spacer()
                 Text("\(viewModel.getCurrency())")
             }
             Divider()
             HStack {
-                Text("Budget")
+                Text("budget")
                 Spacer()
                 Text("\(viewModel.getBudget())")
             }
@@ -122,7 +122,7 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("\(viewModel.calculateDateDifference()) days challenge")
+                    Text("\(viewModel.calculateDateDifference()) calculate_date_info")
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -130,10 +130,10 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.pressedButtonBackground)
                 }
                 Divider()
-                Text("You're committing to this budget for the specified period.")
+                Text("budget_commitment_confirmation")
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
-                Text("Period and amount cannot be changed after confirmation.")
+                Text("warning_no_changes_after_confirm")
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
             .lineLimit(nil)
@@ -146,7 +146,7 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("SUCCESS")
+                    Text("success_uppercase")
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -154,7 +154,7 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.primaryColor)
                 }
                 Divider()
-                Text("If you have money left on the day after end date.")
+                Text("success_condition")
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack
@@ -166,7 +166,7 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("FAILURE")
+                    Text("failure_uppercase")
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -174,7 +174,7 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.disabledButtonText)
                 }
                 Divider()
-                Text("If you spend your entire budget before end date.")
+                Text("failure_condition")
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack

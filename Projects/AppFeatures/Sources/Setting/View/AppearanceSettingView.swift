@@ -43,7 +43,7 @@ public struct AppearanceSettingView: View {
                 router.pop()
             }
             ToolbarItem(placement: .navigation) {
-                Text("Appearance Setting")
+                Text("appearance_setting")
             }
         } // Toolbar
     }

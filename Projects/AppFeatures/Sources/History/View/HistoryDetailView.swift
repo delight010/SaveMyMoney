@@ -34,7 +34,7 @@ struct HistoryDetailView: View {
                 topSymbolView()
                 inputPlanView()
                 VStack(spacing: 15) {
-                    Text("Top Spending Category")
+                    Text("Top_Spending_Category")
                         .bold()
                     Divider()
                     TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))
@@ -43,7 +43,7 @@ struct HistoryDetailView: View {
                 .backgroundRoundedRectangle()
                 
                 VStack(spacing: 15) {
-                    Text("Spending by Category")
+                    Text("spending_by_category")
                         .bold()
                     Divider()
                     PlanBarMarkView(chartData: chartData)
@@ -65,11 +65,11 @@ extension HistoryDetailView {
             if plan.status == .success {
                 SuccessSymbolView()
                     .frame(width: 230)
-                Text("🎉Completed successfully!")
+                Text("emoji-history-detail-success")
             } else {
                 FailureSymbolView()
                     .frame(width: 230)
-                Text("😭Challenge attempt failed!")
+                Text("emoji-history-detail-fail")
             }
         } // Group        
         .font(.title2)
@@ -79,19 +79,19 @@ extension HistoryDetailView {
     func inputPlanView() -> some View {
         VStack {
             HStack {
-                Text("Start Date")
+                Text("start_date")
                 Spacer()
                 Text(DateFormatter().yearAndDay.string(from: plan.startDate))
             }
             Divider()
             HStack {
-                Text("End Date")
+                Text("end_date")
                 Spacer()
                 Text(DateFormatter().yearAndDay.string(from: plan.endDate))
             }
             Divider()
             HStack {
-                Text("Budget")
+                Text("budget")
                 Spacer()
                 Text(currency.formatStyle().format(plan.budget))
             }

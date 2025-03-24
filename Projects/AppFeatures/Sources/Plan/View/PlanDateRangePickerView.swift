@@ -35,19 +35,19 @@ public struct PlanDateRangePickerView: View {
                 .tint(.progressBarColor)
                 .padding()
             
-            Text("Please set the period")
+            Text("please_set_the_period")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom)
             
             VStack(alignment: .leading) {
-                Text("Start date")
+                Text("start_date")
                     .bold()
                 Text("\(DateFormatter().yearAndDay.string(from: startDate))")
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.horizontal, 10)
                     .textRoundedRectangle()
-                Text("End date")
+                Text("end_date")
                     .bold()
                     .padding(.top, 5)
                 DatePicker("", selection: $endDate, in: endDateRange, displayedComponents: .date)
@@ -56,8 +56,8 @@ public struct PlanDateRangePickerView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack(alignment: .leading) {
-                Text("Choose your budget tracking period.")
-                Text("The period range is from 7 to 31 days.")
+                Text("choose_budge_tracking_period")
+                Text("period_range_info")
             } // VStack
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundStyle(.secondary)
@@ -69,7 +69,7 @@ public struct PlanDateRangePickerView: View {
                 viewModel.setDateRange(startDate: startDate, endDate: endDate)
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.currencyAmount)
             } label: {
-                Text("Next")
+                Text("button_next")
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack

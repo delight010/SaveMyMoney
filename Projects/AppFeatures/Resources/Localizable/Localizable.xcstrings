@@ -1,0 +1,517 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "[%@]" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ calculate_date_info" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ days challenge"
+          }
+        }
+      }
+    },
+    "amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amount"
+          }
+        }
+      }
+    },
+    "appearance_setting" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance Setting"
+          }
+        }
+      }
+    },
+    "budget" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Budget"
+          }
+        }
+      }
+    },
+    "budget_commitment_confirmation" : {
+      "comment" : "PlanConfirmationView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You're committing to this budget for the specified period."
+          }
+        }
+      }
+    },
+    "button_next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        }
+      }
+    },
+    "button_ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "choose_budge_tracking_period" : {
+      "comment" : "PlanDateRangePickerView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose your budget tracking period."
+          }
+        }
+      }
+    },
+    "create_plan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Plan"
+          }
+        }
+      }
+    },
+    "currency" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Currency"
+          }
+        }
+      }
+    },
+    "currency_change_reset_instruction" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To change currency, please reset the app in Settings > Reset."
+          }
+        }
+      }
+    },
+    "D-%@" : {
+      "comment" : "D-Day",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D-%@"
+          }
+        }
+      }
+    },
+    "date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        }
+      }
+    },
+    "delete_all_data_warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This action will delete all your challenge records, budget settings, and currency."
+          }
+        }
+      }
+    },
+    "done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "emoji-congratulation" : {
+      "comment" : "PlanSuccessView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉Congratulations!"
+          }
+        }
+      }
+    },
+    "emoji-failure" : {
+      "comment" : "PlanFailureView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭Failure!"
+          }
+        }
+      }
+    },
+    "emoji-history-detail-fail" : {
+      "comment" : "HistoryDetailView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭Challenge attempt failed!"
+          }
+        }
+      }
+    },
+    "emoji-history-detail-success" : {
+      "comment" : "HistoryDetailView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉Completed successfully!"
+          }
+        }
+      }
+    },
+    "empty_plan_info" : {
+      "comment" : "EmptyPlanView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no plan currently in progress."
+          }
+        }
+      }
+    },
+    "end_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "end_date"
+          }
+        }
+      }
+    },
+    "failure_condition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you spend your entire budget before end date."
+          }
+        }
+      }
+    },
+    "failure_uppercase" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAILURE"
+          }
+        }
+      }
+    },
+    "no_consumption_record" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no consumption record."
+          }
+        }
+      }
+    },
+    "no_data_yet" : {
+      "comment" : "HistoryView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data yet"
+          }
+        }
+      }
+    },
+    "period_range_info" : {
+      "comment" : "PlanDateRangePickerView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The period range is from 7 to 31 days."
+          }
+        }
+      }
+    },
+    "plan_failure_message" : {
+      "comment" : "PlanFailureView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You spent more than your budget!"
+          }
+        }
+      }
+    },
+    "plan_success_message" : {
+      "comment" : "PlanSuccessView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge successfully completed!"
+          }
+        }
+      }
+    },
+    "please_set_the_period" : {
+      "comment" : "PlanDateRangePickerView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please set the period"
+          }
+        }
+      }
+    },
+    "positive_amount_only" : {
+      "comment" : "PlanCurrencyAmountInputView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter a positive amount only."
+          }
+        }
+      }
+    },
+    "reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        }
+      }
+    },
+    "reset_all_data_confirmation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are about to reset all app data."
+          }
+        }
+      }
+    },
+    "reset_success_message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All data has been successfully reset."
+          }
+        }
+      }
+    },
+    "reset_warning_message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This action cannot be undone. \\nAll your challenge data will be permanently erased."
+          }
+        }
+      }
+    },
+    "return_to_initial_setup" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app will now return to its initial setup."
+          }
+        }
+      }
+    },
+    "review_your_entries" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Review Your Entries"
+          }
+        }
+      }
+    },
+    "select_currency_and_enter_amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select currency and enter amount"
+          }
+        }
+      }
+    },
+    "show_detail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Detail"
+          }
+        }
+      }
+    },
+    "spending_by_category" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spending by Category"
+          }
+        }
+      }
+    },
+    "start_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Date"
+          }
+        }
+      }
+    },
+    "start_new_plan_prompt" : {
+      "comment" : "EmptyPlanView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like to start a new plan?"
+          }
+        }
+      }
+    },
+    "success_condition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have money left on the day after end date."
+          }
+        }
+      }
+    },
+    "success_uppercase" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUCCESS"
+          }
+        }
+      }
+    },
+    "tag" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        }
+      }
+    },
+    "title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        }
+      }
+    },
+    "Top_Spending_Category" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top Spending Category"
+          }
+        }
+      }
+    },
+    "warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
+          }
+        }
+      }
+    },
+    "warning_no_changes_after_confirm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Period and amount cannot be changed after confirmation."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

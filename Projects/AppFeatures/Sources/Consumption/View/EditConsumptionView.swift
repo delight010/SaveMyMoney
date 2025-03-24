@@ -35,13 +35,13 @@ public struct EditConsumptionView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("Date")
+                Text("date")
                     .bold()
                 Spacer()
                 Text(viewModel.getDate())
             } // HStack
             HStack {
-                Text("Title")
+                Text("title")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
@@ -49,14 +49,14 @@ public struct EditConsumptionView: View {
                     .focused($isFocused)
             }
             HStack {
-                Text("Amount")
+                Text("amount")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
                     .focused($isFocused)
             }
             HStack {
-                Text("Tag")
+                Text("tag")
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker("\(category.localizedName)", selection: $category) {
@@ -110,7 +110,7 @@ public struct EditConsumptionView: View {
                         router.pop()
                     }
                 } label: {
-                    Text("Done")
+                    Text("done")
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
                 .disabled(!isPositive || isFocused)

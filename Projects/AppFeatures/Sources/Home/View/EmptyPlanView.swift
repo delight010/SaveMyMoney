@@ -22,12 +22,12 @@ public struct EmptyPlanView: View {
     
     public var body: some View {
         VStack {
-            Text("There is no plan currently in progress.")
-            Text("Would you like to start a new plan?")
+            Text("empty_plan_info")
+            Text("start_new_plan_prompt")
             Button {
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.dateRange)
             } label: {
-                Text("Create Plan")
+                Text("create_plan")
             }
             .buttonStyle(CapsuleButtonStyle())
         } // VStack

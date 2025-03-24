@@ -26,8 +26,8 @@ public struct ResetSettingView: View {
     public var body: some View {
         VStack(spacing: 15) {
             Group {
-                Text("You are about to reset all app data.")
-                Text("This action will delete all your challenge records, budget settings, and currency.")
+                Text("reset_all_data_confirmation")
+                Text("delete_all_data_warning")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             warningView()
@@ -47,7 +47,7 @@ public struct ResetSettingView: View {
                 router.pop()
             }
             ToolbarItem(placement: .navigation) {
-                Text("Reset")
+                Text("reset")
             }
         } // Toolbar
         .basicAlert(isPresented: $isShowingAlert,
@@ -79,7 +79,7 @@ extension ResetSettingView {
         VStack {
             Group {
                 Label {
-                    Text("Warning")
+                    Text("warning")
                         .font(.title3)
                         .bold()
                         .foregroundStyle(.red)
@@ -88,7 +88,7 @@ extension ResetSettingView {
                         .foregroundStyle(.yellow)
                 }
                 Divider()
-                Text("This action cannot be undone. \nAll your challenge data will be permanently erased.")
+                Text("reset_warning_message")
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack

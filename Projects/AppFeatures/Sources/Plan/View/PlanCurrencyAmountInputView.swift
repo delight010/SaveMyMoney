@@ -32,13 +32,13 @@ public struct PlanCurrencyAmountInputView: View {
                 .tint(.progressBarColor)
                 .padding()
             
-            Text("Select currency and enter amount")
+            Text("select_currency_and_enter_amount")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom)
             
             VStack(alignment: .leading) {
-                Text("Currency")
+                Text("currency")
                     .bold()
                 Picker("", selection: $selectedCurrency) {
                     ForEach(Currency.currencies) { currency in
@@ -52,16 +52,16 @@ public struct PlanCurrencyAmountInputView: View {
                 .textRoundedRectangle()
                 .disabled(!viewModel.isSwiftDataPlanEmpty())
                 
-                Text("Amount")
+                Text("amount")
                     .bold()
                     .padding(.top, 5)
                 AmountTextField("\(selectedCurrency.currencySymbol) 0", value: $amount, currency: $selectedCurrency)
                     .id(selectedCurrency)
                 
                 Group {
-                    Text("Please enter a positive amount only.")
+                    Text("positive_amount_only")
                     if !viewModel.isSwiftDataPlanEmpty() {
-                        Text("To change currency, please reset the app in Settings > Reset.")
+                        Text("currency_change_reset_instruction")
                     }
                 }
                 .foregroundStyle(.secondary)
@@ -76,7 +76,7 @@ public struct PlanCurrencyAmountInputView: View {
                 viewModel.setBudget(amount)
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.confirmation)
             } label: {
-                Text("Next")
+                Text("button_next")
             }
             .buttonStyle(BottomButtonStyle())
             .disabled(!isPositive)

@@ -30,17 +30,17 @@ public struct PlanSuccessView: View {
             SuccessSymbolView()
                 .frame(width: 250)
             
-            Text("🎉Congratulations!")
+            Text("emoji-congratulation")
                 .font(.title3)
                 .bold()
-            Text("Challenge successfully completed!")
+            Text("plan_success_message")
             
             Spacer()
             
             Button {
                 router.popToRoot()
             } label: {
-                Text("OK")
+                Text("button_ok")
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack

@@ -52,7 +52,7 @@ extension HistoryView {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 70, height: 70)
-            Text("No data yet")
+            Text("no_data_yet")
         } // VStack
     }
     
@@ -77,17 +77,17 @@ extension HistoryView {
                 VStack {
                     Group {
                         HStack {
-                            Text("Start Date")
+                            Text("start_date")
                             Spacer()
                             Text(DateFormatter().yearAndDay.string(from: plan.startDate))
                         } // HStack
                         HStack {
-                            Text("End Date")
+                            Text("end_date")
                             Spacer()
                             Text(DateFormatter().yearAndDay.string(from: plan.endDate))
                         } // HStack
                         HStack {
-                            Text("Budget")
+                            Text("budget")
                             Spacer()
                             Text(currency.formatStyle().format(plan.budget))
                         } // HStack
@@ -99,7 +99,7 @@ extension HistoryView {
                         isShowDetail.toggle()
                         selectedPlan = plan
                     } label: {
-                        Text("Show Detail")
+                        Text("show_detail")
                     }
                     .font(.subheadline)
                     .buttonStyle(CapsuleButtonStyle())

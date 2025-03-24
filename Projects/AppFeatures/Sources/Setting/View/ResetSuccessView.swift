@@ -18,8 +18,8 @@ public struct ResetSuccessView: View {
     
     public var body: some View {
         VStack {
-            Text("All data has been successfully reset.")
-            Text("The app will now return to its initial setup.")
+            Text("reset_success_message")
+            Text("return_to_initial_setup")
 
             Button("Go to main") {
                 router.popToRoot()
