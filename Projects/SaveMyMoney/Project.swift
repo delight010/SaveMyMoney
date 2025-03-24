@@ -16,7 +16,6 @@ let infoPlist: [String: Plist.Value] = [
     
     // Localization settings
     "CFBundleDevelopmentRegion": "$(DEVELOPMENT_LANGUAGE)",
-    "CFBundleLocalizations": ["en", "ko", "ja"],
     "CFBundleAllowMixedLocalizations": true,
     
     // UI and launch settings
