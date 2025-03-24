@@ -59,9 +59,9 @@ public struct EditConsumptionView: View {
                 Text("Tag")
                     .bold()
                     .frame(width: 80, alignment: .leading)
-                Picker("\(category.rawValue)", selection: $category) {
+                Picker("\(category.localizedName)", selection: $category) {
                     ForEach(ExpenseCategory.allCases) { category in
-                        Label(category.rawValue, systemImage: category.icon).tag(category)
+                        Label(category.localizedName, systemImage: category.icon).tag(category)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)

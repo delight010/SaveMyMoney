@@ -21,6 +21,11 @@ public enum ExpenseCategory: String, CaseIterable, Identifiable {
     
     public var id: String { self.rawValue }
     
+    public var localizedName: String {
+        let key = "ExpenseCategory.\(rawValue)"
+        return NSLocalizedString(key, bundle: .module, comment: "Expense category name")
+    }
+    
     public var icon: String {
         switch self {
         case .food:
