@@ -25,6 +25,12 @@
             "value" : "%@ days challenge"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 日間チャレンジ"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,6 +45,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amount"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "金額"
           }
         },
         "ko" : {
@@ -57,6 +69,12 @@
             "value" : "Appearance Setting"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テーマ設定"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -71,6 +89,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Budget"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算"
           }
         },
         "ko" : {
@@ -90,6 +114,12 @@
             "value" : "You're committing to this budget for the specified period."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "指定された期間、この予算に取り組むことになります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -104,6 +134,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次へ"
           }
         },
         "ko" : {
@@ -122,6 +158,12 @@
             "value" : "OK"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -136,6 +178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Category"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カテゴリー"
           }
         },
         "ko" : {
@@ -155,6 +203,12 @@
             "value" : "Choose your budget tracking period."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算追跡期間を選択してください。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -169,6 +223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Create Plan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャレンジを始める"
           }
         },
         "ko" : {
@@ -187,6 +247,12 @@
             "value" : "Currency"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通貨"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -201,6 +267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To change currency, please reset the app in Settings > Reset."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通貨を変更するには、設定 > リセットでアプリをリセットしてください。"
           }
         },
         "ko" : {
@@ -230,6 +302,12 @@
             "value" : "Date"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -246,6 +324,12 @@
             "value" : "This action will delete all your challenge records, budget settings, and currency."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この操作により、すべてのチャレンジ記録、予算設定、および通貨が削除されます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -260,6 +344,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
           }
         },
         "ko" : {
@@ -279,6 +369,12 @@
             "value" : "🎉Congratulations!"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉おめでとうございます！"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -294,6 +390,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "😭Failure!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭チャレンジ挑戦失敗！"
           }
         },
         "ko" : {
@@ -313,6 +415,12 @@
             "value" : "😭Challenge attempt failed!"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😭チャレンジ挑戦失敗！"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -328,6 +436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🎉Completed successfully!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉成功しました！"
           }
         },
         "ko" : {
@@ -347,6 +461,12 @@
             "value" : "There is no plan currently in progress."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在進行中のチャレンジはありません。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -360,12 +480,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "end_date"
+            "value" : "End Date"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了日"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "종료일"
           }
         }
@@ -377,6 +503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "If you spend your entire budget before end date."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了日前に予算を使い切った場合には失敗になります。"
           }
         },
         "ko" : {
@@ -395,6 +527,12 @@
             "value" : "FAILURE"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャレンジ挑戦失敗"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -409,6 +547,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "There is no consumption record."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "消費記録はありません。"
           }
         },
         "ko" : {
@@ -428,6 +572,12 @@
             "value" : "No data yet"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだデータがありません。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -443,6 +593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The period range is from 7 to 31 days."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "期間の範囲は7日から31日までです。"
           }
         },
         "ko" : {
@@ -462,6 +618,12 @@
             "value" : "You spent more than your budget!"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算をすべて使用しました。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -477,6 +639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Challenge successfully completed!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算は0を超える必要があります。"
           }
         },
         "ko" : {
@@ -496,6 +664,12 @@
             "value" : "Please set the period"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "期間を設定してください"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -511,6 +685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please enter a positive amount only."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算は0を超える必要があります。"
           }
         },
         "ko" : {
@@ -529,6 +709,12 @@
             "value" : "Reset"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リセット"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -543,6 +729,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You are about to reset all app data."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのアプリデータをリセットしようとしています。"
           }
         },
         "ko" : {
@@ -561,6 +753,12 @@
             "value" : "All data has been successfully reset."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのデータが正常にリセットされました。\n"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -575,6 +773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This action cannot be undone. \\nAll your challenge data will be permanently erased."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この操作は元に戻せません。\\nすべてのチャレンジデータは完全に消去されます。"
           }
         },
         "ko" : {
@@ -593,6 +797,12 @@
             "value" : "The app will now return to its initial setup."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリは初期設定に戻ります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -607,6 +817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Review Your Entries"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力内容を確認"
           }
         },
         "ko" : {
@@ -625,6 +841,12 @@
             "value" : "Select currency and enter amount"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通貨を選択して金額を入力してください。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -639,6 +861,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Detail"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細を見る"
           }
         },
         "ko" : {
@@ -657,6 +885,12 @@
             "value" : "Spending by Category"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カテゴリー別支出"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -671,6 +905,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start Date"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始日"
           }
         },
         "ko" : {
@@ -690,6 +930,12 @@
             "value" : "Would you like to start a new plan?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいチャレンジを始めますか？"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -704,6 +950,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "If you have money left on the day after end date."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了日翌日にお金が残っている場合、成功になります。"
           }
         },
         "ko" : {
@@ -722,6 +974,12 @@
             "value" : "SUCCESS"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -736,6 +994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイトル"
           }
         },
         "ko" : {
@@ -754,6 +1018,12 @@
             "value" : "Top Spending Category"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最も支出の多いカテゴリー"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -770,6 +1040,12 @@
             "value" : "Warning"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -784,6 +1060,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Period and amount cannot be changed after confirmation."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認後、期間と金額は変更できません。"
           }
         },
         "ko" : {
