@@ -32,6 +32,24 @@ let infoPlist: [String: Plist.Value] = [
     "NSAppTransportSecurity": ["NSAllowsArbitraryLoads": true],
 ]
 
+public extension TargetScript {
+    static let firebaseCrashlytics = TargetScript.post(
+        script: """
+          "${SRCROOT}/../../Tuist/.build/checkouts/firebase-ios-sdk/Crashlytics/run"
+          """,
+        name: "FirebaseCrashlyticsString",
+        inputPaths: [
+            "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME",
+            "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Info.plist",
+            "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF/$PRODUCT_NAME",
+            "$TARGET_BUILD_DIR/$EXECUTABLE_PATH",
+            "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/GoogleService-Info.plist"
+        ],
+        basedOnDependencyAnalysis: true,
+        runForInstallBuildsOnly: false
+    )
+}
+
 let project = Project.create(
     module: .app,
     product: .app,
