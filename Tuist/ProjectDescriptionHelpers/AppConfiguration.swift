@@ -16,5 +16,6 @@ public enum AppConfiguration {
     public static let bundleIdentifier: String = "\(organizationName).\(appName.lowercased())"
     public static let sources: SourceFilesList = "Sources/**"
     public static let resources: ResourceFileElements = [.glob(pattern: "Resources/**")]
+    public static let baseSettings: SettingsDictionary = ["DEBUG_INFORMATION_FORMAT": "dwarf-with-dsym"]
     public static let debugConfig: ConfigurationName = "Debug"
 }
