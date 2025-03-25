@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "[%@]" : {
 
     },
@@ -17,24 +20,49 @@
         }
       }
     },
-    "%@ calculate_date_info" : {
+    "%@ 0" : {
+
+    },
+    "%lld calculate_date_info" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ days challenge"
+            "value" : "%lld days challenge"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 日間チャレンジ"
+            "state" : "needs_review",
+            "value" : "%lld 日間チャレンジ"
           }
         },
         "ko" : {
           "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 일 도전"
+          }
+        }
+      }
+    },
+    "add_consumption" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 일 도전"
+            "value" : "Add Consumption"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "支出を追加"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "지출 추가"
           }
         }
       }
@@ -217,6 +245,72 @@
         }
       }
     },
+    "color_scheme" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Scheme"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "テーマ設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "디스플레이 설정"
+          }
+        }
+      }
+    },
+    "consumption" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumption"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "支出"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "지출"
+          }
+        }
+      }
+    },
+    "consumption_record_section" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumption Record"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "支出内訳"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지출 내역"
+          }
+        }
+      }
+    },
     "create_plan" : {
       "localizations" : {
         "en" : {
@@ -283,13 +377,25 @@
         }
       }
     },
-    "D-%@" : {
+    "D-%lld" : {
       "comment" : "D-Day",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "D-%@"
+            "value" : "D-%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D-%lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D-%lld"
           }
         }
       }
@@ -356,6 +462,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료"
+          }
+        }
+      }
+    },
+    "edit_consumption" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Consumption"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "支出を編集"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지출 수정"
           }
         }
       }
@@ -537,6 +665,51 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "실패"
+          }
+        }
+      }
+    },
+    "go_back" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "前の画面へ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이전화면으로"
+          }
+        }
+      }
+    },
+    "i_understand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I understand"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "理解しました"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "알겠습니다"
           }
         }
       }
@@ -1010,7 +1183,7 @@
         }
       }
     },
-    "Top_Spending_Category" : {
+    "top_spending_category" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1020,13 +1193,13 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "最も支出の多いカテゴリー"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "지출 비중이 가장 높은 카테고리"
           }
         }
@@ -1072,6 +1245,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최종 확인 후 기간, 통화, 예산은 변경하실 수 없습니다."
+          }
+        }
+      }
+    },
+    "your_challenge_history" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Challenge History"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャレンジ記録"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "챌린지 기록"
           }
         }
       }

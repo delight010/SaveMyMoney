@@ -39,7 +39,7 @@ public struct AddConsumptionView: View {
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
-                CustomTextField("Title", text: $title)
+                CustomTextField("title", text: $title)
             }
             HStack {
                 Text("amount")
@@ -64,7 +64,7 @@ public struct AddConsumptionView: View {
         } // VStack
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .navigationTitle("Add Consumption")
+        .navigationTitle("add_consumption")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onChange(of: amount) { _, newValue in

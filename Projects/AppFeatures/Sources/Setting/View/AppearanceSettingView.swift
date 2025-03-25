@@ -25,7 +25,7 @@ public struct AppearanceSettingView: View {
     public var body: some View {
         VStack {
             List {
-                Picker("Color Scheme", selection: $appColorScheme) {
+                Picker("color_scheme", selection: $appColorScheme) {
                     ForEach(AppColorScheme.allCases.dropLast(), id: \.self) { scheme in
                         Text(scheme.rawValue.capitalized).tag(scheme)
                     }

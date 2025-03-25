@@ -34,7 +34,7 @@ struct HistoryDetailView: View {
                 topSymbolView()
                 inputPlanView()
                 VStack(spacing: 15) {
-                    Text("Top_Spending_Category")
+                    Text("top_spending_category")
                         .bold()
                     Divider()
                     TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))

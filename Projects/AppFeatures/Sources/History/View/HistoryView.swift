@@ -60,7 +60,7 @@ extension HistoryView {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .foregroundStyle(LinearGradient(colors: [Color.primaryColor.opacity(0.5), Color.pressedButtonBackground], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Label("Your Challenge History", systemImage: "trophy.fill")
+            Label("your_challenge_history", systemImage: "trophy.fill")
                 .font(.title2)
                 .bold()
                 .foregroundStyle(.background)

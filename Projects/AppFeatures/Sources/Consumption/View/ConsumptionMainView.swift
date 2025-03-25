@@ -33,7 +33,7 @@ public struct ConsumptionMainView: View {
             chartView()
             if let plan = viewModel.getPlan(), !plan.consumption.isEmpty {
                 Group {
-                    Text("Top_Spending_Category")
+                    Text("top_spending_category")
                         .bold()
                     HStack {
                         TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))
@@ -101,7 +101,7 @@ extension ConsumptionMainView {
             Chart {
                 ForEach(viewModel.chartData) { data in
                     SectorMark(
-                        angle: .value("Consumption", data.value),
+                        angle: .value("consumption", data.value),
                         innerRadius: .ratio(0.6),
                         angularInset: 1.5
                     )
@@ -122,7 +122,7 @@ extension ConsumptionMainView {
     
     func consumptionListView() -> some View {
         List {
-            Section("Consumption Record") {
+            Section("consumption_record_section") {
                 if viewModel.consumption.isEmpty {
                     Text("no_consumption_record")
                 } else {

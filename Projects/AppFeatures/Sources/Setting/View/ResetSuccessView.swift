@@ -21,7 +21,7 @@ public struct ResetSuccessView: View {
             Text("reset_success_message")
             Text("return_to_initial_setup")
 
-            Button("Go to main") {
+            Button("go_back") {
                 router.popToRoot()
             }
             .buttonStyle(CapsuleButtonStyle())

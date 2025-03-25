@@ -45,7 +45,7 @@ public struct EditConsumptionView: View {
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
-                CustomTextField("Title", text: $title)
+                CustomTextField("title", text: $title)
                     .focused($isFocused)
             }
             HStack {
@@ -72,7 +72,7 @@ public struct EditConsumptionView: View {
         } // VStack
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .navigationTitle("Edit Consumption")
+        .navigationTitle("edit_consumption")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {

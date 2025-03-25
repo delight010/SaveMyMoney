@@ -34,7 +34,7 @@ public struct ResetSettingView: View {
             
             Spacer()
             
-            Button("I understand") {
+            Button("i_understand") {
                 isShowingAlert.toggle()
             }
             .buttonStyle(BottomButtonStyle())
