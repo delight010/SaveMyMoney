@@ -24,4 +24,9 @@ public enum AppColorScheme: String, CaseIterable {
             return .light
         }
     }
+    
+    public var localizedName: String {
+        let key: String.LocalizationValue = "AppColorScheme.\(rawValue)"
+        return String(localized: key, bundle: .module)
+    }
 }
