@@ -32,6 +32,8 @@ public struct PlanBarMarkView: View {
     }
 }
 
+#if DEBUG
+
 #Preview {
     PlanBarMarkView(
         chartData: ChartData.sampleData
@@ -39,3 +41,5 @@ public struct PlanBarMarkView: View {
                    )
     )
 }
+
+#endif

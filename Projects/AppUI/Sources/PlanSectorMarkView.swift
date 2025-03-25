@@ -42,6 +42,10 @@ public struct PlanSectorMarkView: View {
     }
 }
 
+#if DEBUG
+
 #Preview {
     PlanSectorMarkView(planStatus: Plan.samplePlan.status.localizedName, chartData: ChartData.sampleData)
 }
+
+#endif

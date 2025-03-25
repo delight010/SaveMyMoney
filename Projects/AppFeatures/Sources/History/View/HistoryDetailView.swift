@@ -104,9 +104,13 @@ extension HistoryDetailView {
     }
 }
 
+#if DEBUG
+
 #Preview {
     HistoryDetailView(
         viewModel: HistoryViewModel(),
         plan: Plan.samplePlan
     )
 }
+
+#endif
