@@ -39,7 +39,7 @@ public struct AddConsumptionView: View {
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
-                CustomTextField("title", text: $title)
+                CustomTextField("", text: $title)
             }
             HStack {
                 Text("amount".localized(in: .module))

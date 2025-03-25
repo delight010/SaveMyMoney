@@ -9,6 +9,18 @@
             "state" : "translated",
             "value" : "Daily Necessities"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日用品"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일상 용품"
+          }
         }
       }
     },
@@ -19,6 +31,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Education"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "教育"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "교육"
           }
         }
       }
@@ -31,6 +55,18 @@
             "state" : "translated",
             "value" : "Fashion/Beauty"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファッション/美容"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "패션/미용"
+          }
         }
       }
     },
@@ -41,6 +77,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Food"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "食費"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음식"
           }
         }
       }
@@ -53,6 +101,18 @@
             "state" : "translated",
             "value" : "Health"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "医療"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "의료"
+          }
         }
       }
     },
@@ -63,6 +123,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hobbies"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "趣味"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취미"
           }
         }
       }
@@ -75,6 +147,18 @@
             "state" : "translated",
             "value" : "Housing/Communication"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "住居/通信"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "주거/통신"
+          }
         }
       }
     },
@@ -86,6 +170,18 @@
             "state" : "translated",
             "value" : "Other Expenses"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他の支出"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "그 외"
+          }
         }
       }
     },
@@ -96,6 +192,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transportation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "교통"
           }
         }
       }

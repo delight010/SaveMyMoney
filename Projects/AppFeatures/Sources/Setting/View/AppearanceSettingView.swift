@@ -28,7 +28,7 @@ public struct AppearanceSettingView: View {
                 Picker("color_scheme".localized(in: .module),
                        selection: $appColorScheme) {
                     ForEach(AppColorScheme.allCases.dropLast(), id: \.self) { scheme in
-                        Text(scheme.rawValue.capitalized).tag(scheme)
+                        Text(scheme.localizedName).tag(scheme)
                     }
                 } // Picker
                 .pickerStyle(.inline)

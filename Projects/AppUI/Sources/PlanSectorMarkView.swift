@@ -43,5 +43,5 @@ public struct PlanSectorMarkView: View {
 }
 
 #Preview {
-    PlanSectorMarkView(planStatus: Plan.samplePlan.status.rawValue, chartData: ChartData.sampleData)
+    PlanSectorMarkView(planStatus: Plan.samplePlan.status.localizedName, chartData: ChartData.sampleData)
 }

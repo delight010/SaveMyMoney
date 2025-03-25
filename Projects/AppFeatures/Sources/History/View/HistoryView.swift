@@ -73,7 +73,7 @@ extension HistoryView {
     func listView() -> some View {
         List(viewModel.plan) { plan in
             HStack {
-                PlanSectorMarkView(planStatus: plan.status.rawValue, chartData: viewModel.createChartData(plan: plan))
+                PlanSectorMarkView(planStatus: plan.status.localizedName, chartData: viewModel.createChartData(plan: plan))
                     .padding(5)
                 VStack {
                     Group {
