@@ -36,7 +36,7 @@ public struct AmountTextField: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .keyboard) {
                         Spacer()
-                        Button("Done") {
+                        Button("Done".localized(in: .module)) {
                             isFocused = false
                         }
                     }

@@ -22,12 +22,12 @@ public struct EmptyPlanView: View {
     
     public var body: some View {
         VStack {
-            Text("empty_plan_info")
-            Text("start_new_plan_prompt")
+            Text("empty_plan_info".localized(in: .module))
+            Text("start_new_plan_prompt".localized(in: .module))
             Button {
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.dateRange)
             } label: {
-                Text("create_plan")
+                Text("create_plan".localized(in: .module))
             }
             .buttonStyle(CapsuleButtonStyle())
         } // VStack

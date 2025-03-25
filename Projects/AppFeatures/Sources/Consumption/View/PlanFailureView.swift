@@ -30,17 +30,17 @@ public struct PlanFailureView: View {
             FailureSymbolView()
                 .frame(width: 250)
             
-            Text("emoji-failure")
+            Text("emoji-failure".localized(in: .module))
                 .font(.title2)
                 .bold()
-            Text("plan_failure_message")
+            Text("plan_failure_message".localized(in: .module))
             
             Spacer()
             
             Button {
                 router.popToRoot()
             } label: {
-                Text("button_ok")
+                Text("button_ok".localized(in: .module))
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack

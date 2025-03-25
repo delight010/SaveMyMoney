@@ -18,10 +18,10 @@ public struct ResetSuccessView: View {
     
     public var body: some View {
         VStack {
-            Text("reset_success_message")
-            Text("return_to_initial_setup")
+            Text("reset_success_message".localized(in: .module))
+            Text("return_to_initial_setup".localized(in: .module))
 
-            Button("go_back") {
+            Button("go_back".localized(in: .module)) {
                 router.popToRoot()
             }
             .buttonStyle(CapsuleButtonStyle())

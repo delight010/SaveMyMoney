@@ -26,15 +26,15 @@ public struct ResetSettingView: View {
     public var body: some View {
         VStack(spacing: 15) {
             Group {
-                Text("reset_all_data_confirmation")
-                Text("delete_all_data_warning")
+                Text("reset_all_data_confirmation".localized(in: .module))
+                Text("delete_all_data_warning".localized(in: .module))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             warningView()
             
             Spacer()
             
-            Button("i_understand") {
+            Button("i_understand".localized(in: .module)) {
                 isShowingAlert.toggle()
             }
             .buttonStyle(BottomButtonStyle())
@@ -47,14 +47,14 @@ public struct ResetSettingView: View {
                 router.pop()
             }
             ToolbarItem(placement: .navigation) {
-                Text("reset")
+                Text("reset".localized(in: .module))
             }
         } // Toolbar
         .basicAlert(isPresented: $isShowingAlert,
-                    title: "Reset All Data",
-                    message: "Are you sure you want to reset all data?",
-                    primaryButtonTitle: "OK",
-                    secondaryButtonTitle: "Cancel") {
+                    title: "reset_alert_title".localized(in: .module),
+                    message: "reset_alert_message".localized(in: .module),
+                    primaryButtonTitle: "button_ok".localized(in: .module),
+                    secondaryButtonTitle: "button_cancel".localized(in: .module)) {
             viewModel.deleteAllData()
             resetCurrency()
             router.push(to: SettingCoordinator.SettingDestination.resetSuccess)
@@ -79,7 +79,7 @@ extension ResetSettingView {
         VStack {
             Group {
                 Label {
-                    Text("warning")
+                    Text("warning".localized(in: .module))
                         .font(.title3)
                         .bold()
                         .foregroundStyle(.red)
@@ -88,7 +88,7 @@ extension ResetSettingView {
                         .foregroundStyle(.yellow)
                 }
                 Divider()
-                Text("reset_warning_message")
+                Text("reset_warning_message".localized(in: .module))
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack

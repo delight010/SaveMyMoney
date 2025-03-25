@@ -29,26 +29,26 @@ public struct AddConsumptionView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("date")
+                Text("date".localized(in: .module))
                     .bold()
                 Spacer()
                 Text(viewModel.getDate())
             } // HStack
             HStack {
-                Text("title")
+                Text("title".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
                 CustomTextField("title", text: $title)
             }
             HStack {
-                Text("amount")
+                Text("amount".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
             }
             HStack {
-                Text("category")
+                Text("category".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker(category.localizedName, selection: $category) {
@@ -64,7 +64,7 @@ public struct AddConsumptionView: View {
         } // VStack
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .navigationTitle("add_consumption")
+        .navigationTitle("add_consumption".localized(in: .module))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onChange(of: amount) { _, newValue in
@@ -91,7 +91,7 @@ public struct AddConsumptionView: View {
                         router.push(to: ConsumptionCoordinator.ConsumptionDestination.failure)
                     }
                 } label: {
-                    Text("done")
+                    Text("done".localized(in: .module))
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
                 .disabled(!isPositive)

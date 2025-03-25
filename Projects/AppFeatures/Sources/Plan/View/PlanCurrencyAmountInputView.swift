@@ -32,13 +32,13 @@ public struct PlanCurrencyAmountInputView: View {
                 .tint(.progressBarColor)
                 .padding()
             
-            Text("select_currency_and_enter_amount")
+            Text("select_currency_and_enter_amount".localized(in: .module))
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom)
             
             VStack(alignment: .leading) {
-                Text("currency")
+                Text("currency".localized(in: .module))
                     .bold()
                 Picker("", selection: $selectedCurrency) {
                     ForEach(Currency.currencies) { currency in
@@ -52,16 +52,16 @@ public struct PlanCurrencyAmountInputView: View {
                 .textRoundedRectangle()
                 .disabled(!viewModel.isSwiftDataPlanEmpty())
                 
-                Text("amount")
+                Text("amount".localized(in: .module))
                     .bold()
                     .padding(.top, 5)
                 AmountTextField("\(selectedCurrency.currencySymbol) 0", value: $amount, currency: $selectedCurrency)
                     .id(selectedCurrency)
                 
                 Group {
-                    Text("positive_amount_only")
+                    Text("positive_amount_only".localized(in: .module))
                     if !viewModel.isSwiftDataPlanEmpty() {
-                        Text("currency_change_reset_instruction")
+                        Text("currency_change_reset_instruction".localized(in: .module))
                     }
                 }
                 .foregroundStyle(.secondary)
@@ -76,7 +76,7 @@ public struct PlanCurrencyAmountInputView: View {
                 viewModel.setBudget(amount)
                 router.push(to: PlanBuildCoordinator.PlanBuildDestination.confirmation)
             } label: {
-                Text("button_next")
+                Text("button_next".localized(in: .module))
             }
             .buttonStyle(BottomButtonStyle())
             .disabled(!isPositive)

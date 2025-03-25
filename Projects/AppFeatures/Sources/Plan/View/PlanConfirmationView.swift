@@ -31,7 +31,7 @@ public struct PlanConfirmationView: View {
                 .tint(.progressBarColor)
                 .padding()
             
-            Text("review_your_entries")
+            Text("review_your_entries".localized(in: .module))
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom)
@@ -48,7 +48,7 @@ public struct PlanConfirmationView: View {
             Button {
                 isShowingAlert.toggle()
             } label: {
-                Text("done")
+                Text("done".localized(in: .module))
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack
@@ -58,10 +58,10 @@ public struct PlanConfirmationView: View {
             router.pop()
         }
         .basicAlert(isPresented: $isShowingAlert,
-                    title: "Challenge Start",
-                    message: "Ready to start your budgeting journey?",
-                    primaryButtonTitle: "OK",
-                    secondaryButtonTitle: "Cancel") {
+                    title: "challenge_start".localized(in: .module),
+                    message: "plan_confirmation_message".localized(in: .module),
+                    primaryButtonTitle: "button_ok".localized(in: .module),
+                    secondaryButtonTitle: "button_cancel".localized(in: .module)) {
             viewModel.insertPlan()
             saveCurrency()
             router.popToRoot()
@@ -88,25 +88,25 @@ extension PlanConfirmationView {
     func inputPlanView() -> some View {
         VStack {
             HStack {
-                Text("start_date")
+                Text("start_date".localized(in: .module))
                 Spacer()
                 Text("\(viewModel.getStartDate())")
             }
             Divider()
             HStack {
-                Text("end_date")
+                Text("end_date".localized(in: .module))
                 Spacer()
                 Text("\(viewModel.getEndDate())")
             }
             Divider()
             HStack {
-                Text("currency")
+                Text("currency".localized(in: .module))
                 Spacer()
                 Text("\(viewModel.getCurrency())")
             }
             Divider()
             HStack {
-                Text("budget")
+                Text("budget".localized(in: .module))
                 Spacer()
                 Text("\(viewModel.getBudget())")
             }
@@ -122,7 +122,8 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("\(viewModel.calculateDateDifference()) calculate_date_info")
+                    Text("\(viewModel.calculateDateDifference()) "
+                        .appending("calculate_date_info".localized(in: .module)))
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -130,10 +131,10 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.pressedButtonBackground)
                 }
                 Divider()
-                Text("budget_commitment_confirmation")
+                Text("budget_commitment_confirmation".localized(in: .module))
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
-                Text("warning_no_changes_after_confirm")
+                Text("warning_no_changes_after_confirm".localized(in: .module))
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
             .lineLimit(nil)
@@ -146,7 +147,7 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("success_uppercase")
+                    Text("success_uppercase".localized(in: .module))
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -154,7 +155,7 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.primaryColor)
                 }
                 Divider()
-                Text("success_condition")
+                Text("success_condition".localized(in: .module))
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack
@@ -166,7 +167,7 @@ extension PlanConfirmationView {
         VStack {
             Group {
                 Label {
-                    Text("failure_uppercase")
+                    Text("failure_uppercase".localized(in: .module))
                         .font(.title3)
                         .bold(true)
                 } icon: {
@@ -174,7 +175,7 @@ extension PlanConfirmationView {
                         .foregroundStyle(Color.disabledButtonText)
                 }
                 Divider()
-                Text("failure_condition")
+                Text("failure_condition".localized(in: .module))
             } // Group
             .frame(maxWidth: .infinity, alignment: .leading)
         } // VStack

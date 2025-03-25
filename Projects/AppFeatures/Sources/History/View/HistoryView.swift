@@ -52,7 +52,7 @@ extension HistoryView {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 70, height: 70)
-            Text("no_data_yet")
+            Text("no_data_yet".localized(in: .module))
         } // VStack
     }
     
@@ -60,7 +60,8 @@ extension HistoryView {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .foregroundStyle(LinearGradient(colors: [Color.primaryColor.opacity(0.5), Color.pressedButtonBackground], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Label("your_challenge_history", systemImage: "trophy.fill")
+            Label("your_challenge_history".localized(in: .module),
+                  systemImage: "trophy.fill")
                 .font(.title2)
                 .bold()
                 .foregroundStyle(.background)
@@ -77,17 +78,17 @@ extension HistoryView {
                 VStack {
                     Group {
                         HStack {
-                            Text("start_date")
+                            Text("start_date".localized(in: .module))
                             Spacer()
                             Text(DateFormatter().yearAndDay.string(from: plan.startDate))
                         } // HStack
                         HStack {
-                            Text("end_date")
+                            Text("end_date".localized(in: .module))
                             Spacer()
                             Text(DateFormatter().yearAndDay.string(from: plan.endDate))
                         } // HStack
                         HStack {
-                            Text("budget")
+                            Text("budget".localized(in: .module))
                             Spacer()
                             Text(currency.formatStyle().format(plan.budget))
                         } // HStack
@@ -99,7 +100,7 @@ extension HistoryView {
                         isShowDetail.toggle()
                         selectedPlan = plan
                     } label: {
-                        Text("show_detail")
+                        Text("show_detail".localized(in: .module))
                     }
                     .font(.subheadline)
                     .buttonStyle(CapsuleButtonStyle())

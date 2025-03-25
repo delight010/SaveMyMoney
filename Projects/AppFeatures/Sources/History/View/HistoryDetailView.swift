@@ -34,7 +34,7 @@ struct HistoryDetailView: View {
                 topSymbolView()
                 inputPlanView()
                 VStack(spacing: 15) {
-                    Text("top_spending_category")
+                    Text("top_spending_category".localized(in: .module))
                         .bold()
                     Divider()
                     TopSpendingCategoryView(chartData: viewModel.createChartDataWithPercentage(plan: plan))
@@ -43,7 +43,7 @@ struct HistoryDetailView: View {
                 .backgroundRoundedRectangle()
                 
                 VStack(spacing: 15) {
-                    Text("spending_by_category")
+                    Text("spending_by_category".localized(in: .module))
                         .bold()
                     Divider()
                     PlanBarMarkView(chartData: chartData)
@@ -65,11 +65,11 @@ extension HistoryDetailView {
             if plan.status == .success {
                 SuccessSymbolView()
                     .frame(width: 230)
-                Text("emoji-history-detail-success")
+                Text("emoji-history-detail-success".localized(in: .module))
             } else {
                 FailureSymbolView()
                     .frame(width: 230)
-                Text("emoji-history-detail-fail")
+                Text("emoji-history-detail-fail".localized(in: .module))
             }
         } // Group        
         .font(.title2)
@@ -79,19 +79,19 @@ extension HistoryDetailView {
     func inputPlanView() -> some View {
         VStack {
             HStack {
-                Text("start_date")
+                Text("start_date".localized(in: .module))
                 Spacer()
                 Text(DateFormatter().yearAndDay.string(from: plan.startDate))
             }
             Divider()
             HStack {
-                Text("end_date")
+                Text("end_date".localized(in: .module))
                 Spacer()
                 Text(DateFormatter().yearAndDay.string(from: plan.endDate))
             }
             Divider()
             HStack {
-                Text("budget")
+                Text("budget".localized(in: .module))
                 Spacer()
                 Text(currency.formatStyle().format(plan.budget))
             }

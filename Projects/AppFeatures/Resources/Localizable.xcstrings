@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "[%@]" : {
 
     },
@@ -20,10 +17,8 @@
         }
       }
     },
-    "%@ 0" : {
-
-    },
-    "%lld calculate_date_info" : {
+    "%@ calculate_date_info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -33,19 +28,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld 日間チャレンジ"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld 일 도전"
           }
         }
       }
     },
     "add_consumption" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -68,6 +64,7 @@
       }
     },
     "amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -90,6 +87,7 @@
       }
     },
     "appearance_setting" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -112,6 +110,7 @@
       }
     },
     "budget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -135,6 +134,7 @@
     },
     "budget_commitment_confirmation" : {
       "comment" : "PlanConfirmationView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -156,7 +156,31 @@
         }
       }
     },
+    "button_cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
+          }
+        }
+      }
+    },
     "button_next" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -179,6 +203,7 @@
       }
     },
     "button_ok" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -200,7 +225,31 @@
         }
       }
     },
+    "calculate_date_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "days challenge"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日間チャレンジ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일 도전"
+          }
+        }
+      }
+    },
     "category" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -222,8 +271,32 @@
         }
       }
     },
+    "challenge_start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャレンジを開始"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "챌린지 시작"
+          }
+        }
+      }
+    },
     "choose_budge_tracking_period" : {
       "comment" : "PlanDateRangePickerView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -246,6 +319,7 @@
       }
     },
     "color_scheme" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -268,6 +342,7 @@
       }
     },
     "consumption" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -290,6 +365,7 @@
       }
     },
     "consumption_record_section" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -312,6 +388,7 @@
       }
     },
     "create_plan" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -334,6 +411,7 @@
       }
     },
     "currency" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -356,6 +434,7 @@
       }
     },
     "currency_change_reset_instruction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -377,8 +456,12 @@
         }
       }
     },
+    "D-%@" : {
+
+    },
     "D-%lld" : {
       "comment" : "D-Day",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -401,6 +484,7 @@
       }
     },
     "date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -423,6 +507,7 @@
       }
     },
     "delete_all_data_warning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -445,6 +530,7 @@
       }
     },
     "done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -467,6 +553,7 @@
       }
     },
     "edit_consumption" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -490,6 +577,7 @@
     },
     "emoji-congratulation" : {
       "comment" : "PlanSuccessView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -513,6 +601,7 @@
     },
     "emoji-failure" : {
       "comment" : "PlanFailureView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -536,6 +625,7 @@
     },
     "emoji-history-detail-fail" : {
       "comment" : "HistoryDetailView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -559,6 +649,7 @@
     },
     "emoji-history-detail-success" : {
       "comment" : "HistoryDetailView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -582,6 +673,7 @@
     },
     "empty_plan_info" : {
       "comment" : "EmptyPlanView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -604,6 +696,7 @@
       }
     },
     "end_date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -626,6 +719,7 @@
       }
     },
     "failure_condition" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -648,6 +742,7 @@
       }
     },
     "failure_uppercase" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -670,6 +765,7 @@
       }
     },
     "go_back" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -715,6 +811,7 @@
       }
     },
     "no_consumption_record" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -738,6 +835,7 @@
     },
     "no_data_yet" : {
       "comment" : "HistoryView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -761,6 +859,7 @@
     },
     "period_range_info" : {
       "comment" : "PlanDateRangePickerView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -782,8 +881,32 @@
         }
       }
     },
+    "plan_confirmation_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready to start your budgeting journey?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予算管理の旅を始める準備はできましたか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "챌린지를 시작할 준비가 되셨습니까?"
+          }
+        }
+      }
+    },
     "plan_failure_message" : {
       "comment" : "PlanFailureView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -807,6 +930,7 @@
     },
     "plan_success_message" : {
       "comment" : "PlanSuccessView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -830,6 +954,7 @@
     },
     "please_set_the_period" : {
       "comment" : "PlanDateRangePickerView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -853,6 +978,7 @@
     },
     "positive_amount_only" : {
       "comment" : "PlanCurrencyAmountInputView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -875,6 +1001,7 @@
       }
     },
     "reset" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -896,7 +1023,54 @@
         }
       }
     },
+    "reset_alert_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to reset all data?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのデータをリセットしてもよろしいですか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정말 모든 데이터를 초기화하시겠습니까?"
+          }
+        }
+      }
+    },
+    "reset_alert_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset All Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのデータをリセット"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 데이터 초기화"
+          }
+        }
+      }
+    },
     "reset_all_data_confirmation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -919,6 +1093,7 @@
       }
     },
     "reset_success_message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -941,28 +1116,30 @@
       }
     },
     "reset_warning_message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This action cannot be undone. \\nAll your challenge data will be permanently erased."
+            "value" : "This action cannot be undone. \nAll your challenge data will be permanently erased."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "この操作は元に戻せません。\\nすべてのチャレンジデータは完全に消去されます。"
+            "value" : "この操作は元に戻せません。\nすべてのチャレンジデータは完全に消去されます。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 작업은 취소할 수 없습니다. \\n모든 챌린지 데이터가 영구적으로 삭제됩니다."
+            "value" : "이 작업은 취소할 수 없습니다. \n모든 챌린지 데이터가 영구적으로 삭제됩니다."
           }
         }
       }
     },
     "return_to_initial_setup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -985,6 +1162,7 @@
       }
     },
     "review_your_entries" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1007,6 +1185,7 @@
       }
     },
     "select_currency_and_enter_amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1029,6 +1208,7 @@
       }
     },
     "show_detail" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1051,6 +1231,7 @@
       }
     },
     "spending_by_category" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1073,6 +1254,7 @@
       }
     },
     "start_date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1096,6 +1278,7 @@
     },
     "start_new_plan_prompt" : {
       "comment" : "EmptyPlanView",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1118,6 +1301,7 @@
       }
     },
     "success_condition" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1140,6 +1324,7 @@
       }
     },
     "success_uppercase" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1162,6 +1347,7 @@
       }
     },
     "title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1184,6 +1370,7 @@
       }
     },
     "top_spending_category" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1206,6 +1393,7 @@
       }
     },
     "warning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1228,6 +1416,7 @@
       }
     },
     "warning_no_changes_after_confirm" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1250,6 +1439,7 @@
       }
     },
     "your_challenge_history" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

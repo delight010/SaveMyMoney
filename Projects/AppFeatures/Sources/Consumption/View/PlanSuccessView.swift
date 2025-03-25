@@ -30,17 +30,17 @@ public struct PlanSuccessView: View {
             SuccessSymbolView()
                 .frame(width: 250)
             
-            Text("emoji-congratulation")
+            Text("emoji-congratulation".localized(in: .module))
                 .font(.title3)
                 .bold()
-            Text("plan_success_message")
+            Text("plan_success_message".localized(in: .module))
             
             Spacer()
             
             Button {
                 router.popToRoot()
             } label: {
-                Text("button_ok")
+                Text("button_ok".localized(in: .module))
             }
             .buttonStyle(BottomButtonStyle())
         } // VStack

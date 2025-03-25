@@ -35,13 +35,13 @@ public struct EditConsumptionView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("date")
+                Text("date".localized(in: .module))
                     .bold()
                 Spacer()
                 Text(viewModel.getDate())
             } // HStack
             HStack {
-                Text("title")
+                Text("title".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Spacer()
@@ -49,14 +49,14 @@ public struct EditConsumptionView: View {
                     .focused($isFocused)
             }
             HStack {
-                Text("amount")
+                Text("amount".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
                     .focused($isFocused)
             }
             HStack {
-                Text("category")
+                Text("category".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 Picker("\(category.localizedName)", selection: $category) {
@@ -72,7 +72,7 @@ public struct EditConsumptionView: View {
         } // VStack
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .navigationTitle("edit_consumption")
+        .navigationTitle("edit_consumption".localized(in: .module))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {
@@ -110,7 +110,7 @@ public struct EditConsumptionView: View {
                         router.pop()
                     }
                 } label: {
-                    Text("done")
+                    Text("done".localized(in: .module))
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
                 .disabled(!isPositive || isFocused)

@@ -25,7 +25,8 @@ public struct AppearanceSettingView: View {
     public var body: some View {
         VStack {
             List {
-                Picker("color_scheme", selection: $appColorScheme) {
+                Picker("color_scheme".localized(in: .module),
+                       selection: $appColorScheme) {
                     ForEach(AppColorScheme.allCases.dropLast(), id: \.self) { scheme in
                         Text(scheme.rawValue.capitalized).tag(scheme)
                     }
@@ -43,7 +44,7 @@ public struct AppearanceSettingView: View {
                 router.pop()
             }
             ToolbarItem(placement: .navigation) {
-                Text("appearance_setting")
+                Text("appearance_setting".localized(in: .module))
             }
         } // Toolbar
     }
