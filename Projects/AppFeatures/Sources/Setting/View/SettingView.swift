@@ -38,7 +38,7 @@ extension SettingView {
                     Button {
                         router.push(to: destination)
                     } label: {
-                        Label("\(destination.id)".capitalized, systemImage: destination.icon)
+                        Label(destination.title, systemImage: destination.icon)
                     }
                     Divider()
                 } // ForEach

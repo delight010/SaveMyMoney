@@ -28,6 +28,17 @@ public class SettingCoordinator: AppCoordinator {
                 return ""
             }
         }
+        
+        var title: String {
+            switch self {
+            case .appearance:
+                return "appearance_setting".localized(in: .module)
+            case .reset:
+                return "reset".localized(in: .module)
+            default:
+                return ""
+            }
+        }
     }
     
     public var appRouter: AppRouter
