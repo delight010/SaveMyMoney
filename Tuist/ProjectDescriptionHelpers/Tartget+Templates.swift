@@ -17,6 +17,7 @@ public extension Target {
                        infoPlist: InfoPlist = .default,
                        sources: SourceFilesList = AppConfiguration.sources,
                        resources: ResourceFileElements? = AppConfiguration.resources,
+                       scripts: [TargetScript] = [],
                        dependencies: [TargetDependency] = [],
                        settings: Settings?
     ) -> Target {
@@ -28,6 +29,7 @@ public extension Target {
                        infoPlist: infoPlist,
                        sources: sources,
                        resources: resources,
+                       scripts: scripts,
                        dependencies: dependencies,
                        settings: settings
         )

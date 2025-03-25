@@ -54,7 +54,10 @@ let project = Project.create(
     module: .app,
     product: .app,
     infoPlist: .extendingDefault(with: infoPlist),
+    targetscripts: [.firebaseCrashlytics],
     targetDependencies: [
-        .project(target: Module.features.name, path: Module.features.path)
+        .project(target: Module.features.name, path: Module.features.path),
+        .external(name: "FirebaseAnalytics"),
+        .external(name: "FirebaseCrashlytics")
     ]
 )
