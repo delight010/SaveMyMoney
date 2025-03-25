@@ -17,8 +17,8 @@ public final class Plan {
         case inProgress = "InProgress"
         
         public var localizedName: String {
-            let key: String.LocalizationValue = "TaskStatus.\(rawValue)"
-            return String(localized: key, bundle: .module)
+            let key = "TaskStatus." + self.rawValue
+            return String(localized: String.LocalizationValue(key), bundle: .module)
         }
     }
     

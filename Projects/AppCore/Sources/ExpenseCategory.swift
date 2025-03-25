@@ -22,8 +22,8 @@ public enum ExpenseCategory: String, CaseIterable, Identifiable {
     public var id: String { self.rawValue }
     
     public var localizedName: String {
-        let key: String.LocalizationValue = "ExpenseCategory.\(rawValue)"
-        return String(localized: key, bundle: .module)
+        let key = "ExpenseCategory." + self.rawValue
+        return String(localized: String.LocalizationValue(key), bundle: .module)
     }
     
     public var icon: String {
