@@ -76,8 +76,6 @@ struct RootView: View {
             }
             .navigationDestination(for: SettingCoordinator.SettingDestination.self) { destination in
                 switch destination {
-                case .language:
-                    EmptyView()
                 case .appearance:
                     AppearanceSettingView()
                 case .reset:

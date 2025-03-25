@@ -12,7 +12,6 @@ import Foundation
 
 public class SettingCoordinator: AppCoordinator {
     public enum SettingDestination: Hashable, CaseIterable, Identifiable {
-        case language
         case appearance
         case reset
         case resetSuccess
@@ -21,8 +20,6 @@ public class SettingCoordinator: AppCoordinator {
         
         var icon: String {
             switch self {
-            case .language:
-                return "globe"
             case .appearance:
                 return "circle.lefthalf.filled"
             case .reset:
