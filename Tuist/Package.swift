@@ -15,7 +15,7 @@ import PackageDescription
 let package = Package(
     name: "SaveMyMoney",
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", exact: "11.10.0")
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.22.1")
         // Add your own dependencies here:
         // .package(url: "https://github.com/Alamofire/Alamofire", from: "5.0.0"),
         // You can read more about dependencies here: https://docs.tuist.io/documentation/tuist/dependencies
