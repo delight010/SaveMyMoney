@@ -1,7 +1,7 @@
 import AppFeatures
 import AppCore
 
-import FirebaseCore
+import Firebase
 
 import SwiftData
 import SwiftUI
