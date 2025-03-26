@@ -43,7 +43,7 @@ public struct ConsumptionMainView: View {
             consumptionListView()
         } // VStack
         .onAppear {
-            if let plan = viewModel.getPlan(), !viewModel.isTodayInRange() {
+            if let plan = viewModel.getPlan(), plan.status == .inProgress, !viewModel.isTodayInRange() {
                 router.push(to: ConsumptionCoordinator.ConsumptionDestination.success)
             }
         }
