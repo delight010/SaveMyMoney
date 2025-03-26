@@ -24,7 +24,7 @@ public extension ChartDataProtocol {
             let category = ExpenseCategory(rawValue: tag)
             result.append(
                 ChartData(
-                    label: tag,
+                    label: category?.localizedName ?? "",
                     value: amount,
                     color: category?.color ?? .black,
                     icon: category?.icon
