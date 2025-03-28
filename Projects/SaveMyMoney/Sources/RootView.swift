@@ -30,20 +30,20 @@ struct RootView: View {
             TabView(selection: $selectedMenu) {
                 HomeView(consumptionViewModel: consumptionViewModel, planViewModel: planViewModel)
                     .tabItem {
-                        Label("Home", systemImage: "house.fill")
+                        Label("home", systemImage: "house.fill")
                     }
                     .tag(AppDestination.home)
                     .navigationTitle("")
                 
                 HistoryView()
                     .tabItem {
-                        Label("History", systemImage: "magazine.fill")
+                        Label("history", systemImage: "magazine.fill")
                     }
                     .tag(AppDestination.history)
                 
                 SettingView(coordinator: SettingCoordinator(router))
                     .tabItem {
-                        Label("Setting", systemImage: "gearshape.fill")
+                        Label("setting", systemImage: "gearshape.fill")
                     }
                     .tag(AppDestination.setting)
             } // TabView
