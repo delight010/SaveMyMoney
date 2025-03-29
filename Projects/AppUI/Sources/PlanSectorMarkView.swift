@@ -36,7 +36,7 @@ public struct PlanSectorMarkView: View {
             } // Chart
             
             Text(planStatus)
-                .font(.title)
+                .font(.title2)
                 .bold()
         } // ZStack
     }
