@@ -30,6 +30,9 @@ let infoPlist: [String: Plist.Value] = [
     
     // Network settings
     "NSAppTransportSecurity": ["NSAllowsArbitraryLoads": true],
+    
+    // Other
+    "ITSAppUsesNonExemptEncryption": false
 ]
 
 public extension TargetScript {
