@@ -10,7 +10,7 @@ import ProjectDescriptionHelpers
 
 let infoPlist: [String: Plist.Value] = [
     // Bundle identification and configuration
-    "CFBundleVersion": "1",
+    "CFBundleVersion": "2",
     "CFBundleShortVersionString": "1.0.0",
     "CFBundleDisplayName": "\(AppConfiguration.appName)",
     
