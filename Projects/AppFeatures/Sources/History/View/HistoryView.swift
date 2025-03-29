@@ -75,6 +75,8 @@ extension HistoryView {
             HStack {
                 PlanSectorMarkView(planStatus: plan.status.localizedName, chartData: viewModel.createChartData(plan: plan))
                     .padding(5)
+                    .frame(width: 120)
+                Spacer()
                 VStack {
                     Group {
                         HStack {
@@ -105,8 +107,14 @@ extension HistoryView {
                     .font(.subheadline)
                     .buttonStyle(CapsuleButtonStyle())
                 } // VStack
+                .padding(10)
+                .background {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.secondaryColor.opacity(0.3))
+                }
             } // HStack
             .padding(5)
+            .frame(maxWidth: .infinity)
             .listRowSeparator(.hidden)
             .backgroundRoundedRectangle()
         }
