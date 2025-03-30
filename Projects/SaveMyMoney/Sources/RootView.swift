@@ -34,6 +34,7 @@ struct RootView: View {
                     }
                     .tag(AppDestination.home)
                     .navigationTitle("")
+                    .dismissKeyboardOnTap()
                 
                 HistoryView()
                     .tabItem {
@@ -85,7 +86,6 @@ struct RootView: View {
                 }
             } // navigationDestination
         } // NavigationStack
-        .dismissKeyboardOnTap()
     }
 }
 
