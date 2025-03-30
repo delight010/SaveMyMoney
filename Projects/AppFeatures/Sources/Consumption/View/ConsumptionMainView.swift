@@ -128,8 +128,9 @@ extension ConsumptionMainView {
                 } else {
                     ForEach(viewModel.consumption, id: \.self) { data in
                         NavigationLink(value: ConsumptionCoordinator.ConsumptionDestination.edit(consumptionID: data.id)) {
+                            let category = ExpenseCategory(rawValue: data.tag)?.localizedName ?? ""
                             HStack {
-                                Text("[\(data.tag)]")
+                                Text("[\(category)]")
                                 Text(data.title)
                                 Spacer()
                                 Text(currency.formatStyle().format(data.amount))
