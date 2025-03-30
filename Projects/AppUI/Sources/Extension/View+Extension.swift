@@ -53,6 +53,10 @@ public extension View {
         self.modifier(ExpandTouchArea(edges, size: size))
     }
     
+    func dismissKeyboardOnTap() -> some View {
+        modifier(DismissKeyboardOnTap())
+    }
+    
     func basicAlert(
         isPresented: Binding<Bool>,
         title: String,
