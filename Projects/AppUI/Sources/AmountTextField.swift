@@ -31,16 +31,8 @@ public struct AmountTextField: View {
         HStack {
             TextField(titleKey, text: $valueString)
                 .multilineTextAlignment(.trailing)
-                .focused($isFocused)
                 .keyboardType(.decimalPad)
-                .toolbar {
-                    ToolbarItemGroup(placement: .keyboard) {
-                        Spacer()
-                        Button("Done".localized(in: .module)) {
-                            isFocused = false
-                        }
-                    }
-                }
+                .focused($isFocused)
                 .onChange(of: isFocused) {
                     if isFocused {
                         valueString = filterDecimal(valueString)
