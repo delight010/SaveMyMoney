@@ -27,6 +27,9 @@ public struct CustomTextField: View {
             TextField(titleKey, text: $text)
                 .multilineTextAlignment(.trailing)
                 .focused($isFocused)
+                .onSubmit {
+                    isFocused = false
+                }
         } // HStack
         .padding(padding)
         .foregroundColor(.primary)
