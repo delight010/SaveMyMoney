@@ -110,7 +110,7 @@ public struct EditConsumptionView: View {
                     Text("done".localized(in: .module))
                 }
                 .tint(isPositive ? Color.primaryColor : Color.disabledButtonBackground)
-                .disabled(!isPositive || isFocused)
+                .disabled(!isPositive)
             }
         }
     }
