@@ -23,7 +23,6 @@ public struct EditConsumptionView: View {
     @State private var amount: Decimal = 0
     @State private var category: ExpenseCategory = .food
     @State private var isPositive: Bool = false
-    @FocusState private var isFocused: Bool
     
     @State private var originalAmount: Decimal = 0
     
@@ -46,14 +45,12 @@ public struct EditConsumptionView: View {
                     .frame(width: 80, alignment: .leading)
                 Spacer()
                 CustomTextField("title", text: $title)
-                    .focused($isFocused)
             }
             HStack {
                 Text("amount".localized(in: .module))
                     .bold()
                     .frame(width: 80, alignment: .leading)
                 AmountTextField("\(currency.currencySymbol) 0", value: $amount, currency: .constant(currency))
-                    .focused($isFocused)
             }
             HStack {
                 Text("category".localized(in: .module))
