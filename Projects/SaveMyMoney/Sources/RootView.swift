@@ -85,6 +85,7 @@ struct RootView: View {
                 }
             } // navigationDestination
         } // NavigationStack
+        .dismissKeyboardOnTap()
     }
 }
 
