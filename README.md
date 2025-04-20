@@ -13,19 +13,19 @@ Simple to use yet powerful in results, Save Money for My Life is your trusted co
 ## Features
 
 - Create Plan Views
-![Image](https://github.com/user-attachments/assets/d7fb4fb5-8f1b-43c5-92c5-f1baf60534b0)
-![Image](https://github.com/user-attachments/assets/bb8dc4b0-a5d1-402d-98c3-3322536556c4)
-![Image](https://github.com/user-attachments/assets/ec7866f2-a8ed-4ec8-a7ef-ed8553ea53f5)
+<img src="https://github.com/user-attachments/assets/d7fb4fb5-8f1b-43c5-92c5-f1baf60534b0" width="250" />
+<img src="https://github.com/user-attachments/assets/bb8dc4b0-a5d1-402d-98c3-3322536556c4" width="250" />
+<img src="https://github.com/user-attachments/assets/ec7866f2-a8ed-4ec8-a7ef-ed8553ea53f5" width="250" />
 
 - Consumption Add/Edit View
-![Image](https://github.com/user-attachments/assets/a1bbfc60-2ca6-41fb-97f4-523c9caf928f)
+<img src="https://github.com/user-attachments/assets/a1bbfc60-2ca6-41fb-97f4-523c9caf928f" width="250" />
 
 - Home View
-![Image](https://github.com/user-attachments/assets/e9ba7654-4292-47a8-8085-df43e88044b1)
+<img src="https://github.com/user-attachments/assets/e9ba7654-4292-47a8-8085-df43e88044b1" width="250" />
 
 - History Views
-![Image](https://github.com/user-attachments/assets/784fb82f-0c89-4461-bc8a-797c94659f3b)
-![Image](https://github.com/user-attachments/assets/90f060b8-dcff-4e39-8f66-93739a92241b)
+<img src="https://github.com/user-attachments/assets/784fb82f-0c89-4461-bc8a-797c94659f3b" width="250" />
+<img src="https://github.com/user-attachments/assets/90f060b8-dcff-4e39-8f66-93739a92241b" width="250" />
 
 ## Technologies Used
 
