@@ -1,5 +1,7 @@
 # Save Money for My Life
 
+[English] | [日本語](./README.jp.md) | [한국어](./README.kr.md)
+
 ## About
 
 Take control of your finances with Save Money for My Life - the smart budgeting app that helps you set spending periods and budget limits to keep your expenses in check.
